@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="../css/reg.css">
+    <script src="../css/rem.js"></script>
+</head>
+<body>
+<div id="login">
+    <form   id="loginform">
+        <div class="login-box">
+            <div class="login-left">
+                <img src="../image/Login/logo.png" alt="logo">
+                <a href="index.html" class="login-back"><img src="../image/Login/return.png">返回首页</a>
+            </div>
+            <div class="login-right">
+                <div class="login-item login-phone">
+                    <div class="login-icon"><img src="../image/Login/username.png"></div>
+                    <div class="login-input">
+                        <input type="text" autocomplete="off" name="username" id="username" placeholder="请输入用户名">
+                    </div>
+                </div>
+                <div class="login-item login-phone">
+                    <div class="login-icon"><img src="../image/Login/password.png"></div>
+                    <div class="login-input">
+                        <input type="text" autocomplete="off" name="password" id="password" placeholder="请输入密码">
+                    </div>
+                </div>
+                <div class="login-sumbit unselected" >登录</div>
+            </div>
+        </div>
+    </form>
+</div>
+
+</body>
+
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/vue/3.0.2/vue.cjs.js"></script>
+<script>
+    //登录判定
+    $(".login-sumbit").click(function () {
+        $.ajax({
+            type:"post",
+            url:"login",
+            data:$("#loginform").serialize(),
+            success : function (data) {
+                if (data == "success") {
+                    location.href="showticket";
+                } else if (data == "error") {
+                    alert("账号密码有误,请重新输入!");
+                }
+            },
+
+        });
+    })
+</script>
+</html>
