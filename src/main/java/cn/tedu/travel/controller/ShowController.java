@@ -19,4 +19,8 @@ public class ShowController {
     public String showTicketing() {
         return "ticketing";
     }
+    @GetMapping("/showabout")
+    public String showAbout(){return "about";}
+    @GetMapping("/showcontactUs")
+    public String showContactUs(){return "contactUs";}
 }

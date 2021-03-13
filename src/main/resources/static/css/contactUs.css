@@ -1,0 +1,113 @@
+body, div, dl,a, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6,form,input, textarea, p, th, td, hr, button{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:Microsoft YaHei;
+}
+li{
+	list-style-type:none;
+}
+a{
+	text-decoration: none;
+}
+.wapper{
+	width: 16rem;
+	margin: 0 auto;
+}
+/*页面导航*/
+.linkList{
+	display: flex;
+	align-items: center;
+	font-size:.2rem;
+	padding: .33rem 0 0;
+	color: #3E3D3D;
+	flex-wrap: wrap;
+}
+.linkList a{
+	color: #3E3D3D;
+	display: flex;
+	align-items: center;
+}
+.linkList img{
+	width: .14rem;
+	margin: 0 .33rem;
+	min-width: 10px;
+}
+/*联系我们样式*/
+.contact-title{
+	font-size:.26rem;
+	padding: 60px 0 .18rem;
+	margin: 0rem auto .43rem;
+	position: relative;
+	text-align: center;
+}
+.contact-title::after{
+	content: "";
+	width: 2.2rem;
+	height: 3px;
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+	margin-left: -1.1rem;
+	background: #CBBDA8;
+}
+.contact-content{
+	font-size: .18rem;
+	line-height: 1.6;
+	color: #FFFFFF;
+	background-image: url(https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/contact/contact-bg.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	min-height: 5.24rem;
+	padding: 1.2rem 0 1.15rem;
+}
+.contact-content .contact-title{
+	margin: 0 0 .3rem  0;
+}
+.contact-content div{
+	padding: .3rem;
+}
+.contact-list{
+	display: flex;
+	flex-wrap: wrap;
+	font-size: .16rem;
+	color: #666666;
+	text-align: center;
+	justify-content: space-between;
+	cursor: pointer;
+	padding: 0 .3rem 0;
+}
+.contact-list li{
+	width: 2.17rem;
+	margin-top: .13rem
+}
+.contact-list a{
+	color: #bf9a0b
+}
+.contact-list h3{
+	font-size: .24rem;
+	color: #3E3D3D;
+	margin: .22rem 0 .2rem;
+}
+.contact-item{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 2.17rem;
+	box-shadow:1px 1px 6px 0px rgba(60, 59, 59, 0.34);
+	border-radius:.1rem;
+}
+.contact-item img{
+	height: 35%
+}
+.join-us{
+	color: #666;
+	font-size: .18rem;
+	text-align: center;
+	line-height: 1.6;
+	padding: 0 .7rem;
+}
+.join-us h4{
+	font-size: .2rem;
+	margin: .2rem 0;
+}

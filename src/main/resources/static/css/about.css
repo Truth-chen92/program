@@ -1,0 +1,299 @@
+body, div, dl,a, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6,form,input, textarea, p, th, td, hr, button{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family:Microsoft YaHei;
+}
+a{
+	text-decoration: none;
+}
+.wapper{
+	width: 16rem;
+	margin: 0 auto;
+}
+/*页面导航*/
+.linkList{
+	display: flex;
+	align-items: center;
+	font-size:.2rem;
+	padding: .33rem 0 0;
+	color: #3E3D3D;
+	flex-wrap: wrap;
+}
+.linkList a{
+	color: #3E3D3D;
+	display: flex;
+	align-items: center;
+}
+.linkList img{
+	width: .14rem;
+	margin: 0 .33rem;
+	min-width: 10px;
+}
+
+/*古城概述*/
+#about-box{
+	background-image: url(../image/Ticketing/background3.png);
+	background-size: 100% 100%;
+}
+.about-chart{
+	width: 100%;
+}
+.about-introduce{
+	padding: .6rem 0 0;
+}
+.about-title{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: .35rem;
+	color: #3E3D3D;
+	font-weight: bold;
+}
+.about-title img{
+	height: .4rem;
+	margin: 0 .25rem
+}
+.introduce-content{
+	display: flex;
+	margin-top: .45rem;
+	flex-wrap: wrap;
+}
+.introduce-text{
+	width: 50%;
+	display: flex;
+	justify-content: center;
+	font-size: .18rem;
+	line-height: 1.8;
+	padding: 1.5rem;
+	box-shadow:0px -8px 20px 0px rgba(60, 59, 59, 0.07);
+	position: relative;
+	background: url(../image/Ticketing/background2.png) no-repeat;
+    background-size: 103% auto;
+    background-position: bottom;
+    flex-direction: column;
+}
+.introduce-text div{ text-indent:2em; padding:0px; margin:0px; }
+.introduce-content>img{
+	width:50%;
+}
+.introduce-more{
+	position: absolute;
+	display: flex;
+	align-items: center;
+	bottom: .4rem;
+	right: .46rem;
+	color: #3E3D3D;
+	font-weight:bold;
+}
+.introduce-more>img{
+	width: .16rem;
+	margin-left: .24rem;
+	min-width: 12px;
+}
+
+.about-route{
+	margin-top: .6rem;
+	font-size: .18rem;
+	color: #3E3D3D;
+}
+.route-title{
+	font-size: .26rem;
+	font-weight: bold;
+	color: #292929;
+	padding-bottom: .15rem;
+	border-bottom: 3px solid #CBBDA8;
+	display: inline-block;
+	padding-right: 1.28rem;
+}
+.route-title span{
+	color: #5D0B0B
+}
+.route-content{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.route-content>img{
+	width: 50%;
+}
+.route-text{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 50%;
+}
+.route-item{
+	width: 50%;
+	padding-right: 1rem;
+	margin-top: .45rem;
+}
+.route-item1{
+	padding-top: .3rem;
+}
+.route-item3{
+	width: 100%
+}
+.route-item h3{
+	font-size: .24rem;
+	display: inline-block;
+	padding: .15rem .72rem .15rem .18rem;
+	background: #CBBDA8;
+	color: #fff;
+	border-radius:.05rem;
+}
+.route-item p{
+	padding: .25rem 0 0;
+}
+.route-item3  div{
+	color: #666666;
+	font-size: .16rem;
+	margin-top: .05rem;
+}
+
+.about-people{
+	padding-top: 60px;
+}
+
+.about-custom{
+	padding-top: .6rem;
+}
+#custom-content{
+	font-size: .16rem;
+	color: #3E3D3D;
+	line-height: 1.8;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.custom-item{
+	width: 4.92rem;
+	margin-top: .44rem;
+	background:rgba(240,240,240,1);
+}
+.custom-item h3{
+	padding: .31rem .17rem 0;
+}
+.custom-item p{
+	padding: .31rem .17rem;
+}
+.custom-item img{
+	width: 100%;
+}
+.custom-more{
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	font-size: .18rem;
+	font-weight: bold;
+	color: #3E3D3D;
+	margin-top: .23rem;
+}
+.custom-more img{
+	margin-left: .2rem;
+	width: .28rem;
+	min-width: 16px;
+}
+
+#celebrity-box .wapper{
+	position: relative;
+}
+.celebrity-item{
+	position: relative;
+	line-height: 0;
+	font-size: .16rem;
+	color: #fff;
+	display: flex;
+	transition: all 1s;
+	margin: 0 .08rem;
+	overflow: hidden;
+	height: 3.76rem;
+}
+.celebrity-item>img{
+	width: 2.82rem;
+
+}
+.celebrity-ul{
+	position: relative;
+	display: flex;
+	margin-top: .6rem;
+	align-items: center;
+	z-index: 1;
+	/*flex-wrap: wrap;*/
+}
+.celebrity-ul li:nth-child(1){
+	transform: scale(0.85);
+	transform-origin:left center;
+	margin: 0 -1.5rem 0 0;
+	z-index: -1
+}
+.celebrity-ul li:nth-child(6){
+	transform: scale(0.85);
+	transform-origin:right center;
+	margin: 0  0 0 -1.5rem;
+	z-index: -1;
+}
+.celebrity-ul li:nth-child(5) .celebrity-tip{
+	width: 2.88rem;
+}
+.celebrity-ul li:nth-child(7){
+	width: 0;
+	height: 0;
+	z-index: -1;
+}
+.celebrity-ul li:nth-child(8){
+	width: 0;
+	height: 0;
+	z-index: -1;
+}
+.celebrity-prev{
+	width:  .27rem;
+	position: absolute;
+	left: -0.7rem;
+	top: 50%;
+	margin-top: -0.25rem;
+	cursor: pointer;
+	z-index: 2;
+}
+.celebrity-next{
+	width: .27rem;
+	position: absolute;
+	right: -0.7rem;
+	top: 50%;
+	margin-top: -0.25rem;
+	cursor: pointer;
+	z-index: 2;
+}
+.celebrity-tip{
+	width: 0;
+	background:rgba(240,240,240,1);
+	padding:0 .1rem;
+	font-size: .12rem;
+	color: #666666;
+	white-space: pre-line;
+	
+	box-sizing: border-box;
+	overflow: hidden;
+	transition: all 1s;
+
+}
+.celebrity-tip h4{
+	font-size: .16rem;
+	border-bottom: 1px solid #CBBDA8;
+	padding: .1rem 0;
+	line-height: normal;
+}
+.celebrity-tip div{
+	text-indent: 2em;
+	line-height: 1.4;
+	margin-top: .1rem;
+}
+#custom-box-content{
+	font-size: .16rem;
+	color: #3E3D3D;
+	margin-top: .45rem;
+	line-height: 1.5
+}
+#custom-box-content img{
+	width: 100%;
+}
