@@ -1,0 +1,515 @@
+<html lang="en" style="font-size: 50.3125px;"><head>
+    <meta charset="UTF-8">
+    <title>住在凤凰</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="https://hm.baidu.com/hm.js?5b8572ca1660965974d2ea9f755f0459"></script><script src="js/jquery.min.js"></script>
+    <script src="js/rem.js"></script>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/product.css">
+    <script src="js/template.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/api.js"></script>
+</head>
+<body>
+<header id="header">
+    <div id="header-box">
+        <div class="header-left">
+            <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/mobile.png" class="mobile-btn" alt="">
+            <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/logo.png" alt="logo">
+
+            <div>
+                <div>12/20°<br>阴</div>
+                <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/xmall/weatherIcon/104.png" alt="天气图标">
+            </div>
+
+        </div>
+        <ul class="header-nav">
+
+            <li>
+                <a href="index.html">首页</a>
+
+            </li>
+
+            <li>
+                <a href="publicity.html">古城景点</a>
+
+                <ul class="nav-list">
+
+                    <a href="video-list.html"><li>宣传视频</li></a>
+
+                    <a href="publicity.html#item_0"><li>凤凰古城九景</li></a>
+
+                    <a href="publicity.html#item_2"><li>南方长城</li></a>
+
+                    <a href="publicity.html#item_3"><li>奇梁洞</li></a>
+
+                    <a href="publicity.html#item_1"><li>边城演艺</li></a>
+
+                </ul>
+
+            </li>
+
+            <li>
+                <a href="guide.html">导览购票</a>
+
+                <ul class="nav-list">
+
+                    <a href="guide.html#opending"><li>开放时间</li></a>
+
+                    <a href="guide.html"><li>票务服务</li></a>
+
+                    <a href="guide.html#needKnow"><li>游览须知</li></a>
+
+                    <a href="guide.html#map"><li>电子地图</li></a>
+
+                </ul>
+
+            </li>
+
+            <li>
+                <a href="product.html">吃喝玩乐</a>
+
+                <ul class="nav-list">
+
+                    <a href="product-travel.html"><li>玩在凤凰</li></a>
+
+                    <a href="product-live.html"><li>住在凤凰</li></a>
+
+                    <a href="product-eat.html"><li>吃在凤凰</li></a>
+
+                    <a href="product-entertain.html"><li>购在凤凰</li></a>
+
+                </ul>
+
+            </li>
+
+            <li>
+                <a href="about.html">古城概述</a>
+
+                <ul class="nav-list">
+
+                    <a href="about-introduce.html"><li>古城介绍</li></a>
+
+                    <a href="about.html#celebrity"><li>古城名人</li></a>
+
+                    <a href="about-custom.html"><li>古城风俗</li></a>
+
+                </ul>
+
+            </li>
+
+            <li>
+                <a href="information.html">景点资讯</a>
+
+                <ul class="nav-list">
+
+                    <a href="notice-list.html"><li>景点公告</li></a>
+
+                    <a href="dynamic-list.html"><li>景点动态</li></a>
+
+                    <a href="activity-list.html"><li>景点活动</li></a>
+
+                </ul>
+
+            </li>
+
+            <li>
+                <a href="contactUs.html">联系我们</a>
+
+                <ul class="nav-list">
+
+                    <a href="contactUs.html"><li>集团介绍</li></a>
+
+                    <a href="contactUs.html#cooperation"><li>商务合作</li></a>
+
+                    <a href="contactUs.html#cooperation"><li>联系方式</li></a>
+
+                    <a href="contactUs.html#recruit"><li>人才招聘</li></a>
+
+                </ul>
+
+            </li>
+
+        </ul>
+        <a href="login.html" class="consumer-box">
+            <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/head.png" alt="用户登录" class="consumer-icon">
+            <span class="consumer-text">欢迎您</span>
+        </a>
+        <ul class="header-nav-mobile">
+
+            <li>
+                <a href="index.html">首页<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/right-btn.png" alt=""></a>
+            </li>
+
+            <li>
+                <a href="publicity.html">古城景点<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/right-btn.png" alt=""></a>
+            </li>
+
+            <li>
+                <a href="guide.html">导览购票<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/right-btn.png" alt=""></a>
+            </li>
+
+            <li>
+                <a href="product.html">吃喝玩乐<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/right-btn.png" alt=""></a>
+            </li>
+
+            <li>
+                <a href="about.html">古城概述<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/right-btn.png" alt=""></a>
+            </li>
+
+            <li>
+                <a href="information.html">景点资讯<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/right-btn.png" alt=""></a>
+            </li>
+
+            <li>
+                <a href="contactUs.html">联系我们<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/right-btn.png" alt=""></a>
+            </li>
+
+        </ul>
+    </div>
+    <script type="text/html" id="headerBox">
+        <div class="header-left">
+            <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/mobile.png" class="mobile-btn" alt="">
+            <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/logo.png" alt="logo">
+            <% if (weatherData.isNight) { %>
+            <div>
+                <div><%= weatherData.tmp_min %>/<%= weatherData.tmp_max %>°</br><%= weatherData.cond_txt_n %></div>
+                <img src="<%= weatherData.cond_url_n %>" alt="天气图标">
+            </div>
+            <% }else{ %>
+            <div>
+                <div><%= weatherData.tmp_min %>/<%= weatherData.tmp_max %>°</br><%= weatherData.cond_txt_d %></div>
+                <img src="<%= weatherData.cond_url_d %>" alt="天气图标">
+            </div>
+            <% } %>
+        </div>
+        <ul class="header-nav">
+            <% for(var i = 0;i < navLsit.length;i++){ %>
+            <li>
+                <a href="<%= navLsit[i].targetPath %>"><%= navLsit[i].name %></a>
+                <% if (navLsit[i].childrenList.length) { %>
+                <ul class="nav-list">
+                    <% for(var j = 0;j < navLsit[i].childrenList.length;j++){ %>
+                    <a href="<%= navLsit[i].childrenList[j].targetPath %>"><li><%= navLsit[i].childrenList[j].title %></li></a>
+                    <% } %>
+                </ul>
+                <% } %>
+            </li>
+            <% } %>
+        </ul>
+        <a href="login.html" class="consumer-box">
+            <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/head.png" alt="用户登录" class="consumer-icon">
+            <span class="consumer-text">欢迎您</span>
+        </a>
+        <ul class="header-nav-mobile">
+            <% for(var i = 0;i < navLsit.length;i++){ %>
+            <li>
+                <a href="<%= navLsit[i].targetPath %>"><%= navLsit[i].name %><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/right-btn.png" alt=""></a>
+            </li>
+            <% } %>
+        </ul>
+    </script>
+    <script>
+        $(function(){
+            var data = {
+                weatherData:{
+                    tmp_min:'11/17℃',
+                    tmp_max:'',
+                    cond_url_d:'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/weather.png',
+                    cond_txt_d:'晴'
+                },
+                navLsit:[{
+                    name:'首页',
+                    childrenList:[],
+                    targetPath:'index.html'
+                },{
+                    name:'古城景点',
+                    childrenList:[{
+                        title:'宣传视频',
+                        targetPath:'video-list.html'
+                    },{
+                        title:'凤凰古城九景',
+                        targetPath:'publicity.html#item_0'
+                    },{
+                        title:'南方长城',
+                        targetPath:'publicity.html#item_2'
+                    },{
+                        title:'奇梁洞',
+                        targetPath:'publicity.html#item_3'
+                    },{
+                        title:'边城演艺',
+                        targetPath:'publicity.html#item_1'
+                    }],
+                    targetPath:'publicity.html'
+                },{
+                    name:'导览购票',
+                    childrenList:[{
+                        title:'开放时间',
+                        targetPath:'guide.html#opending'
+                    },{
+                        title:'票务服务',
+                        targetPath:'guide.html'
+                    },{
+                        title:'游览须知',
+                        targetPath:'guide.html#needKnow'
+                    },{
+                        title:'电子地图',
+                        targetPath:'guide.html#map'
+                    }],
+                    targetPath:'guide.html'
+                },{
+                    name:'吃喝玩乐',
+                    childrenList:[{
+                        title:'玩在凤凰',
+                        targetPath:'product-travel.html'
+                    },{
+                        title:'住在凤凰',
+                        targetPath:'product-live.html'
+                    },{
+                        title:'吃在凤凰',
+                        targetPath:'product-eat.html'
+                    },{
+                        title:'购在凤凰',
+                        targetPath:'product-entertain.html'
+                    }],
+                    targetPath:'product.html'
+                },{
+                    name:'古城概述',
+                    childrenList:[{
+                        title:'古城介绍',
+                        targetPath:'about-introduce.html'
+                    },{
+                        title:'古城名人',
+                        targetPath:'about.html#celebrity'
+                    },{
+                        title:'古城风俗',
+                        targetPath:'about-custom.html'
+                    }],
+                    targetPath:'about.html'
+                },{
+                    name:'景点资讯',
+                    childrenList:[{
+                        title:'景点公告',
+                        targetPath:'notice-list.html'
+                    },{
+                        title:'景点动态',
+                        targetPath:'dynamic-list.html'
+                    },{
+                        title:'景点活动',
+                        targetPath:'activity-list.html'
+                    }],
+                    targetPath:'information.html'
+                },{
+                    name:'联系我们',
+                    childrenList:[{
+                        title:'集团介绍',
+                        targetPath:'contactUs.html'
+                    },{
+                        title:'商务合作',
+                        targetPath:'contactUs.html#cooperation'
+                    },{
+                        title:'联系方式',
+                        targetPath:'contactUs.html#cooperation'
+                    },{
+                        title:'人才招聘',
+                        targetPath:'contactUs.html#recruit'
+                    }],
+                    targetPath:'contactUs.html'
+                }],
+
+            }
+
+            API.getWeather(function(){
+                //请求前设置
+            },{des_id:21}).then(res=>{
+                data.weatherData = res.data;
+                data.weatherData['isNight'] = (new Date()).getHours()<18?false:true;//判断当前时间是否为晚上
+                // 模板渲染
+                var headerBox = document.getElementById('headerBox').innerHTML;
+                document.getElementById('header-box').innerHTML = template(headerBox,{weatherData:data.weatherData,navLsit:data.navLsit});
+                if(localStorage.getItem("memberCode")){
+                    $(".consumer-icon").attr("src","https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/head_portrait%402x.png");
+                    $(".consumer-text").show();
+                    $(".consumer-box").css("pointer-events","none")
+                }
+                $('.header-nav>li').hover(function(e) {
+                    $(this).find(".nav-list").stop().slideToggle()
+                });
+                $(".mobile-btn").click(function(event) {
+                    $(".header-nav-mobile").stop().slideToggle()
+                });
+            })
+        });
+
+    </script></header>
+<div class="linkList wapper linkList2">
+    <a href="index.html">首页</a>
+    <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point1.png" alt="">
+    <a href="product.html">吃喝玩乐</a>
+    <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point1.png" alt="">
+    住在凤凰
+</div>
+<div class="wapper" id="live-box">
+
+    <div class="live-item">
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/product/xionggongguan%402x.png" alt="产品图片">
+        <div class="live-item-contet">
+            <h3>熊公馆（总理府）</h3>
+            <div class="live-address"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/location.png" alt="地点">文星街8号（凤凰古城内）</div>
+            <div>商家电话：15174346018</div>
+            <div style="color: #FF6600;font-weight: bold;">价位：780元/起</div>
+            <div class="live-dricp">2018年开业，一家苗族古代建筑风格，极富苗族情调的会所，共有6间房，豪华套房2间，高级标准套房2间，高级大床房1间，高级双标1间；具有配套餐饮、茶道、多功能会议室，可满足会务接待、商务活动、休闲旅行等不同需求，设有健身室，24小时开放式前台服务可随时为您提供信息，以帮助您探索这个魅力之城，酒店客人可以额外使用免费停车场。</div>
+            <!-- <div><a href="" class="live-btn">去购买</a></div> -->
+        </div>
+    </div>
+
+    <div class="live-item">
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/product/wanshougong%402x.png" alt="产品图片">
+        <div class="live-item-contet">
+            <h3>万寿宫轻奢驿站</h3>
+            <div class="live-address"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/location.png" alt="地点">沙湾11号万寿宫景点内（凤凰古城内）</div>
+            <div>商家电话：15907438526</div>
+            <div style="color: #FF6600;font-weight: bold;">价位：598元/起</div>
+            <div class="live-dricp">2018年开业，凤凰万寿宫轻奢驿站总占地面积4000平方米，投资共350万元余，是由湖南首家星级生态会馆普瑞温泉酒店全权管理，共有12间房，豪华套房6间，高级双标房3间，高级大床房3间；位于凤凰古城核心景区内，面朝沱江，集餐饮娱乐、休闲度假、会议商务于一休。万寿宫驿站由客房、茶楼、餐厅组成。能容纳20多人的会议餐饮多功能厅1个，其中会馆茶楼为会馆独创；在会馆茶楼品茶沱江江景尽收眼底，古色古香的装修氛围使人仿佛陶醉在古时的湖光山色中。</div>
+            <!-- <div><a href="" class="live-btn">去购买</a></div> -->
+        </div>
+    </div>
+
+    <div class="live-item">
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/product/qixitingyuan%402x.png" alt="产品图片">
+        <div class="live-item-contet">
+            <h3>栖溪庭院民宿</h3>
+            <div class="live-address"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/location.png" alt="地点">凤凰古城南门索33号</div>
+            <div>商家电话：13974376474</div>
+            <div style="color: #FF6600;font-weight: bold;">价位：200元/起</div>
+            <div class="live-dricp">2018年开业，2019年装修，位于凤凰古城入口西门内，与凤凰古城核心景区景点沈从文故居相邻，共有12间房，轻奢大床房、亲子套房、奢雅套房、轻奢双床房，生活配套设施完善，属于古城便利区域。古色古香的中式建筑完美融入古镇之中，走进庭院却又别有一番风味，我们每个房间的硬件设施可与四星级酒店媲美，并致力于为第一位客人提供五星级服务，房间古典中式与现代简约风格的结合，整体典雅大气，现代化的卫浴设备便捷舒心。</div>
+            <!-- <div><a href="" class="live-btn">去购买</a></div> -->
+        </div>
+    </div>
+
+    <div class="live-item">
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/product/dengnilai%402x.png" alt="产品图片">
+        <div class="live-item-contet">
+            <h3>凤凰等你来三生三世.艺术民宿</h3>
+            <div class="live-address"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/location.png" alt="地点">凤凰古城翡翠城东南方向200米</div>
+            <div>商家电话：0743-3666633</div>
+            <div style="color: #FF6600;font-weight: bold;">价位：470元/起</div>
+            <div class="live-dricp">2020年开业，凤凰民宿分会会长玲姐13年磨一剑的精品民宿，以苗绣文化为基调的体验式民宿，让选择入住的朋友们可以深切体会凤凰古城浓厚的苗族文化，民宿人性化管家式管理，个性化有温度的服务理念，宾至如归是您入住的感受。民宿交通便利，出行方便，早餐丰富，旅游服务，游玩舒畅，有亲子房、双间和大床房，每个房间都是江景房，每个房间都有大阳台，有会议室、娱乐室、餐厅、户外江景活动区，可以开宴会、生日派队。</div>
+            <!-- <div><a href="" class="live-btn">去购买</a></div> -->
+        </div>
+    </div>
+
+    <div class="live-item">
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/product/jiangjing%402x.png" alt="产品图片">
+        <div class="live-item-contet">
+            <h3>等一个人江景客栈（凤凰跳岩店）</h3>
+            <div class="live-address"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/location.png" alt="地点">老营哨街141号</div>
+            <div>商家电话：0743-3225227</div>
+            <div style="color: #FF6600;font-weight: bold;">价位：290元/起</div>
+            <div class="live-dricp">2016年开业，客栈位于古城最核心最繁华的沱江泛舟风景区，共有9间房，江景大床房、双床房；客房以东南亚、美式乡村等风格为主，还拥有古城最佳观景台，白天俯江而望，来上一杯咖啡，远离古城的喧哗，享受最美风景。</div>
+            <!-- <div><a href="" class="live-btn">去购买</a></div> -->
+        </div>
+    </div>
+
+    <div class="live-item">
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/product/wubai%402x.png" alt="产品图片">
+        <div class="live-item-contet">
+            <h3>凤凰無白.沐野高端度假民宿</h3>
+            <div class="live-address"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/location.png" alt="地点">沱江镇田家弄24号</div>
+            <div>商家电话：0743-3666736</div>
+            <div style="color: #FF6600;font-weight: bold;">价位：470元/起</div>
+            <div class="live-dricp">2019年开业，处于古城核心景区位置，民宿附近就是虹桥中心步行街和凤凰酒吧街，紧邻沱江，户型涵盖景观房、情侣房、家庭套房、亲子套房、双床房等，共有25间房，高档型酒店，各项设施达到四星酒店水平。</div>
+            <!-- <div><a href="" class="live-btn">去购买</a></div> -->
+        </div>
+    </div>
+
+</div>
+<div id="footer">
+    <div id="footer-box">
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/stone.png" alt=""><div class="footer">
+        <div class="footer-item">
+            <a href="contactUs.html">联系我们</a>
+            <div class="contact"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/phone.png" alt="" style="margin-left: 1.74rem"><span>0743-3502059</span></div>
+            <span>湖南省湘西土家族苗族自治州</span>
+            <a href="https://weibo.com/hnphoenix?from=myfollow_all" target="_blank"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/weibo.png" alt="" style="margin-left: 1.82rem"></a>
+            <a href="https://mp.weixin.qq.com/mp/homepage?__biz=MzA4OTQ2OTIxOQ==&amp;hid=1&amp;sn=6e87d4f93f4b065ddac1548451c6fba3" target="_blank"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/wechat.png" alt=""></a>
+        </div>
+        <div class="line"></div>
+        <div class="footer-item2">
+            <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/logo.png" alt="">
+            <a href="http://www.sunriver.cn/" class="website-link" target="_blank">祥源控股集团有限责任公司</a>
+            <a href="http://www.hunanhld.cn/" class="website-link" target="_blank">张家界黄龙洞景区</a>
+            <a href="http://qiyunshan.sunriver.cn/" target="_blank">齐云山生态文化旅游区</a>
+        </div>
+        <div class="footer-item3">
+            <span>凤凰古城官网</span>
+            <a href="http://beian.miit.gov.cn" target="_blank" style="display: inline-block;">湘ICP备20015967号-1</a>
+        </div>
+    </div>
+    </div></div>
+
+
+<script type="text/html" id="liveBox">
+    <% for(var i = 0;i < liveList.length;i++){ %>
+    <div class="live-item">
+        <img src="<%= liveList[i].img %>" alt="产品图片">
+        <div class="live-item-contet">
+            <h3><%= liveList[i].title %></h3>
+            <div class="live-address"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/location.png" alt="地点"><%= liveList[i].address %></div>
+            <div>商家电话：<%= liveList[i].phone %></div>
+            <div style="color: #FF6600;font-weight: bold;">价位：<%= liveList[i].price %>元/起</div>
+            <div class="live-dricp"><%= liveList[i].dricp %></div>
+            <!-- <div><a href="" class="live-btn">去购买</a></div> -->
+        </div>
+    </div>
+    <% } %>
+</script>
+<script>
+    $(function(){
+        let liveList =[{
+            img:'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/product/xionggongguan%402x.png',
+            title:'熊公馆（总理府）',
+            address:'文星街8号（凤凰古城内）',
+            phone:'15174346018',
+            price: 780,
+            dricp:'2018年开业，一家苗族古代建筑风格，极富苗族情调的会所，共有6间房，豪华套房2间，高级标准套房2间，高级大床房1间，高级双标1间；具有配套餐饮、茶道、多功能会议室，可满足会务接待、商务活动、休闲旅行等不同需求，设有健身室，24小时开放式前台服务可随时为您提供信息，以帮助您探索这个魅力之城，酒店客人可以额外使用免费停车场。'
+        },{
+            img:'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/product/wanshougong%402x.png',
+            title:'万寿宫轻奢驿站',
+            address:'沙湾11号万寿宫景点内（凤凰古城内）',
+            phone:'15907438526',
+            price: 598,
+            dricp:'2018年开业，凤凰万寿宫轻奢驿站总占地面积4000平方米，投资共350万元余，是由湖南首家星级生态会馆普瑞温泉酒店全权管理，共有12间房，豪华套房6间，高级双标房3间，高级大床房3间；位于凤凰古城核心景区内，面朝沱江，集餐饮娱乐、休闲度假、会议商务于一休。万寿宫驿站由客房、茶楼、餐厅组成。能容纳20多人的会议餐饮多功能厅1个，其中会馆茶楼为会馆独创；在会馆茶楼品茶沱江江景尽收眼底，古色古香的装修氛围使人仿佛陶醉在古时的湖光山色中。'
+        },{
+            img:'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/product/qixitingyuan%402x.png',
+            title:'栖溪庭院民宿',
+            phone:'13974376474',
+            address:'凤凰古城南门索33号',
+            price: 200,
+            dricp:'2018年开业，2019年装修，位于凤凰古城入口西门内，与凤凰古城核心景区景点沈从文故居相邻，共有12间房，轻奢大床房、亲子套房、奢雅套房、轻奢双床房，生活配套设施完善，属于古城便利区域。古色古香的中式建筑完美融入古镇之中，走进庭院却又别有一番风味，我们每个房间的硬件设施可与四星级酒店媲美，并致力于为第一位客人提供五星级服务，房间古典中式与现代简约风格的结合，整体典雅大气，现代化的卫浴设备便捷舒心。'
+        },{
+            img:'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/product/dengnilai%402x.png',
+            title:'凤凰等你来三生三世.艺术民宿',
+            phone:'0743-3666633',
+            address:'凤凰古城翡翠城东南方向200米',
+            price: 470,
+            dricp:'2020年开业，凤凰民宿分会会长玲姐13年磨一剑的精品民宿，以苗绣文化为基调的体验式民宿，让选择入住的朋友们可以深切体会凤凰古城浓厚的苗族文化，民宿人性化管家式管理，个性化有温度的服务理念，宾至如归是您入住的感受。民宿交通便利，出行方便，早餐丰富，旅游服务，游玩舒畅，有亲子房、双间和大床房，每个房间都是江景房，每个房间都有大阳台，有会议室、娱乐室、餐厅、户外江景活动区，可以开宴会、生日派队。'
+        },{
+            img:'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/product/jiangjing%402x.png',
+            title:'等一个人江景客栈（凤凰跳岩店）',
+            phone:'0743-3225227',
+            address:'老营哨街141号',
+            price: 290,
+            dricp:'2016年开业，客栈位于古城最核心最繁华的沱江泛舟风景区，共有9间房，江景大床房、双床房；客房以东南亚、美式乡村等风格为主，还拥有古城最佳观景台，白天俯江而望，来上一杯咖啡，远离古城的喧哗，享受最美风景。'
+        },{
+            img:'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/product/wubai%402x.png',
+            title:'凤凰無白.沐野高端度假民宿',
+            phone:'0743-3666736',
+            address:'沱江镇田家弄24号',
+            price: 470,
+            dricp:'2019年开业，处于古城核心景区位置，民宿附近就是虹桥中心步行街和凤凰酒吧街，紧邻沱江，户型涵盖景观房、情侣房、家庭套房、亲子套房、双床房等，共有25间房，高档型酒店，各项设施达到四星酒店水平。'
+        }]
+        $("#live-box").html(template($("#liveBox").html(),{liveList:liveList}));
+    })
+
+</script></body></html>

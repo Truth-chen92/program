@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 70px;">
+<head>
+    <meta charset="UTF-8">
+    <title>古城景点</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/publicity.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/rem.js"></script>
+    <script src="js/template.js"></script>
+    <script>//古城景点页面数据
+    const publicityData={
+        interval:null,//轮播图循环
+        moving:false,//当前是否在翻页
+        // 轮播图上一张
+        prevTo:(that)=>{
+            if(publicityData.moving){return false}
+            clearInterval(publicityData.interval);
+            publicityData.moving = true;
+            let nowLeft = Number($(that).parent().attr("data-left"))*10000; //当前left
+            let len = Number($(that).parent().attr("data-len")); //目标轮播图的图片总数
+            let orderLeft = nowLeft+ 55500; //目标移动位置
+            publicityData.interval = setInterval(()=>{
+                nowLeft = nowLeft +500;
+                $(that).parent().find(".publicity-imglist").css("left",nowLeft/10000+'rem');
+                if(nowLeft == orderLeft){
+                    publicityData.moving = false;
+                    $(that).parent().attr("data-left",orderLeft/10000);
+                    if(orderLeft ==0){ //移动到第一张图时
+                        $(that).parent().find(".publicity-imglist").css("left",-len*5.55+'rem');
+                        $(that).parent().attr("data-left",-len*5.55);
+                    }
+                    clearInterval(publicityData.interval);
+                }
+            },1)
+        },
+        // 轮播图下一张
+        nextTo:(that)=>{
+            if(publicityData.moving){
+                return false
+            }
+            clearInterval(publicityData.interval);
+            publicityData.moving = true;
+            let nowLeft = Number($(that).parent().attr("data-left"))*10000;
+            let len = Number($(that).parent().attr("data-len"));
+            let orderLeft = nowLeft - 55500;
+            publicityData.interval = setInterval(()=>{
+                nowLeft = nowLeft  - 500;
+                $(that).parent().find(".publicity-imglist").css("left",nowLeft/10000+'rem');
+                if(nowLeft == orderLeft){
+                    publicityData.moving = false;
+                    $(that).parent().attr("data-left",orderLeft/10000);
+                    if(orderLeft/10000 ==(-(len+1)*5.55)){//移动到最后一张图时
+                        $(that).parent().find(".publicity-imglist").css("left",'0rem');
+                        $(that).parent().attr("data-left",0);
+                    }
+                    clearInterval(publicityData.interval);
+                }
+            },1)
+        },
+    }</script>
+
+    <style>
+        video {width: 100%;object-fit: fill;
+            background: transparent url('https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/video/1(1).png') 50% 50% no-repeat;
+            background-size: cover;}
+        .shiping{width: 50%;margin-top: 10px;}
+        .jin{margin: 15% 0 0 95%;position: fixed;}
+    </style>
+</head>
+<body>
+<div class="jin"><a href="publicity-3.html"><img src="image/img/jin.png" alt=""></a></div>
+<div id="publicity-box">
+    <div class="linkList wapper" style="margin-top: 100px">
+        <a href="index.html">首页</a>
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point1.png" alt="">
+        古城景点
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point1.png" alt="">
+        奇梁洞
+    </div>
+    <div id="publicity-list" class="wapper">
+        <div class="publicity-item" id="item_3">
+            <div class="publicity-title">
+                <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/left black.png" alt="">
+                奇梁洞
+                <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/right black.png" alt="">
+            </div>
+            <ul>
+                <li class="publicity-li publicity-li-active">
+                    <div class="publicity-li-box">
+                        <div class="shiping">
+                            <video poster="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/publicity/4.png" controls>
+                                <source src="https://xislandtravel.oss-cn-beijing.aliyuncs.com/qld.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="publicity-li-content">
+                            <h3>奇梁洞景区</h3>
+                            <div>一碗喝不醉的酒，在等您</div>
+                            <p>
+                                相传宋代末年，土人首领何车聚众起义反对官府，攻城夺寨，势如破竹。朝廷举派“杨氏三兄弟”统兵征剿，被何车用“追命鼓”、“迷魂锣”、“荷花伞”三件法宝打败。后因叛徒告密，法宝被破，退守奇梁洞中，将士全部战死。民间至今流传“三十六人杀九千，死在奇梁洞门前”的故事。小溪右岸石壁上垂下一把“荷花伞”，流水有声，传说是何车的护身法宝。
+                                著名的地质学家B.D埃德曼考察了奇梁洞后认为洞中的水中倒影美轮美奂堪称世界溶洞一绝。
+                                有着如此惊心动魄一个传说的地方，如此惊艳的一个溶洞，你能不让自己置身其中吗？</p>
+                        </div>
+                    </div>
+                    <div class="publicity-li-imglist" data-left="-11.1" data-len="3">
+                        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/left-btn.png" alt=""
+                             class="imglist-prev" onclick="publicityData.prevTo(this)">
+                        <img class="imglist-img"
+                             src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/publicity/4-1.png" alt=""
+                             style="opacity: 0">
+                        <div class="publicity-imglist" style="width: 38.2rem">
+                            <img class="imglist-img"
+                                 src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/publicity/4-2.png"
+                                 alt="" data-index="2">
+                            <img class="imglist-img"
+                                 src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/publicity/4-3.png"
+                                 alt="" data-index="3">
+                            <img class="imglist-img"
+                                 src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/publicity/4-1.png"
+                                 alt="" data-index="1">
+                            <img class="imglist-img"
+                                 src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/publicity/4-2.png"
+                                 alt="" data-index="2">
+                            <img class="imglist-img"
+                                 src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/publicity/4-3.png"
+                                 alt="" data-index="3">
+                            <img class="imglist-img"
+                                 src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/publicity/4-1.png"
+                                 alt="" data-index="1">
+                            <img class="imglist-img"
+                                 src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/publicity/4-1.png"
+                                 alt="" style="margin-right: 0" data-index="2">
+                        </div>
+                        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/right-btn.png" alt=""
+                             class="imglist-next" onclick="publicityData.nextTo(this)">
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,626 @@
+<html lang="en" style="font-size: 50.3125px;"><head>
+    <meta charset="UTF-8">
+    <title>吃喝玩乐</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="./js/jquery.min.js"></script>
+    <script src="js/rem.js"></script>
+    <script src="js/common.js"></script>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/product.css">
+    <script src="js/template.js"></script>
+    <script src="js/api.js"></script>
+
+</head>
+<body>
+
+<div id="product-box">
+    <div style="line-height: 0">
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/about/fenghuang1.png" alt="头图" class="product-chart">
+        <div class="linkList wapper" style="margin-top: 0">
+            <a href="index.html">首页</a>
+            <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point1.png" alt="">
+            吃喝玩乐
+        </div>
+
+    </div>
+
+    <div id="product-travel" class="wapper">
+        <div class="product-title">
+            <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/left black.png" alt="">
+            玩在凤凰
+            <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/right black.png" alt="">
+        </div>
+        <p class="product-title-p">旅行懒人包，请查收!</p>
+        <div class="product-travel-content">
+            <a href="" class="product-travel-left"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/9.png" alt="智能客服"></a>
+            <div class="product-travel-right">
+                <a href="travel-details.html?id=21" style="background-image: url('https://image.xisland.cn/xmall/default/1868676e7340aa7cb0b9bf6244ce9a6a少时诵诗书.jpg');" class="product-travel-img product-travel-img1">
+                    <div class="overhide">走进“文学之父”沈从文的家乡，凤凰古城</div>
+                </a>
+                <a href="travel-details.html?id=12" style="background-image: url('https://image.xisland.cn/xmall/goodsImg/d3347672e134805ae10c4e9e99918882凤凰长图.JPG');" class="product-travel-img product-travel-img2">	<div class="overhide">凤凰古城介绍</div>
+                </a>
+                <a href="travel-details.html?id=13" style="background-image: url('https://image.xisland.cn/xmall/goodsImg/59d0f3848b4b024828e5b8852a0207241578308549.jpg');" class="product-travel-img product-travel-img3">	<div class="overhide">民族风俗</div>
+                </a>
+                <a href="travel-details.html?id=14" style="background-image: url('https://image.xisland.cn/xmall/goodsImg/aa6e358b94faa90b26dadc3d4d659b97古城印象_入选_四川_陈吉中.jpg');" class="product-travel-img product-travel-img4">	<div class="overhide">凤凰旅游概览</div>
+                </a>
+                <a href="travel-details.html?id=22" style="background-image: url('https://image.xisland.cn/xmall/default/78a236d1258f11880e82d9781d88bb99吊脚楼_副本.jpg');" class="product-travel-img product-travel-img5">
+                    <div class="overhide">凤凰古城简介</div>
+                </a>
+            </div>
+        </div>
+        <a href="product-travel.html" class="product-more">了解更多<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point5.png" alt=""></a>
+    </div>
+    <div id="product-live">
+        <div class="product-title">
+            <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/left black.png" alt="">
+            住在凤凰
+            <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/right black.png" alt="">
+        </div>
+        <p class="product-title-p">一瓦一屋，一瞥眼一辈子</p>
+        <div class="product-live-box">
+            <div class="wapper">
+                <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/left-btn.png" alt="" class="product-prev" onclick="productData.prevPage(this)">
+                <ul class="product-live-ul">
+
+                    <li class="product-live-item" data-index="0">
+                        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/product/wubaimuye%402x.png" alt="">
+                        <p onclick="productData.showTip(this)">凤凰無白.沐野高端度假民宿</p>
+                        <div class="product-live-tip" onclick="productData.hideTip(this)">
+                            <div>2019年开业，处于古城核心景区位置，民宿附近就是虹桥中心步行街和凤凰酒吧街，紧邻沱江，户型涵盖景观房、情侣房、家庭套房、亲子套房、双床房等，共有25间房，高档型酒店，各项设施达到四星酒店水平。</div>
+                            <div class="product-live-address"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/location.png" alt="">沱江镇田家弄24号</div>
+                        </div>
+                    </li>
+
+                    <li class="product-live-item" data-index="1">
+                        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/product/xionggonguan%402x.png" alt="">
+                        <p onclick="productData.showTip(this)">熊公馆（总理府）</p>
+                        <div class="product-live-tip" onclick="productData.hideTip(this)">
+                            <div>2018年开业，一家苗族古代建筑风格，极富苗族情调的会所，共有6间房，豪华套房2间，高级标准套房2间，高级大床房1间，高级双标1间；具有配套餐饮、茶道、多功能会议室，可满足会务接待、商务活动、休闲旅行等不同需求，设有健身室，24小时开放式前台服务可随时为您提供信息，以帮助您探索这个魅力之城，酒店客人可以额外使用免费停车场。</div>
+                            <div class="product-live-address"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/location.png" alt="">文星街8号（凤凰古城内）</div>
+                        </div>
+                    </li>
+
+                    <li class="product-live-item" data-index="2">
+                        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/product/wanshougong%402x.png" alt="">
+                        <p onclick="productData.showTip(this)">万寿宫轻奢驿站</p>
+                        <div class="product-live-tip" onclick="productData.hideTip(this)">
+                            <div>2018年开业，凤凰万寿宫轻奢驿站总占地面积4000平方米，投资共350万元余，是由湖南首家星级生态会馆普瑞温泉酒店全权管理，共有12间房，豪华套房6间，高级双标房3间，高级大床房3间；位于凤凰古城核心景区内，面朝沱江，集餐饮娱乐、休闲度假、会议商务于一休。万寿宫驿站由客房、茶楼、餐厅组成。能容纳20多人的会议餐饮多功能厅1个，其中会馆茶楼为会馆独创；在会馆茶楼品茶沱江江景尽收眼底，古色古香的装修氛围使人仿佛陶醉在古时的湖光山色中。</div>
+                            <div class="product-live-address"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/location.png" alt="">沙湾11号万寿宫景点内（凤凰古城内）</div>
+                        </div>
+                    </li>
+
+                    <li class="product-live-item" data-index="3">
+                        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/product/qixi%402x.png" alt="">
+                        <p onclick="productData.showTip(this)">栖溪庭院民宿</p>
+                        <div class="product-live-tip" onclick="productData.hideTip(this)">
+                            <div>2018年开业，2019年装修，位于凤凰古城入口西门内，与凤凰古城核心景区景点沈从文故居相邻，共有12间房，轻奢大床房、亲子套房、奢雅套房、轻奢双床房，生活配套设施完善，属于古城便利区域。古色古香的中式建筑完美融入古镇之中，走进庭院却又别有一番风味，我们每个房间的硬件设施可与四星级酒店媲美，并致力于为第一位客人提供五星级服务，房间古典中式与现代简约风格的结合，整体典雅大气，现代化的卫浴设备便捷舒心。</div>
+                            <div class="product-live-address"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/location.png" alt="">凤凰古城南门索33号</div>
+                        </div>
+                    </li>
+
+                    <li class="product-live-item" data-index="4">
+                        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/product/dengnilai%402x.png" alt="">
+                        <p onclick="productData.showTip(this)">等你来三生三世.艺术民宿</p>
+                        <div class="product-live-tip" onclick="productData.hideTip(this)">
+                            <div>2020年开业，凤凰民宿分会会长玲姐13年磨一剑的精品民宿，以苗绣文化为基调的体验式民宿，让选择入住的朋友们可以深切体会凤凰古城浓厚的苗族文化，民宿人性化管家式管理，个性化有温度的服务理念，宾至如归是您入住的感受。民宿交通便利，出行方便，早餐丰富，旅游服务，游玩舒畅，有亲子房、双间和大床房，每个房间都是江景房，每个房间都有大阳台，有会议室、娱乐室、餐厅、户外江景活动区，可以开宴会、生日派队。</div>
+                            <div class="product-live-address"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/location.png" alt="">凤凰古城翡翠城东南方向200米</div>
+                        </div>
+                    </li>
+
+                    <li class="product-live-item" data-index="5">
+                        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/product/dengyigeren%402x.png" alt="">
+                        <p onclick="productData.showTip(this)">悦兮客栈</p>
+                        <div class="product-live-tip" onclick="productData.hideTip(this)">
+                            <div>2016年开业，客栈位于古城最核心最繁华的沱江泛舟风景区，共有9间房，江景大床房、双床房；客房以东南亚、美式乡村等风格为主，还拥有古城最佳观景台，白天俯江而望，来上一杯咖啡，远离古城的喧哗，享受最美风景。</div>
+                            <div class="product-live-address"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/location.png" alt="">老营哨街141号</div>
+                        </div>
+                    </li>
+
+                </ul>
+                <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/right-btn.png" alt="" class="product-next" onclick="productData.nextPage(this)">
+            </div>
+        </div>
+        <div class="wapper"><a href="product-live.html" class="product-more">了解更多<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point5.png" alt=""></a></div>
+
+    </div>
+    <div id="product-eat" class="wapper">
+        <div class="product-title">
+            <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/left black.png" alt="">
+            吃在凤凰
+            <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/right black.png" alt="">
+        </div>
+        <p class="product-title-p">有些味道，可以停留记忆深处</p>
+        <div class="product-eat-content">
+
+            <div class="product-eat-left">
+                <div><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/daciba.png" alt=""></div>
+                <span><h3>&lt;&lt;打糍粑 </h3>
+				湘西土家人素有“二十八，打粑粑”的说法。每逢春节来临，农历腊月末，家家都要打糯米糍粑。据乡土志书记载：“糯米饭就石槽中杵如泥，压成团形，形如满月。
+			</span>
+            </div>
+            <div class="product-eat-right">
+			<span><h3>凤凰血粑鸭&gt;&gt;</h3>
+				古语有云：秋食鸭血，面若桃花。血粑鸭可以说是是凤凰最为有名的特色菜，既有鸭肉的鲜美味浓，又有血粑的清香糯柔。吃在嘴里，那更是口味香浓，让人食欲大增，是少有的具有浓厚地方特色的美味佳肴。
+			</span>
+                <div><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/jiangtang.png" alt=""></div>
+            </div>
+
+            <div class="product-eat-left">
+                <div><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/larou.png" alt=""></div>
+                <span><h3>&lt;&lt;苗家腊肉 </h3>
+				熏制的腊肉可有很大的不同。它不是腊七腊八才现做，不是用机械工艺，不用各种原料而是常年挂在灶房屋架上熏制。凤凰的腊肉是由灶头上熏干而成，味道很特别。
+			</span>
+            </div>
+            <div class="product-eat-right">
+			<span><h3>米豆腐&gt;&gt;</h3>
+				米豆腐是湘西凤凰地区著名的小吃。它是用大米淘洗浸泡后加水磨成米浆，然后加碱熬制，冷却，形成块状“豆腐”即成。食用时切成小片放入凉水中再捞出，盛入容器后，将切好的大头菜、盐菜、酥黄豆、酥花生、葱花等适合个人味口的不同佐料末与汤汁放于米豆腐上即可。
+			</span>
+                <div><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/midoufu.png" alt=""></div>
+            </div>
+
+            <div class="product-eat-left">
+                <div><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/suanluobo.png" alt=""></div>
+                <span><h3>&lt;&lt;苗家酸萝卜</h3>
+				凤凰人腌萝卜别具特色。在凤凰城乡，只要有人群来往的地方，就会有卖腌酸萝卜的摊子。凤凰人不管男女老幼，不论文人农夫，都喜欢蘸着鲜红的辣子汁吃腌酸萝卜片、酸萝卜梗。腌酸萝卜泡制的方法很多，各家自有绝招，拒不外传哦。
+			</span>
+            </div>
+            <div class="product-eat-right">
+			<span><h3>凤凰姜糖&gt;&gt;</h3>
+				凤凰不仅风光秀美，而且特产很多，许多食品也别具一格，其中姜糖就是一个很有代表性 的食品。姜糖是一种美食。它那特有的甜而不腻，脆而不硬，香而不辣的甜甜的、脆脆的、香香的、略带有一点姜的辣味的那种美滋滋的味道，实在叫人难以忘怀。
+			</span>
+                <div><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/jiangtang.png" alt=""></div>
+            </div>
+
+        </div>
+        <div class="product-title">
+            <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/left black.png" alt="">
+            当地餐厅推荐
+            <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/right black.png" alt="">
+        </div>
+        <div class="product-live-box">
+            <div class="wapper">
+                <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/left-btn.png" alt="" class="product-prev" onclick="productData.prevPage(this)">
+                <ul class="product-live-ul">
+
+                    <li class="product-live-item" data-index="0">
+                        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/gazifandian.png" alt="">
+                        <div class="product-hoteat-tip">
+                            <h4>嘎子饭庄</h4>
+                            <div class="product-live-address "><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/location.png" alt=""><div class="overhide">凤凰县虹桥桥头江天广场大门口右侧（肯德基斜对面）</div></div>
+                            <div>推介菜：血粑鸭、石锅鱼</div>
+                        </div>
+                    </li>
+
+                    <li class="product-live-item" data-index="1">
+                        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/laocaiguan.png" alt="">
+                        <div class="product-hoteat-tip">
+                            <h4>凤凰老菜馆</h4>
+                            <div class="product-live-address "><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/location.png" alt=""><div class="overhide">凤凰县虹桥中路17号虹桥桥头（三王庙入口处）</div></div>
+                            <div>推荐菜：苗家血粑鸭、招牌石锅鱼</div>
+                        </div>
+                    </li>
+
+                    <li class="product-live-item" data-index="2">
+                        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/caihuo.png" alt="">
+                        <div class="product-hoteat-tip">
+                            <h4>大锅大灶柴火饭庄</h4>
+                            <div class="product-live-address "><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/location.png" alt=""><div class="overhide">凤凰县虹桥中路110号（虹桥往南280米）</div></div>
+                            <div>推荐菜：柴火鱼、柴火鸭</div>
+                        </div>
+                    </li>
+
+                    <li class="product-live-item" data-index="3">
+                        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/dashi.png" alt="">
+                        <div class="product-hoteat-tip">
+                            <h4>大使饭店</h4>
+                            <div class="product-live-address "><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/location.png" alt=""><div class="overhide">凤凰县沱江镇虹桥中路118号</div></div>
+                            <div>推荐菜：血粑鸭、酸汤鱼</div>
+                        </div>
+                    </li>
+
+                    <li class="product-live-item" data-index="4">
+                        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/bainian.png" alt="">
+                        <div class="product-hoteat-tip">
+                            <h4>百年老字号湘菜</h4>
+                            <div class="product-live-address "><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/location.png" alt=""><div class="overhide">凤凰县虹桥中路26号（建行对面）</div></div>
+                            <div>推荐菜：血粑鸭、叫花鸡</div>
+                        </div>
+                    </li>
+
+                    <li class="product-live-item" data-index="5">
+                        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/zuixiangxi.png" alt="">
+                        <div class="product-hoteat-tip">
+                            <h4>醉湘西</h4>
+                            <div class="product-live-address "><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/location.png" alt=""><div class="overhide">凤凰县凤凰古城虹桥中路97号（虹桥往西220米）</div></div>
+                            <div>推介菜：石锅鱼、血粑鸭</div>
+                        </div>
+                    </li>
+
+                </ul>
+                <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/right-btn.png" alt="" class="product-next" onclick="productData.nextPage(this)">
+            </div>
+        </div>
+        <a href="product-eat.html" class="product-more">了解更多<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point5.png" alt=""></a>
+    </div>
+    <div id="product-entertain" class="wapper">
+        <div class="product-title">
+            <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/left black.png" alt="">
+            购在凤凰
+            <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/right black.png" alt="">
+        </div>
+        <p class="product-title-p">带不走的凤凰，带走的是属于你的，你与凤凰的故事</p>
+        <div class="product-entertain-content">
+
+            <a href="product-entertain.html">
+                <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/tiaohua.png" alt="">
+                <p>苗族挑花</p>
+            </a>
+
+            <a href="product-entertain.html">
+                <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/laran.png" alt="">
+                <p>蜡染</p>
+            </a>
+
+            <a href="product-entertain.html">
+                <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/yinshi.png" alt="">
+                <p>苗族银饰</p>
+            </a>
+
+            <a href="product-entertain.html">
+                <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/zhusha.png" alt="">
+                <p>凤凰朱砂</p>
+            </a>
+
+            <a href="product-entertain.html">
+                <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/huadai.png" alt="">
+                <p>苗族花带</p>
+            </a>
+
+        </div>
+        <a href="product-entertain.html" class="product-more">了解更多<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point5.png" alt=""></a>
+    </div>
+    <div id="product-activity" class="wapper">
+        <div class="product-title">
+            <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/left black.png" alt="">
+            活动服务
+            <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/right black.png" alt="">
+        </div>
+        <div class="product-activity-content">
+
+            <a href="product-activity.html">
+                <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/biancheng.png" alt="">
+                <h3>边城剧场（场地提供）</h3>
+                <div><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/location2.png" alt="">凤凰县天下凤凰大酒店背后200米</div>
+                <div><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/phone4.png" alt="">0743-3502059</div>
+                <div>凤凰县天下凤凰大酒店背后200米边城剧场按照湘西建筑风格设计建造，剧场中保持原木树型的108根树桩和152个神态各异的傩面完美表现了民族建筑艺术风格。演出舞台总面积8860平方米，运用了6300米湘西蜡染，展示了502套精致的民族服装和3769件苗族精美银饰。边城剧场可同时容纳2600人观演。</div>
+            </a>
+
+            <a href="product-activity.html">
+                <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/yangxi.png" alt="">
+                <h3>阳戏（戏剧表演，文艺宣传）</h3>
+                <div><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/location2.png" alt="">湘西 沱江镇南华路１９号</div>
+                <div><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/phone4.png" alt="">0743-3221499</div>
+                <div>凤凰阳戏是一种具有民族风格和地方特色的地方戏。它角色齐全，配套完整。有三生(即老生、正 生、小生)、三旦(即老旦、正旦、小旦)一丑一净(即大花脸、三花脸)八种角色。有全套乐器(即锣、鼓、胡琴等)齐全的服装和道具。唱腔朴质粗犷，节奏明快，曲调幽雅，道白地方口语，通俗易懂。</div>
+            </a>
+
+        </div>
+        <a href="product-activity.html" class="product-more">了解更多<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point5.png" alt=""></a>
+    </div>
+</div>
+<div id="footer">
+    <div id="footer-box">
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/stone.png" alt=""><div class="footer">
+        <div class="footer-item">
+            <a href="contactUs.html">联系我们</a>
+            <div class="contact"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/phone.png" alt="" style="margin-left: 1.74rem"><span>0743-3502059</span></div>
+            <span>湖南省湘西土家族苗族自治州</span>
+            <a href="https://weibo.com/hnphoenix?from=myfollow_all" target="_blank"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/weibo.png" alt="" style="margin-left: 1.82rem"></a>
+            <a href="https://mp.weixin.qq.com/mp/homepage?__biz=MzA4OTQ2OTIxOQ==&amp;hid=1&amp;sn=6e87d4f93f4b065ddac1548451c6fba3" target="_blank"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/wechat.png" alt=""></a>
+        </div>
+        <div class="line"></div>
+        <div class="footer-item2">
+            <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/logo.png" alt="">
+            <a href="http://www.sunriver.cn/" class="website-link" target="_blank">祥源控股集团有限责任公司</a>
+            <a href="http://www.hunanhld.cn/" class="website-link" target="_blank">张家界黄龙洞景区</a>
+            <a href="http://qiyunshan.sunriver.cn/" target="_blank">齐云山生态文化旅游区</a>
+        </div>
+        <div class="footer-item3">
+            <span>凤凰古城官网</span>
+            <a href="http://beian.miit.gov.cn" target="_blank" style="display: inline-block;">湘ICP备20015967号-1</a>
+        </div>
+    </div>
+    </div></div>
+
+
+<!-- 玩在凤凰模块 -->
+
+<!-- 住在凤凰 -->
+<script type="text/html" id="liveBox">
+    <div class="product-title">
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/left black.png" alt="">
+        住在凤凰
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/right black.png" alt="">
+    </div>
+    <p class="product-title-p">一瓦一屋，一瞥眼一辈子</p>
+    <div class="product-live-box">
+        <div class="wapper">
+            <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/left-btn.png" alt="" class="product-prev" onclick="productData.prevPage(this)">
+            <ul class="product-live-ul">
+                <% for(var i = 0;i < liveList.length;i++){ %>
+                <li class="product-live-item" data-index="<%= i %>">
+                    <img src="<%= liveList[i].img %>" alt="">
+                    <p onclick="productData.showTip(this)"><%= liveList[i].title %></p>
+                    <div class="product-live-tip" onclick="productData.hideTip(this)">
+                        <div><%= liveList[i].dricp %></div>
+                        <div class="product-live-address"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/location.png" alt=""><%= liveList[i].address %></div>
+                    </div>
+                </li>
+                <% } %>
+            </ul>
+            <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/right-btn.png" alt="" class="product-next" onclick="productData.nextPage(this)">
+        </div>
+    </div>
+    <div class="wapper"><a href="product-live.html" class="product-more">了解更多<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point5.png" alt=""></a></div>
+
+</script>
+<!-- 吃在凤凰模块 -->
+<script type="text/html" id="eatBox">
+    <div class="product-title">
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/left black.png" alt="">
+        吃在凤凰
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/right black.png" alt="">
+    </div>
+    <p class="product-title-p">有些味道，可以停留记忆深处</p>
+    <div class="product-eat-content">
+        <% for(var i = 0;i < eatList.length;i=i+2){ %>
+        <div  class="product-eat-left">
+            <div><img src="<%= eatList[i].img %>" alt=""></div>
+            <span><h3><<<%= eatList[i].title %></h3>
+				<%= eatList[i].dricp %>
+			</span>
+        </div>
+        <div class="product-eat-right">
+			<span><h3><%= eatList[i+1].title %>>></h3>
+				<%= eatList[i+1].dricp %>
+			</span>
+            <div><img src="<%= eatList[i+1].img %>" alt=""></div>
+        </div>
+        <% } %>
+    </div>
+    <div class="product-title">
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/left black.png" alt="">
+        当地餐厅推荐
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/right black.png" alt="">
+    </div>
+    <div class="product-live-box">
+        <div class="wapper">
+            <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/left-btn.png" alt="" class="product-prev" onclick="productData.prevPage(this)">
+            <ul class="product-live-ul">
+                <% for(var j = 0;j < hotEatList.length;j++){ %>
+                <li class="product-live-item" data-index="<%= j %>">
+                    <img src="<%= hotEatList[j].img %>" alt="">
+                    <div class="product-hoteat-tip">
+                        <h4><%= hotEatList[j].title %></h4>
+                        <div class="product-live-address "><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/location.png" alt=""><div class="overhide"><%= hotEatList[j].address %></div></div>
+                        <div><%= hotEatList[j].dricp %></div>
+                    </div>
+                </li>
+                <% } %>
+            </ul>
+            <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/right-btn.png" alt="" class="product-next" onclick="productData.nextPage(this)">
+        </div>
+    </div>
+    <a href="product-eat.html" class="product-more">了解更多<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point5.png" alt=""></a>
+</script>
+<!-- 购在凤凰模块 -->
+<script type="text/html" id="entertainBox">
+    <div class="product-title">
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/left black.png" alt="">
+        购在凤凰
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/right black.png" alt="">
+    </div>
+    <p class="product-title-p">带不走的凤凰，带走的是属于你的，你与凤凰的故事</p>
+    <div class="product-entertain-content">
+        <% for(var i = 0;i < entertainList.length;i++){ %>
+        <a href="product-entertain.html">
+            <img src="<%= entertainList[i].img %>" alt="">
+            <p><%= entertainList[i].title %></p>
+        </a>
+        <% } %>
+    </div>
+    <a href="product-entertain.html" class="product-more">了解更多<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point5.png" alt=""></a>
+</script>
+<!-- 活动服务模块 -->
+<script type="text/html" id="activityBox">
+    <div class="product-title">
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/left black.png" alt="">
+        活动服务
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/right black.png" alt="">
+    </div>
+    <div class="product-activity-content">
+        <% for(var i = 0;i < activityList.length;i++){ %>
+        <a href="product-activity.html">
+            <img src="<%= activityList[i].img %>" alt="">
+            <h3><%= activityList[i].title %></h3>
+            <div><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/location2.png" alt=""><%= activityList[i].address %></div>
+            <div><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/phone4.png" alt=""><%= activityList[i].phone %></div>
+            <div><%= activityList[i].decrip %></div>
+        </a>
+        <% } %>
+    </div>
+    <a href="product-activity.html" class="product-more">了解更多<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point5.png" alt=""></a>
+</script>
+<script>
+    $(function(){
+        let productData={
+            //玩在凤凰
+            travelList:[{
+                img:'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/8.png',
+                title:'凤凰最值得玩的景点 '
+            },{
+                img:'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/8.png',
+                title:'凤凰最值得玩的景点 '
+            },{
+                img:'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/8.png',
+                title:'凤凰最值得玩的景点 '
+            },{
+                img:'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/8.png',
+                title:'凤凰最值得玩的景点 '
+            },{
+                img:'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/8.png',
+                title:'凤凰最值得玩的景点 '
+            }],
+            //住在凤凰
+            liveList:[{
+                img:'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/product/wubaimuye%402x.png',
+                title:'凤凰無白.沐野高端度假民宿',
+                address:'沱江镇田家弄24号',
+                dricp:'2019年开业，处于古城核心景区位置，民宿附近就是虹桥中心步行街和凤凰酒吧街，紧邻沱江，户型涵盖景观房、情侣房、家庭套房、亲子套房、双床房等，共有25间房，高档型酒店，各项设施达到四星酒店水平。'
+            },{
+                img:'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/product/xionggonguan%402x.png',
+                title:'熊公馆（总理府）',
+                address:'文星街8号（凤凰古城内）',
+                dricp:'2018年开业，一家苗族古代建筑风格，极富苗族情调的会所，共有6间房，豪华套房2间，高级标准套房2间，高级大床房1间，高级双标1间；具有配套餐饮、茶道、多功能会议室，可满足会务接待、商务活动、休闲旅行等不同需求，设有健身室，24小时开放式前台服务可随时为您提供信息，以帮助您探索这个魅力之城，酒店客人可以额外使用免费停车场。'
+            },{
+                img:'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/product/wanshougong%402x.png',
+                title:'万寿宫轻奢驿站',
+                address:'沙湾11号万寿宫景点内（凤凰古城内）',
+                dricp:'2018年开业，凤凰万寿宫轻奢驿站总占地面积4000平方米，投资共350万元余，是由湖南首家星级生态会馆普瑞温泉酒店全权管理，共有12间房，豪华套房6间，高级双标房3间，高级大床房3间；位于凤凰古城核心景区内，面朝沱江，集餐饮娱乐、休闲度假、会议商务于一休。万寿宫驿站由客房、茶楼、餐厅组成。能容纳20多人的会议餐饮多功能厅1个，其中会馆茶楼为会馆独创；在会馆茶楼品茶沱江江景尽收眼底，古色古香的装修氛围使人仿佛陶醉在古时的湖光山色中。'
+            },{
+                img:'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/product/qixi%402x.png',
+                title:'栖溪庭院民宿',
+                address:'凤凰古城南门索33号',
+                dricp:'2018年开业，2019年装修，位于凤凰古城入口西门内，与凤凰古城核心景区景点沈从文故居相邻，共有12间房，轻奢大床房、亲子套房、奢雅套房、轻奢双床房，生活配套设施完善，属于古城便利区域。古色古香的中式建筑完美融入古镇之中，走进庭院却又别有一番风味，我们每个房间的硬件设施可与四星级酒店媲美，并致力于为第一位客人提供五星级服务，房间古典中式与现代简约风格的结合，整体典雅大气，现代化的卫浴设备便捷舒心。'
+            },{
+                img:'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/product/dengnilai%402x.png',
+                title:'等你来三生三世.艺术民宿',
+                address:'凤凰古城翡翠城东南方向200米',
+                dricp:'2020年开业，凤凰民宿分会会长玲姐13年磨一剑的精品民宿，以苗绣文化为基调的体验式民宿，让选择入住的朋友们可以深切体会凤凰古城浓厚的苗族文化，民宿人性化管家式管理，个性化有温度的服务理念，宾至如归是您入住的感受。民宿交通便利，出行方便，早餐丰富，旅游服务，游玩舒畅，有亲子房、双间和大床房，每个房间都是江景房，每个房间都有大阳台，有会议室、娱乐室、餐厅、户外江景活动区，可以开宴会、生日派队。'
+            },{
+                img:'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/product/dengyigeren%402x.png',
+                title:'悦兮客栈',
+                address:'老营哨街141号',
+                dricp:'2016年开业，客栈位于古城最核心最繁华的沱江泛舟风景区，共有9间房，江景大床房、双床房；客房以东南亚、美式乡村等风格为主，还拥有古城最佳观景台，白天俯江而望，来上一杯咖啡，远离古城的喧哗，享受最美风景。'
+            }],
+            //吃在凤凰
+            eatList:[{
+                img:'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/daciba.png',
+                title:'打糍粑 ',
+                dricp:'湘西土家人素有“二十八，打粑粑”的说法。每逢春节来临，农历腊月末，家家都要打糯米糍粑。据乡土志书记载：“糯米饭就石槽中杵如泥，压成团形，形如满月。'
+            },{
+                img:'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/jiangtang.png',
+                title:'凤凰血粑鸭',
+                dricp:'古语有云：秋食鸭血，面若桃花。血粑鸭可以说是是凤凰最为有名的特色菜，既有鸭肉的鲜美味浓，又有血粑的清香糯柔。吃在嘴里，那更是口味香浓，让人食欲大增，是少有的具有浓厚地方特色的美味佳肴。'
+            },{
+                img:'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/larou.png',
+                title:'苗家腊肉 ',
+                dricp:'熏制的腊肉可有很大的不同。它不是腊七腊八才现做，不是用机械工艺，不用各种原料而是常年挂在灶房屋架上熏制。凤凰的腊肉是由灶头上熏干而成，味道很特别。'
+            },{
+                img:'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/midoufu.png',
+                title:'米豆腐',
+                dricp:'米豆腐是湘西凤凰地区著名的小吃。它是用大米淘洗浸泡后加水磨成米浆，然后加碱熬制，冷却，形成块状“豆腐”即成。食用时切成小片放入凉水中再捞出，盛入容器后，将切好的大头菜、盐菜、酥黄豆、酥花生、葱花等适合个人味口的不同佐料末与汤汁放于米豆腐上即可。'
+            },{
+                img:'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/suanluobo.png',
+                title:'苗家酸萝卜',
+                dricp:'凤凰人腌萝卜别具特色。在凤凰城乡，只要有人群来往的地方，就会有卖腌酸萝卜的摊子。凤凰人不管男女老幼，不论文人农夫，都喜欢蘸着鲜红的辣子汁吃腌酸萝卜片、酸萝卜梗。腌酸萝卜泡制的方法很多，各家自有绝招，拒不外传哦。'
+            },{
+                img:'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/jiangtang.png',
+                title:'凤凰姜糖',
+                dricp:'凤凰不仅风光秀美，而且特产很多，许多食品也别具一格，其中姜糖就是一个很有代表性 的食品。姜糖是一种美食。它那特有的甜而不腻，脆而不硬，香而不辣的甜甜的、脆脆的、香香的、略带有一点姜的辣味的那种美滋滋的味道，实在叫人难以忘怀。'
+            }],
+            //餐厅推荐
+            hotEatList:[{
+                img:'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/gazifandian.png',
+                title:'嘎子饭庄',
+                address:'凤凰县虹桥桥头江天广场大门口右侧（肯德基斜对面）',
+                dricp:'推介菜：血粑鸭、石锅鱼'
+            },{
+                img:'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/laocaiguan.png',
+                title:'凤凰老菜馆',
+                address:'凤凰县虹桥中路17号虹桥桥头（三王庙入口处）',
+                dricp:'推荐菜：苗家血粑鸭、招牌石锅鱼'
+            },{
+                img:'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/caihuo.png',
+                title:'大锅大灶柴火饭庄',
+                address:'凤凰县虹桥中路110号（虹桥往南280米）',
+                dricp:'推荐菜：柴火鱼、柴火鸭'
+            },{
+                img:'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/dashi.png',
+                title:'大使饭店',
+                address:'凤凰县沱江镇虹桥中路118号',
+                dricp:'推荐菜：血粑鸭、酸汤鱼'
+            },{
+                img:'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/bainian.png',
+                title:'百年老字号湘菜',
+                address:'凤凰县虹桥中路26号（建行对面）',
+                dricp:'推荐菜：血粑鸭、叫花鸡'
+            },{
+                img:'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/zuixiangxi.png',
+                title:'醉湘西',
+                address:'凤凰县凤凰古城虹桥中路97号（虹桥往西220米）',
+                dricp:'推介菜：石锅鱼、血粑鸭'
+            },],
+            //购在凤凰
+            entertainList:[{
+                img:'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/tiaohua.png',
+                title:'苗族挑花'
+            },{
+                img:'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/laran.png',
+                title:'蜡染'
+            },{
+                img:'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/yinshi.png',
+                title:'苗族银饰'
+            },{
+                img:'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/zhusha.png',
+                title:'凤凰朱砂'
+            },{
+                img:'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/huadai.png',
+                title:'苗族花带'
+            }],
+            //活动服务
+            activityList:[{
+                img:'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/biancheng.png',
+                title:'边城剧场（场地提供）',
+                phone:'0743-3502059',
+                address:'凤凰县天下凤凰大酒店背后200米',
+                decrip:'凤凰县天下凤凰大酒店背后200米边城剧场按照湘西建筑风格设计建造，剧场中保持原木树型的108根树桩和152个神态各异的傩面完美表现了民族建筑艺术风格。演出舞台总面积8860平方米，运用了6300米湘西蜡染，展示了502套精致的民族服装和3769件苗族精美银饰。边城剧场可同时容纳2600人观演。'
+            },{
+                img:'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/yangxi.png',
+                title:'阳戏（戏剧表演，文艺宣传）',
+                address:'湘西 沱江镇南华路１９号',
+                phone:'0743-3221499',
+                decrip:'凤凰阳戏是一种具有民族风格和地方特色的地方戏。它角色齐全，配套完整。有三生(即老生、正 生、小生)、三旦(即老旦、正旦、小旦)一丑一净(即大花脸、三花脸)八种角色。有全套乐器(即锣、鼓、胡琴等)齐全的服装和道具。唱腔朴质粗犷，节奏明快，曲调幽雅，道白地方口语，通俗易懂。'
+            }]
+        }
+        //获取攻略列表数据
+        API.getTips(function(){
+            //请求前设置
+        },{des_id:21,paginate:true,page:1,page_size:5}).then(res=>{
+            productData.travelList = res.data;
+            $("#product-travel").html(template($("#travelBox").html(),{travelList:productData.travelList}));
+        })
+        $("#product-activity").html(template($("#activityBox").html(),{activityList:productData.activityList}));
+        $("#product-entertain").html(template($("#entertainBox").html(),{entertainList:productData.entertainList}));
+        $("#product-eat").html(template($("#eatBox").html(),{eatList:productData.eatList,hotEatList:productData.hotEatList}));
+
+        $("#product-live").html(template($("#liveBox").html(),{liveList:productData.liveList}));
+
+
+        EventUtil.listenTouchDirection($(".product-live-ul").get(0), true, function(){
+        }, function(){
+            $(".product-next").eq(0).click()
+        }, function(){
+        }, function(){
+            $(".product-prev").eq(0).click()
+        });
+        EventUtil.listenTouchDirection($(".product-live-ul").get(1), true, function(){
+        }, function(){
+            $(".product-next").eq(1).click()
+        }, function(){
+        }, function(){
+            $(".product-prev").eq(1).click()
+        });
+    })
+
+</script>
+</body></html>

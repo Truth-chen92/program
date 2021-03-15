@@ -1,0 +1,234 @@
+/*古城景点样式*/
+.video-more{
+    position: absolute;
+    bottom: .17rem;
+    left: 50%;
+    margin-left: -8rem;
+    display: flex;
+    justify-content: flex-end;
+    line-height: normal;
+}
+.video-more a{
+    color: #fff;
+    font-size: .18rem;
+    display: flex;
+    align-items: center;
+}
+.video-more img{
+    margin-left: .29rem;
+    width: .14rem;
+    min-width: 10px;
+}
+
+.publicity-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .38rem;
+    color: #3E3D3D;
+    font-weight: bold;
+}
+.publicity-title img{
+    height: .4rem;
+    margin: 0 .34rem
+}
+
+.publicity-item{
+    padding-top: 60px;
+}
+.publicity-li{
+    display: none;
+}
+.publicity-li.publicity-li-active{
+    display: block;
+}
+.publicity-li-box{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: .45rem;
+    line-height: 0;
+}
+.publicity-li-video{
+    width: 8rem;
+    position: relative;
+}
+.publicity-li-video-img{
+    width: 100%;
+}
+.publicity-li-content{
+    width: 8rem;
+    font-size: .14rem;
+    color: #666666;
+    line-height: 1.8;
+    padding: 0 .13rem 0 .59rem;
+}
+.publicity-li-content h3{
+    color: #3E3D3D;
+    font-size: .24rem;
+    margin:.45rem 0 .29rem;
+
+}
+.publicity-li-content div{
+    color: #8F030A;
+    font-size: .2rem;
+    margin-bottom: .3rem;
+}
+.publicity-li-content p{
+    white-space: pre-line;
+}
+
+.publicity-li-imglist{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-top: .53rem;
+}
+.imglist-prev{
+    height: .5rem;
+    position: absolute;
+    left: .1rem;
+    top: 50%;
+    margin-top: -0.25rem;
+    cursor: pointer;
+    z-index: 2;
+}
+.imglist-next{
+    height: .5rem;
+    position: absolute;
+    right: .1rem;
+    top: 50%;
+    margin-top: -0.25rem;
+    cursor: pointer;
+    z-index: 2;
+}
+.publicity-imglist{
+    top: 0;
+    position: absolute;
+    left: -11.1rem;
+    z-index: 1;
+}
+.imglist-img{
+    width: 4.9rem;
+    float: left;
+    margin-right: .65rem;
+}
+.publicity-nav{
+    font-size: .22rem;
+    color: #3E3D3D;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    margin-top: .3rem;
+}
+.publicity-nav li{
+    border-bottom: 3px solid #fff;
+    padding: .11rem 0
+}
+.publicity-nav .publicity-nav-active{
+    font-weight:bold;
+    border-color: #CBBDA8
+}
+
+@media only screen and (max-width: 850px){
+    .video-more{
+        left: 0;
+        margin-left: 0;
+        bottom: 5px;
+        padding-right: 10px;
+    }
+    .publicity-nav{
+        display: none;
+    }
+    .publicity-li{
+        display: block;
+    }
+    .publicity-li-video,.publicity-li-content{
+        width: 90%;
+    }
+    .publicity-li-imglist{
+        width: 100%;
+        margin: auto;
+        overflow: hidden;
+    }
+    .publicity-li-content{
+        font-size: 12px;
+        padding: 0px;
+    }
+    .publicity-imglist{
+        left: 0
+    }
+    .imglist-img{
+        margin: 0 .32rem;
+    }
+    .imglist-next{
+        left: 5rem;
+    }
+}
+
+/*宣传视频样式*/
+
+.video-chart{
+    width: 100%;
+    position: relative;
+    line-height: 0
+}
+.video-chart-img{
+    width: 100%;
+}
+.play-btn{
+    position: absolute;
+    width: 1.32rem;
+    left: 50%;
+    top: 50%;
+    margin-top: -0.66rem;
+    margin-left: -0.66rem;
+    cursor: pointer;
+}
+#video-list{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.video-list-item{
+    width: 7.52rem;
+    margin-top: .6rem;
+    font-size: .18rem;
+    color: #666666;
+    line-height: 1.5;
+
+}
+.video-list-item h3{
+    font-size: .24rem;
+    margin: .6rem 0 .4rem;
+    color: #3E3D3D;
+}
+.video-list-item  p{
+    white-space: pre-line;
+}
+.video-item{
+    line-height: 0;
+    position: relative;
+}
+.video-item-img{
+    width: 100%;
+}
+
+@media only screen and (max-width: 850px){
+    #video-list{
+        justify-content: center;
+
+    }
+    .video-list-item{
+        width: 90%;
+    }
+    .video-chart{
+        margin-top: 60px;
+    }
+    .play-btn{
+        width: 60px;
+        margin-top:-30px;
+        margin-left:-30px;
+    }
+}

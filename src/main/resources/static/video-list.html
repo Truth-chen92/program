@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 56.9271px;">
+<head>
+    <meta charset="UTF-8">
+    <title>宣传视频</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/publicity.css">
+    <style>
+        div > div > video {
+            width: 100%;
+            object-fit: fill;
+            background: transparent url('https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/video/1(1).png') 50% 50% no-repeat;
+            background-size: cover;}
+    </style>
+</head>
+<body>
+<div id="video-box">
+    <div>
+        <video poster="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/video/1(1).png" controls>
+            <source src="https://xislandtravel.oss-cn-beijing.aliyuncs.com/yrfhzsp.mp4" type="video/mp4">
+        </video>
+    </div><!--宣传视频-->
+
+    <div class="linkList wapper" style="margin-top: 0">
+        <a href="index.html">首页</a>
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point1.png" alt="">
+        <a href="publicity-0.html">古城景点</a>
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point1.png" alt="">
+        宣传视频
+    </div><!--标签栏-->
+    <div id="video-list" class="wapper">
+        <div class="video-list-item">
+            <div>
+                <video poster="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/video/1.png" controls>
+                    <source src="https://xislandtravel.oss-cn-beijing.aliyuncs.com/bcyc.mp4" type="video/mp4">
+                </video>
+            </div>
+            <h3>边城森林实景演出摄影大赛</h3>
+            <p>2015《边城》·凤凰全球摄影擂台赛”
+                创世界摄影史上最高奖金纪录的100万元巨奖</p>
+        </div><!--第一个视频-->
+
+        <div class="video-list-item">
+            <div>
+                <video poster="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/video/2.png" controls>
+                    <source src="https://xislandtravel.oss-cn-beijing.aliyuncs.com/%E3%80%8A%E7%83%9F%E9%9B%A8%E5%87%A4%E5%87%B0%E3%80%8Bmv.mp4" type="video/mp4">
+                </video>
+            </div>
+            <h3>烟雨凤凰MV</h3>
+            <p>青石绵延成古巷 流向童谣收藏的远方
+                岁月斑驳成砖墙 圈住星斗守望的边疆</p>
+        </div><!--第二个视频-->
+
+        <div class="video-list-item">
+            <div>
+                <video poster="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/video/3.png" controls>
+                    <source src="https://xislandtravel.oss-cn-beijing.aliyuncs.com/%E8%BE%B9%E5%9F%8E%E5%A4%A7%E5%9E%8B%E6%A3%AE%E6%9E%97%E5%AE%9E%E6%99%AF%E6%BC%94%E5%87%BA.mp4" type="video/mp4">
+                </video>
+            </div>
+            <h3>边城大型森林实景演出</h3>
+            <p>
+                总投资1.8亿，可同时容纳2600人观演，展示了502套精致的民族服装和3769件苗族精美银饰。演出以沈从文名著为蓝本，讲述了爷爷、翠翠、天保、傩送之间催人泪下的情义和守望。演出分为身世、初萌、端午、灵犀、魂诉、渡缘六幕。</p>
+        </div><!--第三个视频-->
+
+        <div class="video-list-item">
+            <div>
+                <video poster="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/video/4.png" controls>
+                    <source src="https://xislandtravel.oss-cn-beijing.aliyuncs.com/cc.mp4" type="video/mp4">
+                </video>
+            </div>
+            <h3>凤凰古城翠翠陪您游古城</h3>
+            <p>我在这儿等了好久 为什么你还不来
+                我在这儿等了好久 今天终于等到你到来...</p>
+        </div><!--第四个视频-->
+
+    </div>
+</div>
+</body>
+</html>
+<script >
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if (clientWidth >= 1920) {
+                    docEl.style.fontSize = '100px';
+                } else if(clientWidth >=850){
+                    docEl.style.fontSize = 100 * (clientWidth / 1920) + 'px';
+                }else{
+                    docEl.style.fontSize = '70px';
+                }
+            };
+
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+</script><!--视频尺寸格式-->
