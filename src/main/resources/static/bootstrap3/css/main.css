@@ -1,0 +1,547 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body, div, dl, a, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, input, textarea, p, th, td, hr, button {
+    padding: 0;
+    margin: 0;
+    /*box-sizing: border-box;*/
+    font-family: Microsoft YaHei;
+}
+
+div {
+    /*display: block;*/
+}
+
+img {
+    border: 0;
+    vertical-align: top;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+ul, li {
+    list-style: none;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.wapper {
+    width: 16rem;
+    margin: 0 auto;
+}
+
+li {
+    list-style-type: none;
+}
+
+li {
+    text-align: -webkit-match-parent;
+}
+
+.flex1 {
+    flex: 1;
+}
+
+.flex2 {
+    flex: 2;
+}
+
+/*css导航条开始*/
+.navbar-default {
+    width: 100%;
+    min-height: 60px;
+    position: fixed;
+    z-index: 1;
+    background: rgba(40, 40, 40, 0.7);
+    border: none;
+}
+
+.nav {
+    width: 100%;
+    height: 60px;
+}
+
+.nav > li {
+    margin: 0 2% 0 2%;
+    font-size: 0.9vw;
+}
+
+.nav > li > a {
+    color: white !important;
+    padding: 20px 25px 20px 25px;
+}
+
+.nav > li > ul {
+    border-top: #eeff00 solid 3px;
+    min-width: 60px;
+    width: 100%;
+    font-size: 0.7vw;
+    background: rgba(40, 40, 40, 0.7);
+}
+
+.nav > li > ul > li > a {
+    margin-top: 10px;
+    color: white !important;
+    text-align: left;
+    background: none !important;
+}
+
+.nav > li > ul > li > a:hover {
+    color: #ffd500 !important;
+}
+
+/*css导航条结束*/
+/*预约购票+走进景区开始*/
+.homepage-content {
+    margin-top: .60rem;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    box-shadow: 3px -1px 20px 3px rgba(29, 27, 27, 0.11); /*阴影*/
+    padding-bottom: 0.3rem;
+}
+
+
+.homepage-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/*预约购票开始*/
+.content-left {
+    font-size: 64.375px;
+    min-width: 300px;
+    width: 9.81rem;
+}
+
+.content-title {
+    font-size: .38rem;
+    font-weight: bold;
+    color: rgba(166, 119, 118, 1);
+    line-height: .48rem;
+    display: flex; /*弹性容器*/
+    align-items: center; /*弹性容器竖直方向居中*/
+    margin-bottom: .49rem;
+    margin-top: .43rem;
+}
+
+.content-title img {
+    height: .4rem;
+}
+
+.content-title span {
+    margin: 0 .18rem;
+}
+
+.content-left-box {
+    display: flex;
+}
+
+.content-left-box > a {
+    width: 31%;
+    min-height: 4.63rem;
+    background: rgba(240, 238, 238, 0.4);
+    border-radius: .20rem;
+    display: flex;
+    flex-direction: column; /*弹性容器项目按列排*/
+    align-items: center;
+    justify-content: center; /*水平对齐弹性容器的项目*/
+    margin-right: 2%;
+    font-size: 0.16rem;
+    color: rgba(62, 61, 61, 1);
+    box-shadow: 3px -1px 20px 3px rgba(29, 27, 27, 0.11);
+    cursor: pointer; /*光标变手指*/
+    padding: 0.42rem;
+    text-align: center;
+
+}
+
+.content-left-box h3 {
+    font-size: .22rem;
+    margin: .36rem 0 .16rem;
+}
+
+.content-left-box img {
+    width: 1.36rem;
+    min-width: 50px;
+}
+
+/*预约购票结束*/
+/*走进景区开始*/
+.homepage-box .content-right {
+    width: 6.19rem;
+}
+
+.content-video {
+    height: 80%;
+    width: 100%;
+    min-width: 300px;
+
+}
+
+
+.content-video img {
+    width: 100%;
+}
+
+.content-video>video {
+    width: 100%;
+    position: relative;
+    top: 1rem;
+
+}
+/*走进景区结束*/
+/*预约购票+走进景区结束*/
+/*景区公告+景区动态开始*/
+.wapper.message-box {
+    display: flex;
+    justify-content: center;
+    font-size: 0.18rem;
+    color: #FFFFFF;
+    width: 16.52rem;
+}
+
+.message-box > div {
+    background-repeat: no-repeat;
+    width: 7.74rem;
+    box-sizing: border-box;
+    margin: 0.6rem 0.26rem 0;
+    padding: 1rem 0.30rem;
+}
+
+/*景区公告开始*/
+#notice-box {
+    background-image: url(https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/boat2.png);
+    background-position: .6rem bottom;
+    background-color: #555346;
+}
+
+.message-title {
+    font-size: .22rem;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: .27rem;
+}
+
+.message-box a {
+    color: rgba(255, 255, 255, 1);
+}
+
+.message-more {
+    font-size: .16rem;
+    font-weight: 400;
+}
+
+.message-box li {
+    display: flex;
+    align-items: center;
+    margin-top: .10rem;
+    cursor: pointer;
+    justify-content: space-between;
+}
+
+.overhide {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-right: 10px;
+}
+
+.message-btn {
+    display: flex;
+    align-items: center;
+}
+
+.message-box li img {
+    margin-left: .18rem;
+    width: 0.28rem;
+    min-width: 16px;
+}
+
+.notice-content {
+    width: 4.5rem;
+}
+
+/*景区公告结束*/
+/*景区动态开始*/
+#dynamic-box {
+    background-image: url(https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/boat.png);
+    background-position: right+.84rem bottom;
+    background-color: #562D15;
+}
+
+.dynamic-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*景区动态结束*/
+/*景区公告+景区动态结束*/
+/*景区活动开始*/
+#activity-box {
+    margin: 0.60rem auto 0;
+    background-image: url(https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/blue-background.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color: #FFFFFF;
+    padding: 0.3rem;
+}
+
+.activity-title {
+    display: flex;
+    align-items: center; /*竖直方向居中*/
+    justify-content: space-between; /*弹性元素两端对齐*/
+    font-size: 0.22rem;
+    font-weight: bold;
+    margin-bottom: 0.30rem;
+}
+
+.activity-title > div {
+    display: flex;
+    align-items: flex-end; /*竖直方向末尾*/
+}
+
+.activity-title span {
+    font-size: 0.12rem;
+    margin-left: 0.20rem;
+    font-weight: 400;
+}
+
+.activity-more {
+    font-size: 0.16rem;
+    cursor: pointer;
+    font-weight: 400;
+    color: #fff;
+}
+
+.activity-content {
+    display: flex;
+    font-size: 0.18rem;
+    flex-wrap: wrap;
+}
+
+.activity-img {
+    height: 3.08rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.activity-content > div {
+    width: 7.44rem;
+}
+
+.activity-img img {
+    width: 100%;
+    height: auto;
+}
+
+.activity-message {
+    padding-left: .82rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.activity-content h3 {
+    font-size: .24rem;
+    margin: .2rem 0 .4rem;
+}
+
+.activity-message p {
+    width: 100%;
+}
+
+.activity-message > div > div {
+    display: flex;
+    align-items: center;
+    margin-top: .30rem;
+}
+
+.activity-message > div img {
+    margin-right: .27rem;
+    height: .25rem;
+    min-height: 12px;
+}
+
+.activity-message > div .location-icon {
+    margin-right: .33rem;
+}
+
+.activity-btn {
+    float: right;
+    color: #FFFFFF;
+    font-size: .18rem;
+    margin-top: .18rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.activity-btn img {
+    margin-left: .13rem;
+    width: .28rem;
+    min-width: 16px;
+}
+
+/*景区活动结束*/
+/*客栈餐厅等开始*/
+#recommend-box {
+    margin: 0.6rem auto 0;
+    overflow: hidden;
+}
+
+#recommend-box ul {
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#recommend-box li {
+    padding: 0rem 0.2rem;
+    position: relative;
+    cursor: pointer;
+    margin: 0rem 0rem 0.21rem;
+    line-height: 0;
+}
+
+#recommend-box img {
+    width: 3.7rem;
+}
+
+#recommend-box p {
+    width: 56%;
+    height: 0.68rem;
+    background: rgba(0, 88, 97, 0.62);
+    color: rgba(255, 255, 255, 1);
+    font-size: 0.20rem;
+    min-height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 22%;
+    margin: .3rem auto;
+}
+
+/*客栈餐厅等结束*/
+/*底部开始*/
+#footer {
+    border: none;
+}
+
+#footer-box {
+    width: 100%;
+    padding-top: .6rem;
+    font-size: 0.2rem;
+    color: #FFFFFF;
+    line-height: 0;
+}
+
+#footer-box > img {
+    width: 100%;
+}
+
+.footer {
+    text-align: center;
+    background: rgba(54, 54, 54, 1);
+    line-height: normal;
+}
+
+.footer-item {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.74rem 0 0.30rem;
+    flex-wrap: wrap;
+    line-height: 0;
+}
+
+.footer a {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    line-height: normal;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    padding-right: 0.6rem;
+    margin-right: 0.6rem;
+    border-right: 0.03rem solid #fff;
+}
+
+.footer-item img {
+    margin-right: 0.20rem;
+    margin-left: 0.65rem;
+    cursor: pointer;
+    height: .14rem;
+    min-height: 10px;
+}
+
+.footer-item span {
+    font-size: 0.16rem;
+    display: flex;
+    align-items: center;
+}
+
+.footer-item img {
+    margin-right: 0.20rem;
+    margin-left: 0.65rem;
+    cursor: pointer;
+    height: .14rem;
+    min-height: 10px;
+}
+
+.line {
+    width: 12.5rem;
+    height: 3px;
+    margin: auto;
+    background: rgba(64, 63, 63, 1);
+}
+
+.footer-item2 {
+    font-size: 0.16rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.31rem 0 0.36rem;
+    flex-wrap: wrap;
+}
+
+.footer-item2 img {
+    width: 1.43rem;
+}
+
+.footer-item2 a {
+    padding: 0 0.45rem;
+}
+
+.footer-item3 {
+    font-size: 0.14rem;
+    padding-bottom: 0.75rem;
+}
+
+/*底部结束*/
