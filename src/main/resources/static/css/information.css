@@ -1,0 +1,342 @@
+body, div, dl,a, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6,form,input, textarea, p, th, td, hr, button{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family:Microsoft YaHei;
+}
+li{
+	list-style-type:none;
+}
+a{
+	text-decoration: none;
+}
+
+.wapper{
+	width: 16rem;
+	margin: 0 auto;
+}
+/*页面导航*/
+.linkList{
+	display: flex;
+	align-items: center;
+	font-size:.2rem;
+	padding: .33rem 0 0;
+	color: #3E3D3D;
+	flex-wrap: wrap;
+}
+.linkList a{
+	color: #3E3D3D;
+	display: flex;
+	align-items: center;
+}
+.linkList img{
+	width: .14rem;
+	margin: 0 .33rem;
+	min-width: 10px;
+}
+
+/*景区资讯*/
+#information-notice{
+	margin-top: .6rem;
+	background:rgba(232,229,229,0.35);
+	padding-bottom: .76rem;
+}
+.notice-item{
+	padding: .48rem 0;
+	border-bottom: 1px solid #DEDCDC;
+	font-size: .18rem;
+	color: #666666;
+	display: block;
+}
+.notice-item h3{
+	font-size: .24rem;
+	color: #3E3D3D;
+	margin:.12rem 0 .47rem;
+}
+.notice-item div{
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	color: #3E3D3D;
+	margin-top: .3rem;
+}
+.notice-item img{
+	width: .28rem;
+	min-width: 20px;
+	margin-left: .37rem;
+}
+.information-more{
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	font-size: .18rem;
+	color: #3E3D3D;
+	margin-top: .26rem;
+}
+.information-more img{
+	width: .16rem;
+	min-width: 12px;
+	margin-left: .34rem;
+}
+
+.information-title{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: .38rem;
+	color: #3E3D3D;
+	font-weight: bold;
+}
+.information-title img{
+	height: .4rem;
+	margin: 0 .34rem
+}
+#information-activity{
+	margin-top: .6rem;
+	font-size: .18rem;
+}
+#information-activity a{
+	color: #3E3D3D;
+}
+.activity-content{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.activity-item{
+	width: 4.8rem;
+	padding: .38rem .33rem;
+	border:2px solid rgba(203,189,168,1);
+	color: #666666;
+	margin-top: .45rem;
+	position: relative;
+	cursor: pointer;
+}
+.activity-tip{
+	position: absolute;
+	left: .21rem;
+	top: .23rem;
+	padding: 0.1rem 0.2rem;
+	background:rgba(206,192,172,1);
+	font-size:.2rem;
+	color: #3E3D3D;
+}
+.activity-item img{
+	width: 100%;
+	height: 2.5rem;
+}
+.activity-item h3{
+	font-size: .24rem;
+	color: #CEC0AC;
+	margin: .45rem 0 .25rem;
+}
+.activity-item div{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: .45rem;
+}
+
+#information-dynamic{
+	border:2px solid rgba(203,189,168,1);
+	padding: .44rem .33rem;
+	margin-top: .6rem;
+	font-size: .26rem;
+	max-width: 90%;
+}
+#information-dynamic a{
+	font-size: .2rem;
+	color: #3E3D3D;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: .25rem;
+}
+#information-dynamic h2{
+	padding-bottom: .1rem;
+	font-size: .38rem;
+}
+.dynamic-item img{
+	width: .28rem;
+	min-width: 20px;
+}
+.dynamic-dricp{
+	flex: 2;
+	margin-left: .9rem;
+	margin-right: .2rem;
+}
+/*景区公告列表样式*/
+.notice-list .information-title{
+	margin-top: .55rem;
+}
+.notice-list #information-notice{
+	background: #fff;
+	box-shadow:none;
+	margin-top: 0;
+}
+.announcer{
+	text-align: right;
+	line-height: 1.8;
+	margin-top: 1.74rem;
+	font-weight: bold;
+}
+
+/*景区活动列表样式*/
+.activity-list .information-title{
+	margin-top: .55rem;
+}
+.activity-list-item{
+	font-size: .16rem;
+	margin-top: .6rem;
+	border: 1px solid #DAD8D7;
+    border-left: none;
+    border-right: none;
+	color: #666666;
+}
+.activity-list-content{
+	padding: .68rem 0;
+	display: flex;
+	flex-wrap:wrap;
+	color: #666666;
+}
+
+.activity-list-img{
+	width: 5.2rem;
+    height: 2.86rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+.activity-list-message{
+	width: 8.8rem;
+	padding-left:.5rem;
+	box-sizing: border-box; 
+}
+.activity-list-img img{
+	width: 100%;
+}
+.activity-list-message h3{
+	font-size: .24rem;
+	color: #3E3D3D;
+	margin: .73rem 0 .28rem;
+}
+.activity-list-message p{
+	width: 100%;
+}
+.activity-list-message>div {
+    display: flex;
+    align-items: center;
+    margin-top: .23rem;
+}
+.activity-list-message>div img{
+	margin-right: .10rem;
+    height: .25rem;
+    min-height: 12px;
+}
+.location-icon{
+	margin-left: .96rem;
+}
+.activity-list-btn {
+    float: right;
+    color: #6B2A0D;
+    display: flex;
+    align-items: center;
+    font-size: .18rem;
+    margin-top: .54rem;
+}
+.activity-list-btn img {
+    margin-left: .29rem;
+    width: .2rem;
+    min-width: 12px;
+}
+/*景区活动详情样式*/
+#activity-details{
+	font-size: .18rem;
+	color: #3E3D3D;
+}
+.activity-details-item{
+	border: 1px solid rgba(218,216,215,1);
+	margin-top: .7rem;
+	padding: .5rem 0 .93rem;
+	border-left: none;
+	border-right: none;
+}
+.activity-details-title{
+	color: #3E3D3D;
+	font-size: .28rem;
+	font-weight: bold;
+	margin-bottom: .7rem;
+	text-align: center;
+}
+.activity-details-box{
+	display: flex;
+	flex-wrap: wrap;
+}
+.activity-details-box>div{
+	width: 8rem;
+}
+.activity-details-left{
+	height: 4.2rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+.activity-details-left img{
+	width: 7.32rem
+}
+.activity-details-right{
+	position: relative;
+	font-size: .18rem;
+}
+.activity-details-right img{
+	height: .29rem;
+	min-height: 12px;
+	margin-right: .28rem
+}
+.activity-details-right>div{
+	margin-top: .4rem;
+	display: flex;
+	align-items: center;
+
+}
+.activity-details-btn{
+	background:rgba(203,189,168,1);
+	border-radius:.05rem;
+	padding: .16rem .51rem;
+	color: #fff;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	display: inline-block;
+}
+.activity-details-btn.activity-details-btn2{
+	background: rgba(220,220,220,1);
+}
+	
+.activity-details-dricp{
+	color: #666666;
+	line-height: 1.8;
+}
+.activity-details-dricp img{
+	width: 100%
+}
+.activity-details-dricp h4{
+	color: #3E3D3D;
+	font-size: .2rem;
+	margin: .7rem 0 .35rem
+}
+
+/*景区动态样式*/
+.dynamic-list .activity-list-message{
+	display: flex;
+	flex-direction:column;
+	justify-content: space-between;
+}
+.dynamic-list .activity-list-message>div{
+	display: block;
+}
+.dynamic-list .activity-list-time{
+	text-align: right;
+}
+

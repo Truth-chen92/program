@@ -5,14 +5,10 @@ import cn.tedu.travel.mapper.UserMapper;
 import cn.tedu.travel.utils.SessionUtil;
 import com.zhenzi.sms.ZhenziSmsClient;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
@@ -52,7 +48,6 @@ public class LoginController {
             return "用户名可用";
         }
     }
-
     //获取短信
     @PostMapping("getCode")
     @ResponseBody
