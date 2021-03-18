@@ -21,6 +21,7 @@ public class ShowController {
     }
     @GetMapping("/showabout")
     public String showAbout(){return "about";}
-    @GetMapping("/showcontactUs")
+    @GetMapping("/showcontactus")
     public String showContactUs(){return "contactUs";}
+
 }
