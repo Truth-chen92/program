@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>凤凰古城后台</title>
     <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap3/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap3/font-awesome-4.7.0/css/font-awesome.css"/>
+    <link rel="stylesheet" type="text/css" href="bootstrap3/css/main.css"/><!--主要css样式-->
+    <script type="text/javascript" src="bootstrap3/jquery.min.js"></script>
+    <script type="text/javascript" src="bootstrap3/js/bootstrap.js"></script>
+    <script type="text/javascript" src="bootstrap3/js/holder.js"></script>
+    <script type="text/javascript" src="bootstrap3/js/html5shiv.min.js"></script>
+    <script type="text/javascript" src="bootstrap3/js/css3-mediaqueries.js"></script>
+    <script type="text/javascript" src="bootstrap3/js/respond.min.js"></script>
+    <script type="text/javascript" src="js/jquery.firefly-0.7.min.js"></script>
+    <script src="layui/layui.js"></script>
+    <script src="js/vue.js"></script>
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
@@ -46,16 +58,16 @@
                 <li class="layui-nav-item layui-nav-itemed">
                     <a class="" href="javascript:;">CRUD</a>
                     <dl class="layui-nav-child">
-                        <dd @click="bannerCRUD()"><a href="javascript:;">轮播图</a></dd>
-                        <dd @click="activitiesCRUD()"><a href="javascript:;">景区活动</a></dd>
+                        <dd @click="sideClick(1)"><a href="javascript:;">轮播图</a></dd>
+                        <dd @click="sideClick(2)"><a href="javascript:;">景区活动</a></dd>
                         <dd><a href="homePage.html">查看效果(跳转网页)</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
                     <a href="javascript:;">用户管理</a>
                     <dl class="layui-nav-child">
-                        <dd @click="userManagement()"><a href="javascript:;">普通用户账户管理</a></dd>
-                        <dd @click="administratorManagement()"><a href="javascript:;">管理员账户管理</a></dd>
+                        <dd @click="sideClick(3)"><a href="javascript:;">普通用户账户管理</a></dd>
+                        <dd @click="sideClick(4)"><a href="javascript:;">管理员账户管理</a></dd>
                         <dd><a href="">刷新</a></dd>
                     </dl>
                 </li>
@@ -65,9 +77,48 @@
         </div>
     </div>
 
-    <div v-html="bodyHtml" class="layui-body">
+    <div class="layui-body">
         <!-- 内容主体区域 -->
-        <div style="padding: 15px;">内容主体区域</div>
+        <div v-if="sideStatus===0" style="padding: 15px;">
+            <table class="table table-bordered table-hover">
+                <tr>
+                    <th>轮播图</th>
+                    <th>操作</th>
+                </tr>
+                <tr>
+                    <td><img src="image/homePage/banner1.jpg" alt="图裂了" class="img-thumbnail"></td>
+                    <td>
+                        <button type="button" class="btn btn-info">添加</button>
+                        <button type="button" class="btn btn-danger">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="" alt="图裂了"></td>
+                    <td>
+                        <button type="button" class="btn btn-info">添加</button>
+                        <button type="button" class="btn btn-danger">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="" alt="图裂了"></td>
+                    <td>
+                        <button type="button" class="btn btn-info">添加</button>
+                        <button type="button" class="btn btn-danger">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="" alt="图裂了"></td>
+                    <td>
+                        <button type="button" class="btn btn-info">添加</button>
+                        <button type="button" class="btn btn-danger">删除</button>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+        <div v-if="sideStatus===2" style="padding: 15px;">活动</div>
+        <div v-if="sideStatus===3" style="padding: 15px;">用户</div>
+        <div v-if="sideStatus===4" style="padding: 15px;">管理员</div>
     </div>
 
     <div class="layui-footer">
@@ -75,8 +126,6 @@
         © layui.com - 底部固定区域
     </div>
 </div>
-<script src="layui/layui.js"></script>
-<script src="js/vue.js"></script>
 <script>
     //JavaScript代码区域
     layui.use('element', function () {
@@ -86,27 +135,16 @@
         el: ".layui-side",
         data: {},
         methods: {
-            bannerCRUD: function () {//侧边栏轮播图点击事件(更改主体标签内容)
-                body.bodyHtml=
-                    "<h1>bannnerCRUD</h1>" +
-                    "<h2>bannnerCRUD</h2>" +
-                    "<h3>bannnerCRUD</h3>"
+            sideClick: function (status) {//侧边栏轮播图点击事件(更改主体标签内容)
+                body.sideStatus=status;
             },
-            activitiesCRUD:function () {//侧边栏景区活动点击事件(更改主体标签内容)
-                body.bodyHtml="<h1>activitiesCRUD</h1>"
-            },
-            userManagement:function () {
-                body.bodyHtml="<h1>userManagement</h1>"
-            },
-            administratorManagement:function () {
-                body.bodyHtml="<h1>administratorManagement</h1>"
-            },
-
         }
     })
     let body = new Vue({//挂载在内容主体的Vue
         el: ".layui-body",
-        data: {bodyHtml: "<i>Hello Body</i>"}
+        data: {
+            sideStatus:0
+        }
     })
 </script>
 </body>

@@ -1,6 +1,6 @@
 package cn.tedu.travel.controller;
 
-import cn.tedu.travel.entity.User;
+import cn.tedu.travel.model.User;
 import cn.tedu.travel.mapper.UserMapper;
 import cn.tedu.travel.utils.SessionUtil;
 import com.zhenzi.sms.ZhenziSmsClient;
