@@ -1,8 +1,7 @@
-package cn.tedu.travel.entity;
+package cn.tedu.travel.model;
 
 import lombok.Data;
 import lombok.experimental.Accessors;
-import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
 

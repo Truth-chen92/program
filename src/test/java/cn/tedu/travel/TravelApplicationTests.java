@@ -1,6 +1,6 @@
 package cn.tedu.travel;
 
-import cn.tedu.travel.entity.User;
+import cn.tedu.travel.model.User;
 import cn.tedu.travel.mapper.UserMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
