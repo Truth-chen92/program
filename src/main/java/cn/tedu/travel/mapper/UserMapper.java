@@ -1,6 +1,6 @@
 package cn.tedu.travel.mapper;
 
-import cn.tedu.travel.entity.User;
+import cn.tedu.travel.model.User;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 
