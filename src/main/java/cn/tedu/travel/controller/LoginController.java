@@ -28,8 +28,9 @@ public class LoginController {
         Integer id = mapper.loginId(username, password);
         if (id != null) {
             User user = mapper.getUser(id);
-            session = request.getSession();
+            System.out.println("有");
             session.setAttribute("user", user);
+            System.out.println("zou");
             return "success";
         } else {
             return "error";
@@ -85,6 +86,10 @@ public class LoginController {
         String phonenumber=request.getParameter("phone");
         String code=request.getParameter("code");
         session = request.getSession();
+        Integer n=mapper.checkPhoneNumber(phonenumber);
+        if (n!=null){
+            return "手机号已被注册，请换个手机号再试。";
+        }
         String result= SessionUtil.validate(session,phonenumber,code);
         if (result.equals("未生成验证码")||result.equals("验证码错误")||result.equals("验证码已过期")) {
             return result;

@@ -61,6 +61,8 @@
             success : function (data) {//请求成功，data是前端发送来的数据也是json格式
                 if (data == "success") {
                     location.href="showticket";
+                }else if(data=="手机号已被注册，请换个手机号再试。"){
+                  alert(data)  ;
                 } else  {
                     $("#input-error").text(data);
                 }

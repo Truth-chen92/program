@@ -17,4 +17,7 @@ public interface UserMapper {
     //用户注册成功保存信息
     @Insert("insert into user values(null,#{username},#{password},#{phonenumber})")
     Integer insertUser(User user);
+    //检查用户手机号是否已注册
+    @Select("select id from user where phonenumber=#{phonenumber}")
+    Integer checkPhoneNumber(String phoneNumber);
 }
