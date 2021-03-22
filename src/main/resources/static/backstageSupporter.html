@@ -79,7 +79,7 @@
 
     <div class="layui-body">
         <!-- 内容主体区域 -->
-        <div v-if="sideStatus===0" style="padding: 15px;">
+        <div v-if="sideStatus===1" style="padding: 15px;">
             <table class="table table-bordered table-hover">
                 <tr>
                     <th>轮播图</th>
@@ -89,7 +89,7 @@
                     <td><img src="image/homePage/banner1.jpg" alt="图裂了" class="img-thumbnail"></td>
                     <td>
                         <button type="button" class="btn btn-info">添加</button>
-                        <button type="button" class="btn btn-danger">删除</button>
+                        <button type="button" class="btn btn-danger" @click.prevent="deleteBanner()">删除</button>
                     </td>
                 </tr>
                 <tr>
@@ -137,6 +137,22 @@
         methods: {
             sideClick: function (status) {//侧边栏轮播图点击事件(更改主体标签内容)
                 body.sideStatus=status;
+                if(status===1){//轮播图CRUD
+                    console.log("轮播图CRUD");
+                    $.ajax({
+                        url: "/selectBanner",
+                        method:"Get",
+                        success: function (r) {
+                            console.log(r);
+                        }
+                    })
+                }else if(status===2){//景区活动CRUD
+                    console.log("景区活动CRUD");
+                }else if(status===3){//普通用户账户管理
+                    console.log("普通用户账户管理");
+                }else if(status===4){//管理员账户管理
+                    console.log("管理员账户管理");
+                }
             },
         }
     })
@@ -144,6 +160,15 @@
         el: ".layui-body",
         data: {
             sideStatus:0
+        },
+        methods:{
+            deleteBanner:function () {
+                console.log('delete');
+                $.ajax({
+                    url:"/deleteBanner?id="
+
+                })
+            }
         }
     })
 </script>
