@@ -25,10 +25,11 @@
                 <div class="login-item login-phone">
                     <div class="login-icon"><img src="../image/Login/password.png"></div>
                     <div class="login-input">
-                        <input type="text" autocomplete="off" name="password" id="password" placeholder="请输入密码">
+                        <input type="password" autocomplete="off" name="password" id="password" placeholder="请输入密码">
                     </div>
                 </div>
                 <div class="login-sumbit unselected" >登录</div>
+                <div style="margin-top: 20px;font-size: 16px"><a href="showreg">没有账号，点击注册</a></div>
             </div>
         </div>
     </form>
@@ -47,7 +48,7 @@
             data:$("#loginform").serialize(),
             success : function (data) {
                 if (data == "success") {
-                    location.href="showticket";
+                    location.href="showhome";
                 } else if (data == "error") {
                     alert("账号密码有误,请重新输入!");
                 }
