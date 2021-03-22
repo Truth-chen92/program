@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/base.css"/>
+    <link rel="stylesheet" href="layui/css/layui.css">
+</head>
+<body>
+<div id="doc3">
+    <div id="bd">
+        <div class="grid-2 clearfix">
+            <div class="aside">
+                <div class="aside-menu">
+                    <ul>
+                        <li class="current"><a href="personal.html"><i class="ico ico-7"></i>基本资料</a></li>
+                        <li><a href="#"><i class="ico ico-12"></i>订单管理</a></li>
+                        <li><a href="passwordquestion.html"><i class="ico ico-16"></i>密保问题</a></li>
+                        <li><a href="updatepassword.html"><i class="ico ico-11"></i>修改密码</a></li>
+                        <li><a href="showhome"><i class="ico ico-13"></i>退出登录</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="article"><!-- 修改密码  -->
+                <form class="layui-form" action="">
+                    <div class="layui-form-item" style="margin-top: 50px">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">昵称</label>
+                            <div class="layui-input-inline">
+                                <input type="tel" name="phone" lay-verify="required|phone" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">性别</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="sex" value="男" title="男" checked="">
+                            <div class="layui-unselect layui-form-radio layui-form-radioed"><i
+                                    class="layui-anim layui-icon"></i>
+                                <div>男</div>
+                            </div>
+                            <input type="radio" name="sex" value="女" title="女">
+                            <div class="layui-unselect layui-form-radio"><i class="layui-anim layui-icon"></i>
+                                <div>女</div>
+                            </div>
+                            <input type="radio" name="sex" value="保密" title="保密">
+                            <div class="layui-unselect layui-form-radio layui-radio-disbaled layui-disabled"><i
+                                    class="layui-anim layui-icon"></i>
+                                <div>保密</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-form-text">
+                        <label class="layui-form-label">个人介绍</label>
+                        <div class="layui-input-block">
+                            <textarea style="width: 75%" placeholder="此人很懒...尚未填写......" class="layui-textarea"></textarea>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+<script src="layui/layui.js"></script>
+
+<script>
+    layui.use('form', function () {
+        var form = layui.form; //只有执行了这一步，部分表单元素才会自动修饰成功
+
+        //……
+
+        //如果你的 HTML 是动态生成的，自动渲染就会失效
+        //因此你需要在相应的地方，执行下述方法来进行渲染
+        form.render();
+    });
+</script>
+</html>

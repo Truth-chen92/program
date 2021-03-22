@@ -1,0 +1,105 @@
+body {
+    background: #fff;
+    color: #666;
+    font-size: 12px;
+    font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    line-height: 1.5
+}
+
+a {
+    color: #333;
+    text-decoration: none
+}
+
+.grid-2 .aside {
+    float: left;
+    width: 230px
+}
+
+.grid-2 .article {
+    float: right;
+    width: 720px
+}
+
+
+#doc3 {
+    position: relative;
+    width: 980px;
+    margin: auto;
+    min-width: 760px;
+    text-align: left;
+    zoom: 1
+}
+
+
+#bd {
+    margin-top: 20px
+}
+
+.aside-menu {
+    background: #f4f4f4;
+    overflow: hidden;
+    padding: 0 0 20px
+}
+
+.ico {
+    display: inline-block;
+    *display: inline;
+    font-size: 0;
+    line-height: 0;
+    vertical-align: middle;
+    *zoom: 1
+}
+
+.aside-menu li {
+    margin-top: 20px
+}
+
+
+.aside-menu li a {
+    color: #888;
+    display: block;
+    font-size: 18px;
+    font-family: "Microsoft Yahei";
+    height: 55px;
+    _height: 40px;
+    line-height: 55px;
+    padding-left: 30px;
+    _padding-top: 15px
+}
+
+
+
+.aside-menu li .ico {
+    background: url(https://p.ssl.qhimg.com/t012c09e84fa6a63f20.png) no-repeat;
+    height: 26px;
+    margin-right: 10px;
+    vertical-align: -5px;
+    width: 26px
+}
+
+.aside-menu li .ico-7 {
+    background-position: 0 -211px
+}
+.aside-menu li .ico-11 {
+    background-position: 0 -352px
+}
+
+.aside-menu li .ico-12 {
+    background-position: 0 -388px
+}
+
+.aside-menu li .ico-13 {
+    background-position: 0 -424px
+}
+
+
+.aside-menu li .ico-16 {
+    background-position: 0 -522px
+}
+
+.aside-menu li.current a {
+    background: #ebefec;
+    border-left: 3px solid #4eba22;
+    padding-left: 27px
+}
