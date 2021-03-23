@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>凤凰古城后台</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap3/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap3/font-awesome-4.7.0/css/font-awesome.css"/>
+    <link rel="stylesheet" type="text/css" href="bootstrap3/css/main.css"/><!--主要css样式-->
+    <script type="text/javascript" src="bootstrap3/jquery.min.js"></script>
+    <script type="text/javascript" src="bootstrap3/js/bootstrap.js"></script>
+    <script type="text/javascript" src="bootstrap3/js/holder.js"></script>
+    <script type="text/javascript" src="bootstrap3/js/html5shiv.min.js"></script>
+    <script type="text/javascript" src="bootstrap3/js/css3-mediaqueries.js"></script>
+    <script type="text/javascript" src="bootstrap3/js/respond.min.js"></script>
+    <script type="text/javascript" src="js/jquery.firefly-0.7.min.js"></script>
+    <script src="layui/layui.js"></script>
+    <script src="js/vue.js"></script>
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo">凤凰古城</div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-left">
+            <li class="layui-nav-item"><a href="">控制台</a></li>
+            <li class="layui-nav-item"><a href="">商品管理</a></li>
+            <li class="layui-nav-item"><a href="">用户</a></li>
+            <li class="layui-nav-item">
+                <a href="javascript:;">其它系统</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="">邮件管理</a></dd>
+                    <dd><a href="">消息管理</a></dd>
+                    <dd><a href="">授权管理</a></dd>
+                </dl>
+            </li>
+        </ul>
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item">
+                <a href="javascript:;">
+                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+                    贤心
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a href="">基本资料</a></dd>
+                    <dd><a href="">安全设置</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item"><a href="">退了</a></li>
+        </ul>
+    </div>
+
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a class="" href="javascript:;">CRUD</a>
+                    <dl class="layui-nav-child">
+                        <dd @click="sideClick(1)"><a href="javascript:;">轮播图</a></dd>
+                        <dd @click="sideClick(2)"><a href="javascript:;">景区活动</a></dd>
+                        <dd><a href="/showhome">查看效果(跳转网页)</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">用户管理</a>
+                    <dl class="layui-nav-child">
+                        <dd @click="sideClick(3)"><a href="javascript:;">普通用户账户管理</a></dd>
+                        <dd @click="sideClick(4)"><a href="javascript:;">管理员账户管理</a></dd>
+                        <dd><a href="">刷新</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item"><a href="">云市场</a></li>
+                <li class="layui-nav-item"><a href="">发布商品</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div v-if="sideStatus===1" style="padding: 15px;">
+            <table class="table table-bordered table-hover">
+                <tr>
+                    <th>轮播图</th>
+                    <th>操作</th>
+                </tr>
+                <tr v-for="banner in banners">
+                    <td><img src="image/homePage/banner1.jpg" alt="图裂了" class="img-thumbnail"
+                        v-bind:src="banner.url"></td>
+                    <td>
+                        <button type="button" class="btn btn-info">添加</button>
+                        <button type="button" class="btn btn-danger" @click.prevent="deleteBanner()">删除</button>
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+        <div v-if="sideStatus===2" style="padding: 15px;">活动</div>
+        <div v-if="sideStatus===3" style="padding: 15px;">用户</div>
+        <div v-if="sideStatus===4" style="padding: 15px;">管理员</div>
+    </div>
+
+    <div class="layui-footer">
+        <!-- 底部固定区域 -->
+        © layui.com - 底部固定区域
+    </div>
+</div>
+<script>
+    //JavaScript代码区域
+    layui.use('element', function () {
+        var element = layui.element;
+    });
+    let side = new Vue({//挂载在侧边栏的Vue
+        el: ".layui-side",
+        data: {},
+        methods: {
+            sideClick: function (status) {//侧边栏轮播图点击事件(更改主体标签内容)
+                body.sideStatus=status;
+                if(status===1){//轮播图CRUD
+                    console.log("轮播图CRUD");
+                    $.ajax({
+                        url: "/banners",
+                        data:{
+                        },
+                        method:"Get",
+                        success: function (r) {
+                            console.log(r);
+                            body.banners=r.data;
+                        }
+
+                    })
+                }else if(status===2){//景区活动CRUD
+                    console.log("景区活动CRUD");
+                }else if(status===3){//普通用户账户管理
+                    console.log("普通用户账户管理");
+                }else if(status===4){//管理员账户管理
+                    console.log("管理员账户管理");
+                }
+            },
+        }
+    })
+    let body = new Vue({//挂载在内容主体的Vue
+        el: ".layui-body",
+        data: {
+            sideStatus:0,
+            banners:[]
+        },
+        methods:{
+            deleteBanner:function () {
+                console.log('deleteBanner');
+                $.ajax({
+                    url:"/deleteBanner",
+                    data:{
+                        id:this.banners.id
+                    }
+                })
+            }
+        }
+    })
+</script>
+</body>
+</html>

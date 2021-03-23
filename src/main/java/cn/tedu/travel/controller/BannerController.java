@@ -15,10 +15,11 @@ public class BannerController {
     @Resource
     IBannerService bannerService;
 
-    @GetMapping("/seleteBanner")
-    public R<List<Banner>> seleteBanner(){
+    @GetMapping("/banners")
+    public R<List<Banner>> banners(){
         List<Banner> banners =bannerService.getBanners();
         return R.ok(banners);
     }
+
 
 }

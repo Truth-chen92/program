@@ -17,6 +17,10 @@ public class BannerServiceImpl extends ServiceImpl<BannerMapper, Banner> impleme
 
     @Override
     public List<Banner> getBanners() {
-        return list();
+        List<Banner> banners = list();
+        for(Banner banner : banners){
+            banner.setUrl("image/homePage/"+banner.getUrl());
+        }
+        return banners;
     }
 }
