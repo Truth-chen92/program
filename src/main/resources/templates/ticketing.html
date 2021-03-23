@@ -1,25 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>导览购票</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="../css/Ticketing.css">
-    <script src="../css/rem.js"></script>
+    <script src="../js/rem.js"></script>
+    <link rel="stylesheet" type="text/css" href="../bootstrap3/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../bootstrap3/font-awesome-4.7.0/css/font-awesome.css"/>
+    <link rel="stylesheet" type="text/css" href="../bootstrap3/css/main.css"/><!--主要css样式-->
 </head>
 <body>
-<div id="guide-box">
-    <div class="linkList wapper linkList2">
+
+<!--导航条开始-->
+<nav class="navbar navbar-default">
+    <div class="container">
+        <!-- 分类标题列表 -->
+        <ul class="nav navbar-nav">
+            <li><a href="showhome">首页</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle dropdown-toggle0">古城景点</a>
+                <ul class="dropdown-menu dropdown-menu0">
+                    <li><a href="#">宣传视频</a></li>
+                    <li><a href="#">凤凰古城九景</a></li>
+                    <li><a href="#">南方长城</a></li>
+                    <li><a href="#">奇梁洞</a></li>
+                    <li><a href="#">边城演艺</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="showticket" class="dropdown-toggle dropdown-toggle1">导览购票</a>
+                <ul class="dropdown-menu dropdown-menu1">
+                    <li><a href="#">开放时间</a></li>
+                    <li><a href="#">票务服务</a></li>
+                    <li><a href="#">游览须知</a></li>
+                    <li><a href="#">电子地图</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle dropdown-toggle2">吃喝玩乐</a>
+                <ul class="dropdown-menu dropdown-menu2">
+                    <li><a href="#">玩在凤凰</a></li>
+                    <li><a href="#">住在凤凰</a></li>
+                    <li><a href="#">吃在凤凰</a></li>
+                    <li><a href="#">购在凤凰</a></li>
+
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="showabout" class="dropdown-toggle dropdown-toggle3">古城概述</a>
+                <ul class="dropdown-menu dropdown-menu3">
+                    <li><a href="#">古城介绍</a></li>
+                    <li><a href="#">古城名人</a></li>
+                    <li><a href="#">古城风俗</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="/showinformation" class="dropdown-toggle dropdown-toggle4">景点资讯</a>
+                <ul class="dropdown-menu dropdown-menu4">
+                    <li><a href="#">景点公告</a></li>
+                    <li><a href="#">景点动态</a></li>
+                    <li><a href="#">景点活动</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="showcontactus" class="dropdown-toggle dropdown-toggle5">联系我们</a>
+                <ul class="dropdown-menu dropdown-menu5">
+                    <li><a href="#">集团介绍</a></li>
+                    <li><a href="#">商务合作</a></li>
+                    <li><a href="#">联系方式</a></li>
+                    <li><a href="#">人才招聘</a></li>
+                </ul>
+            </li>
+            <li th:if="${user}!=null" class="dropdown">
+                <a href="/showpersonal" class="dropdown-toggle dropdown-toggle6">个人中心</a>
+            </li>
+            <li th:if="${user}==null" class="dropdown">
+                <a href="/showlogin" class="dropdown-toggle dropdown-toggle6">登录</a>
+            </li>
+            <li th:if="${user}!=null" class="dropdown">
+                <a href="/logout" class="dropdown-toggle dropdown-toggle6">登出</a>
+            </li>
+
+        </ul>
+    </div><!-- /.container-fluid -->
+</nav>
+<!--导航条结束-->
+
+<div id="guide-box" >
+    <div class="linkList wapper linkList2" >
         <a href="">首页</a>
         <img src="../image/Ticketing/point1.png" alt="">
         导览购票
     </div>
     <div class="guide-title">
         <img src="../image/Ticketing/left black.png" alt="">
-         与你的邂逅，从此开始
+        与你的邂逅，从此开始
         <img src="../image/Ticketing/right black.png" alt="">
     </div>
-    <div class="guide-message" >
+    <div class="guide-message">
         <div class="wapper">
             <h3>一、价格政策</h3>
             <h4>1、凤凰古城核心九景 门票128元</h4>
@@ -36,11 +115,15 @@
             <h4>优惠政策</h4>
             <div>优惠票对象：60—64周岁老人、24周岁以内全日制本科学历在校学生（含本科学历以下的全日制在校学生）、未满60周岁的军队退休干部、未带团导游、城市居民最低生活保障金领取者</div>
             <h4>免票政策</h4>
-            <div>免票对象：65周岁以上老人（含65周岁）、身高1.3米以下儿童、14周岁以下（不含14周岁）儿童、现役士兵、现役军官、烈士家属、残疾人、记者凭国家新闻总署颁发的记者证且有采访任务（其中，65周岁以上老人、身高1.3米以下儿童、14周岁以下儿童、士兵证、军官证，无需办理免票，凭证件可参观游览）</div>
+            <div>
+                免票对象：65周岁以上老人（含65周岁）、身高1.3米以下儿童、14周岁以下（不含14周岁）儿童、现役士兵、现役军官、烈士家属、残疾人、记者凭国家新闻总署颁发的记者证且有采访任务（其中，65周岁以上老人、身高1.3米以下儿童、14周岁以下儿童、士兵证、军官证，无需办理免票，凭证件可参观游览）
+            </div>
 
             <p>【沱江泛舟、沱江夜游】</p>
             <h4>优惠政策</h4>
-            <div>60周岁以上（含60周岁）老人、24周岁以内全日制本科学历在校学生（含本科学历以下的全日制在校学生）、军队退休干部、末带团导游、城市最低生活保障金领取者、14（含14周岁）儿童、现役军官、烈士家属、残疾人、记者凭国家新闻总署颁发的记者证 </div>
+            <div>
+                60周岁以上（含60周岁）老人、24周岁以内全日制本科学历在校学生（含本科学历以下的全日制在校学生）、军队退休干部、末带团导游、城市最低生活保障金领取者、14（含14周岁）儿童、现役军官、烈士家属、残疾人、记者凭国家新闻总署颁发的记者证
+            </div>
             <h4>免票政策</h4>
             <div>免票对象：身高1.3m以下不占座儿童</div>
 
@@ -51,7 +134,7 @@
             <div>免票对象：身高1.3米以下儿童</div>
             <h3>三、开放时间</h3>
             <div>凤凰古城核心九景：旺季7：30-18：00 淡季8：00-17：30</div>
-            <div>沱江夜游：旺季7：30-18：00  18：00-23：30 淡季8：00-17：30  17：30-22：30</div>
+            <div>沱江夜游：旺季7：30-18：00 18：00-23：30 淡季8：00-17：30 17：30-22：30</div>
             <div>南长城：旺季7：30-18：00 淡季8：00-17：30</div>
             <a href=""><span class="guide-ticket">在线<br>购票</span></a>
         </div>
@@ -83,7 +166,9 @@
         <div>2、为保证取票、入园顺利，预订时请务必填写真实姓名、手机号码等信息</div>
         <div>3、从验证初始日开始，需在2天有效期内游玩9个景点（凤凰古城九景），自预约之日起2日内有效，身份证是入园和游览的凭证（奇梁洞、南长城门票当日有效）</div>
         <div>4、入园提示：门票当天有效，出园后再入园，需再次购票</div>
-        <div>5、园内禁止活动：未经许可在景区内游行或演说、公众集会。 未经许可展示任何旗帜、横幅或徽号。未经许可在景区内售卖任何物品或服务、展览。攀折树木、 张贴派发印刷品或其他宣传品。采摘花果，各种形式的狩猎，捕捉、打捞水生动物及植物。 破坏生态、污染环境、危害文物之行为。 其它妨碍游客休闲度假、违反公共秩序、有害本历史街区保护或其相关设施之运作的行为</div>
+        <div>5、园内禁止活动：未经许可在景区内游行或演说、公众集会。 未经许可展示任何旗帜、横幅或徽号。未经许可在景区内售卖任何物品或服务、展览。攀折树木、
+            张贴派发印刷品或其他宣传品。采摘花果，各种形式的狩猎，捕捉、打捞水生动物及植物。 破坏生态、污染环境、危害文物之行为。 其它妨碍游客休闲度假、违反公共秩序、有害本历史街区保护或其相关设施之运作的行为
+        </div>
         <h3>二、边城实景演出</h3>
         <div>1、请携带身份证原件，身份证仅限本人使用，每次只限使用一次，剧场演出前30分钟开始入场，请观众排队入场，对号入座</div>
         <div>2、为保证取票、入园顺利，预订时请务必填写真实姓名、手机号码等信息</div>

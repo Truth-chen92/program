@@ -28,9 +28,7 @@ public class LoginController {
         Integer id = mapper.loginId(username, password);
         if (id != null) {
             User user = mapper.getUser(id);
-            System.out.println("有");
             session.setAttribute("user", user);
-            System.out.println("zou");
             return "success";
         } else {
             return "error";

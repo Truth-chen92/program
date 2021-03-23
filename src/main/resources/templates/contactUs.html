@@ -1,14 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
 	<title>联系我们</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<script src="../css/rem.js"></script>
+	<script src="../js/rem.js"></script>
 	<link rel="stylesheet" href="../css/contactUs.css">
+	<link rel="stylesheet" type="text/css" href="../bootstrap3/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../bootstrap3/font-awesome-4.7.0/css/font-awesome.css"/>
+	<link rel="stylesheet" type="text/css" href="../bootstrap3/css/main.css"/><!--主要css样式-->
 </head>
 <body>
-	<header id="header"></header>
+<!--导航条开始-->
+<nav class="navbar navbar-default">
+	<div class="container">
+		<!-- 分类标题列表 -->
+		<ul class="nav navbar-nav">
+			<li><a href="showhome">首页</a></li>
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle dropdown-toggle0">古城景点</a>
+				<ul class="dropdown-menu dropdown-menu0">
+					<li><a href="#">宣传视频</a></li>
+					<li><a href="#">凤凰古城九景</a></li>
+					<li><a href="#">南方长城</a></li>
+					<li><a href="#">奇梁洞</a></li>
+					<li><a href="#">边城演艺</a></li>
+				</ul>
+			</li>
+			<li class="dropdown">
+				<a href="showticket" class="dropdown-toggle dropdown-toggle1">导览购票</a>
+				<ul class="dropdown-menu dropdown-menu1">
+					<li><a href="#">开放时间</a></li>
+					<li><a href="#">票务服务</a></li>
+					<li><a href="#">游览须知</a></li>
+					<li><a href="#">电子地图</a></li>
+				</ul>
+			</li>
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle dropdown-toggle2">吃喝玩乐</a>
+				<ul class="dropdown-menu dropdown-menu2">
+					<li><a href="#">玩在凤凰</a></li>
+					<li><a href="#">住在凤凰</a></li>
+					<li><a href="#">吃在凤凰</a></li>
+					<li><a href="#">购在凤凰</a></li>
+
+				</ul>
+			</li>
+			<li class="dropdown">
+				<a href="showabout" class="dropdown-toggle dropdown-toggle3">古城概述</a>
+				<ul class="dropdown-menu dropdown-menu3">
+					<li><a href="#">古城介绍</a></li>
+					<li><a href="#">古城名人</a></li>
+					<li><a href="#">古城风俗</a></li>
+				</ul>
+			</li>
+			<li class="dropdown">
+				<a href="/showinformation" class="dropdown-toggle dropdown-toggle4">景点资讯</a>
+				<ul class="dropdown-menu dropdown-menu4">
+					<li><a href="#">景点公告</a></li>
+					<li><a href="#">景点动态</a></li>
+					<li><a href="#">景点活动</a></li>
+				</ul>
+			</li>
+			<li class="dropdown">
+				<a href="showcontactus" class="dropdown-toggle dropdown-toggle5">联系我们</a>
+				<ul class="dropdown-menu dropdown-menu5">
+					<li><a href="#">集团介绍</a></li>
+					<li><a href="#">商务合作</a></li>
+					<li><a href="#">联系方式</a></li>
+					<li><a href="#">人才招聘</a></li>
+				</ul>
+			</li>
+			<li th:if="${user}!=null" class="dropdown">
+				<a href="/showpersonal" class="dropdown-toggle dropdown-toggle6">个人中心</a>
+			</li>
+			<li th:if="${user}==null" class="dropdown">
+				<a href="/showlogin" class="dropdown-toggle dropdown-toggle6">登录</a>
+			</li>
+			<li th:if="${user}!=null" class="dropdown">
+				<a href="/logout" class="dropdown-toggle dropdown-toggle6">登出</a>
+			</li>
+
+		</ul>
+	</div><!-- /.container-fluid -->
+
+</nav>
+<!--导航条结束-->
 	
 	
 	<div class="contact-content">

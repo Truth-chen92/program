@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Bootstrap Template</title>
@@ -55,7 +55,7 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle dropdown-toggle4">景点资讯</a>
+                    <a href="/showinformation" class="dropdown-toggle dropdown-toggle4">景点资讯</a>
                     <ul class="dropdown-menu dropdown-menu4">
                         <li><a href="#">景点公告</a></li>
                         <li><a href="#">景点动态</a></li>
@@ -72,13 +72,13 @@
                     </ul>
                 </li>
                 <li th:if="${user}!=null" class="dropdown">
-                    <a href="#" class="dropdown-toggle dropdown-toggle6">个人中心</a>
+                    <a href="/showpersonal" class="dropdown-toggle dropdown-toggle6">个人中心</a>
                 </li>
                 <li th:if="${user}==null" class="dropdown">
                     <a href="/showlogin" class="dropdown-toggle dropdown-toggle6">登录</a>
                 </li>
                 <li th:if="${user}!=null" class="dropdown">
-                    <a href="#" class="dropdown-toggle dropdown-toggle6">登出</a>
+                    <a href="/logout" class="dropdown-toggle dropdown-toggle6">登出</a>
                 </li>
 
             </ul>
