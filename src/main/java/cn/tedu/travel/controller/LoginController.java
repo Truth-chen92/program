@@ -7,6 +7,8 @@ import com.zhenzi.sms.ZhenziSmsClient;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -98,7 +100,25 @@ public class LoginController {
         }
     }
 
+    @PostMapping("updatepassword")
+    @ResponseBody
+    public String updatePassword(HttpServletRequest request,HttpSession session){
+        User user=(User)request.getSession().getAttribute("user");
+        String oldpassword=request.getParameter("oldpassword");
+        String newpassword1=request.getParameter("newpassword1");
+        String newpassword2=request.getParameter("newpassword2");
+        if (!user.getPassword().equals(oldpassword)) {
+            return "旧密码输入错误";
+        }else if(!newpassword1.equals(newpassword2)){
+            return "两次密码输入不一致";
+        }else if(user.getPassword().equals(newpassword2)){
+            return "与原密码一致，请重新输入";
+        }else{
+            mapper.updatePassword(newpassword1,user.getId());
+            return "success";
+        }
 
+    }
 
 
 }
