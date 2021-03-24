@@ -21,5 +21,10 @@ public class BannerController {
         return R.ok(banners);
     }
 
+    @GetMapping("/deleteBanner")
+    public R deleteBanner(Integer id){
+        bannerService.deleteBanner(id);
+        return R.ok("ok");
+    }
 
 }

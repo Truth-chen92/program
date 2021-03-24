@@ -23,4 +23,9 @@ public class BannerServiceImpl extends ServiceImpl<BannerMapper, Banner> impleme
         }
         return banners;
     }
+
+    @Override
+    public void deleteBanner(Integer id) {
+        removeById(id);
+    }
 }

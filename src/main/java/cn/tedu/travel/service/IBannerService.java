@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface IBannerService extends IService<Banner> {
     List<Banner> getBanners();
+
+    void deleteBanner(Integer id);
 }

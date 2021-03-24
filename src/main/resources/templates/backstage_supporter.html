@@ -90,7 +90,7 @@
                         v-bind:src="banner.url"></td>
                     <td>
                         <button type="button" class="btn btn-info">添加</button>
-                        <button type="button" class="btn btn-danger" @click.prevent="deleteBanner()">删除</button>
+                        <button type="button" class="btn btn-danger" @click.prevent="deleteBanner(banner.id)">删除</button>
                     </td>
                 </tr>
 
@@ -107,6 +107,8 @@
         © layui.com - 底部固定区域
     </div>
 </div>
+</body>
+<script src="js/utils.js"></script>
 <script>
     //JavaScript代码区域
     layui.use('element', function () {
@@ -126,8 +128,10 @@
                         },
                         method:"Get",
                         success: function (r) {
-                            console.log(r);
-                            body.banners=r.data;
+                            console.log("banners:"+r);
+                            if(r.code==OK) {
+                                body.banners = r.data;
+                            }
                         }
 
                     })
@@ -148,17 +152,22 @@
             banners:[]
         },
         methods:{
-            deleteBanner:function () {
+            deleteBanner:function (id) {
                 console.log('deleteBanner');
+
                 $.ajax({
                     url:"/deleteBanner",
                     data:{
-                        id:this.banners.id
+                        id:id
+                    },
+                    method: "get",
+                    success:function () {
+                        side.sideClick(1);//执行方法，目的是遍历轮播图
                     }
                 })
             }
         }
     })
 </script>
-</body>
+
 </html>
