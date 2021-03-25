@@ -51,7 +51,7 @@
         </ul>
     </div>
 
-    <div class="layui-side layui-bg-black">
+    <div id="sideApp" class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
             <ul class="layui-nav layui-nav-tree" lay-filter="test">
@@ -77,29 +77,38 @@
         </div>
     </div>
 
-    <div class="layui-body">
+    <div id="bodyApp" class="layui-body">
         <!-- 内容主体区域 -->
-        <div v-if="sideStatus===1" style="padding: 15px;">
+        <div id="bannerApp" v-show="sideStatus===1" style="padding: 15px;">
             <table class="table table-bordered table-hover">
                 <tr>
                     <th>轮播图</th>
                     <th>操作</th>
                 </tr>
                 <tr v-for="banner in banners">
-                    <td><img src="image/homePage/banner1.jpg" alt="图裂了" class="img-thumbnail"
-                        v-bind:src="banner.url"></td>
+                    <td><img src="image/homePage/banner1.jpg" alt="图裂了" class="img-thumbnail .img-responsive"
+                        style="max-width: 800px"
+                        v-bind:src="banner.url">
+                    </td>
                     <td>
-                        <button type="button" class="btn btn-info">添加</button>
+                        <button type="button" class="btn btn-info" @click.prevent="showInsertBannerForm(banner.id)">添加</button>
                         <button type="button" class="btn btn-danger" @click.prevent="deleteBanner(banner.id)">删除</button>
+                        <form id="demoForm" method="post" enctype="multipart/form-data" action="/upload/file"
+                              v-on:submit.prevent="insertBanner(banner.id)"
+                              v-show="insertBannerFormStatus==banner.id">
+                            选择图片:<input type="file" name="imageFile" id="imageFile">
+                            <br>
+                            <button type="submit">上传</button>
+                        </form>
                     </td>
                 </tr>
 
             </table>
 
         </div>
-        <div v-if="sideStatus===2" style="padding: 15px;">活动</div>
-        <div v-if="sideStatus===3" style="padding: 15px;">用户</div>
-        <div v-if="sideStatus===4" style="padding: 15px;">管理员</div>
+        <div v-show="sideStatus===2" style="padding: 15px;">活动</div>
+        <div v-show="sideStatus===3" style="padding: 15px;">用户</div>
+        <div v-show="sideStatus===4" style="padding: 15px;">管理员</div>
     </div>
 
     <div class="layui-footer">
@@ -114,12 +123,12 @@
     layui.use('element', function () {
         var element = layui.element;
     });
-    let side = new Vue({//挂载在侧边栏的Vue
-        el: ".layui-side",
+    let sideApp = new Vue({//挂载在侧边栏的Vue
+        el: "#sideApp",
         data: {},
         methods: {
             sideClick: function (status) {//侧边栏轮播图点击事件(更改主体标签内容)
-                body.sideStatus=status;
+                bodyApp.sideStatus=status;
                 if(status===1){//轮播图CRUD
                     console.log("轮播图CRUD");
                     $.ajax({
@@ -130,7 +139,7 @@
                         success: function (r) {
                             console.log("banners:"+r);
                             if(r.code==OK) {
-                                body.banners = r.data;
+                                bodyApp.banners = r.data;
                             }
                         }
 
@@ -145,24 +154,42 @@
             },
         }
     })
-    let body = new Vue({//挂载在内容主体的Vue
-        el: ".layui-body",
+    let bodyApp = new Vue({//挂载在内容主体的Vue
+        el: "#bodyApp",
         data: {
             sideStatus:0,
-            banners:[]
+            banners:[],
+            insertBannerFormStatus:0
         },
         methods:{
+            showInsertBannerForm:function(id){
+                this.insertBannerFormStatus=id;
+            },
+            insertBanner:function (id) {
+                console.log("insertBanner");
+                $.ajax({
+                    url:"/insertBanner",
+                    data:{
+                        id:id
+                    },
+                    method:"get",
+                    success:function (r) {
+                        console.log("insertBanner:"+r.code);
+                        sideApp.sideClick(1);//执行方法，目的是遍历轮播图
+                    }
+                })
+            },
             deleteBanner:function (id) {
-                console.log('deleteBanner');
-
+                console.log("deleteBanner");
                 $.ajax({
                     url:"/deleteBanner",
                     data:{
                         id:id
                     },
                     method: "get",
-                    success:function () {
-                        side.sideClick(1);//执行方法，目的是遍历轮播图
+                    success:function (r) {
+                        console.log("deleteBanner:"+r.code);
+                        sideApp.sideClick(1);//执行方法，目的是遍历轮播图
                     }
                 })
             }
