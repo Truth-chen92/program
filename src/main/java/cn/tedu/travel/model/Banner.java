@@ -23,4 +23,7 @@ public class Banner implements Serializable {
 
     @TableField("url")
     private String url;
+
+    @TableField("sort_num")
+    private Integer sortNum;
 }

@@ -3,6 +3,8 @@ package cn.tedu.travel.service.impl;
 import cn.tedu.travel.mapper.BannerMapper;
 import cn.tedu.travel.model.Banner;
 import cn.tedu.travel.service.IBannerService;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.injector.methods.UpdateById;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,15 +19,22 @@ public class BannerServiceImpl extends ServiceImpl<BannerMapper, Banner> impleme
 
     @Override
     public List<Banner> getBanners() {
-        List<Banner> banners = list();
-        for(Banner banner : banners){
-            banner.setUrl("image/homePage/"+banner.getUrl());
-        }
+        QueryWrapper<Banner> query=new QueryWrapper<>();
+        query.orderByAsc("sort_num");
+        List<Banner> banners=bannerMapper.selectList(query);
         return banners;
     }
 
     @Override
     public void deleteBanner(Integer id) {
         removeById(id);
+    }
+
+    @Override
+    public List<Banner> saveBanner(Banner banner) {
+        bannerMapper.updateBannerBySortNum(banner.getSortNum());
+        bannerMapper.insert(banner);
+        List<Banner> banners = getBanners();
+        return banners;
     }
 }

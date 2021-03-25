@@ -82,7 +82,10 @@
             <table class="table table-bordered table-hover">
                 <tr>
                     <th>轮播图</th>
-                    <th>操作</th>
+                    <th>
+                        操作
+
+                    </th>
                 </tr>
                 <tr v-for="banner in banners">
                     <td><img src="image/homePage/banner1.jpg" alt="图裂了" class="img-thumbnail .img-responsive"
@@ -92,8 +95,8 @@
                     <td>
                         <button type="button" class="btn btn-info" @click.prevent="showInsertBannerForm(banner.id)">添加</button>
                         <button type="button" class="btn btn-danger" @click.prevent="deleteBanner(banner.id)">删除</button>
-                        <form id="demoForm" method="post" enctype="multipart/form-data" action="/upload/file"
-                              v-on:submit.prevent="insertBanner(banner.id)"
+                        <form id="demoForm" method="post" enctype="multipart/form-data"
+                              v-on:submit.prevent="insertBanner(banner.sortNum)"
                               v-show="insertBannerFormStatus==banner.id">
                             选择文件:<input type="file" name="imageFile" id="imageFile">
                             <br>
@@ -164,28 +167,18 @@
             showInsertBannerForm:function(id){
                 this.insertBannerFormStatus=id;
             },
-            insertBanner:function (id) {
-                console.log("insertBanner");
+            insertBanner:function (sortNum) {
+                console.log("insertBanner:");
                 let files =document.getElementById("imageFile").files;
+                console.log("files.length:"+files.length);
                 if(files.length>0){
                     let file=files[0];
                     console.log(file);
-                    uploadImage(file);
+                    uploadImage(file,sortNum);
                 }else{
-                    alert("请选择要上传的文件");//如果用户没选中文件,给与提示
+                    alert("请选择要上传的文件!!!");//如果用户没选中文件,给与提示
                     return;
                 }
-                $.ajax({
-                    url:"/insertBanner",
-                    data:{
-                        id:id
-                    },
-                    method:"get",
-                    success:function (r) {
-                        console.log("insertBanner:"+r.code);
-                        sideApp.sideClick(1);//执行方法，目的是遍历轮播图
-                    }
-                })
             },
             deleteBanner:function (id) {
                 console.log("deleteBanner");
@@ -203,20 +196,22 @@
             }
         }
     })
-    function uploadImage(file){
+    function uploadImage(file,sortNum){
         let form=new FormData();
         //将用户上传的文件,追加到表单中imageFile就是它的name属性
         form.append("imageFile",file);
+        form.append("sortNum",sortNum)
         $.ajax({
             url:"/addBanner",
             method:"post",
-            data:form,
+            data: form,
             //文件上传时必须编写的两个属性设置
             contentType:false,
             processData:false,
             success:function(r){
                 if(r.code==OK){
-                    alert(r.message);
+                    bodyApp.banners=r.data;
+                    bodyApp.insertBannerFormStatus=0;
                 }else{
                     alert(r.message);
                 }
