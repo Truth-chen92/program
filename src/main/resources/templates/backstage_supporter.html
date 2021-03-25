@@ -59,16 +59,15 @@
                     <a class="" href="javascript:;">CRUD</a>
                     <dl class="layui-nav-child">
                         <dd @click="sideClick(1)"><a href="javascript:;">轮播图</a></dd>
-                        <dd @click="sideClick(2)"><a href="javascript:;">景区活动</a></dd>
+                        <dd @click="sideClick(2)"><a href="javascript:;">票务</a></dd>
                         <dd><a href="/showhome">查看效果(跳转网页)</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
                     <a href="javascript:;">用户管理</a>
                     <dl class="layui-nav-child">
-                        <dd @click="sideClick(3)"><a href="javascript:;">普通用户账户管理</a></dd>
-                        <dd @click="sideClick(4)"><a href="javascript:;">管理员账户管理</a></dd>
-                        <dd><a href="">刷新</a></dd>
+                        <dd @click="sideClick(3)"><a href="javascript:;">用户管理</a></dd>
+                        <dd @click="sideClick(4)"><a href="javascript:;">管理员账号管理</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item"><a href="">云市场</a></li>
@@ -96,7 +95,7 @@
                         <form id="demoForm" method="post" enctype="multipart/form-data" action="/upload/file"
                               v-on:submit.prevent="insertBanner(banner.id)"
                               v-show="insertBannerFormStatus==banner.id">
-                            选择图片:<input type="file" name="imageFile" id="imageFile">
+                            选择文件:<input type="file" name="imageFile" id="imageFile">
                             <br>
                             <button type="submit">上传</button>
                         </form>
@@ -106,7 +105,7 @@
             </table>
 
         </div>
-        <div v-show="sideStatus===2" style="padding: 15px;">活动</div>
+        <div v-show="sideStatus===2" style="padding: 15px;">票务</div>
         <div v-show="sideStatus===3" style="padding: 15px;">用户</div>
         <div v-show="sideStatus===4" style="padding: 15px;">管理员</div>
     </div>
@@ -167,6 +166,15 @@
             },
             insertBanner:function (id) {
                 console.log("insertBanner");
+                let files =document.getElementById("imageFile").files;
+                if(files.length>0){
+                    let file=files[0];
+                    console.log(file);
+                    uploadImage(file);
+                }else{
+                    alert("请选择要上传的文件");//如果用户没选中文件,给与提示
+                    return;
+                }
                 $.ajax({
                     url:"/insertBanner",
                     data:{
@@ -195,6 +203,26 @@
             }
         }
     })
+    function uploadImage(file){
+        let form=new FormData();
+        //将用户上传的文件,追加到表单中imageFile就是它的name属性
+        form.append("imageFile",file);
+        $.ajax({
+            url:"/addBanner",
+            method:"post",
+            data:form,
+            //文件上传时必须编写的两个属性设置
+            contentType:false,
+            processData:false,
+            success:function(r){
+                if(r.code==OK){
+                    alert(r.message);
+                }else{
+                    alert(r.message);
+                }
+            }
+        });
+    }
 </script>
 
 </html>
