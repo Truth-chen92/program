@@ -98,7 +98,8 @@
                         <form id="demoForm" method="post" enctype="multipart/form-data"
                               v-on:submit.prevent="insertBanner(banner.sortNum)"
                               v-show="insertBannerFormStatus==banner.id">
-                            选择文件:<input type="file" name="imageFile" id="imageFile">
+                            选择文件:<input type="file" name="imageFile" id="imageFile"
+                                    v-bind:id="'imageFile'+banner.sortNum">
                             <br>
                             <button type="submit">上传</button>
                         </form>
@@ -169,7 +170,7 @@
             },
             insertBanner:function (sortNum) {
                 console.log("insertBanner:");
-                let files =document.getElementById("imageFile").files;
+                let files =document.getElementById("imageFile"+sortNum).files;
                 console.log("files.length:"+files.length);
                 if(files.length>0){
                     let file=files[0];
@@ -215,6 +216,7 @@
                 }else{
                     alert(r.message);
                 }
+                $("#imageFile").val("")
             }
         });
     }

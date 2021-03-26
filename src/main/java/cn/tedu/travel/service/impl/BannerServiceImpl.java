@@ -8,6 +8,7 @@ import com.baomidou.mybatisplus.core.injector.methods.UpdateById;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -18,6 +19,7 @@ public class BannerServiceImpl extends ServiceImpl<BannerMapper, Banner> impleme
     private BannerMapper bannerMapper;
 
     @Override
+    @Transactional
     public List<Banner> getBanners() {
         QueryWrapper<Banner> query=new QueryWrapper<>();
         query.orderByAsc("sort_num");
@@ -26,11 +28,13 @@ public class BannerServiceImpl extends ServiceImpl<BannerMapper, Banner> impleme
     }
 
     @Override
+    @Transactional
     public void deleteBanner(Integer id) {
         removeById(id);
     }
 
     @Override
+    @Transactional
     public List<Banner> saveBanner(Banner banner) {
         bannerMapper.updateBannerBySortNum(banner.getSortNum());
         bannerMapper.insert(banner);
