@@ -40,16 +40,17 @@ INSERT INTO `activity` (`id`, `image_url`, `name`, `description`, `time`, `relea
 CREATE TABLE IF NOT EXISTS `banner` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `url` varchar(255) DEFAULT NULL,
+  `sort_num` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
 
 -- 正在导出表  fhgc.banner 的数据：~4 rows (大约)
 /*!40000 ALTER TABLE `banner` DISABLE KEYS */;
-INSERT INTO `banner` (`id`, `url`) VALUES
-	(1, 'banner0.jpg'),
-	(2, 'banner1.jpg'),
-	(3, 'banner2.jpg'),
-	(4, 'banner3.jpg');
+INSERT INTO `banner` (`id`, `url`, `sort_num`) VALUES
+	(1, 'image/homePage/banner0.jpg', 13),
+	(2, 'image/homePage/banner1.jpg', 14),
+	(3, 'image/homePage/banner2.jpg', 22),
+	(4, 'image/homePage/banner3.jpg', 25);
 /*!40000 ALTER TABLE `banner` ENABLE KEYS */;
 
 -- 导出  表 fhgc.user 结构
@@ -65,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`id`, `password`, `username`, `administrators`) VALUES
 	(1, 123456, 'admin', 1),
-	(2, 123456, 'tom', 0),
+	(2, 888888, 'tom', 0),
 	(3, 123456, 'jerry', 0),
 	(4, 123456, 'miki', 0),
 	(5, 123456, 'jse', 0),
