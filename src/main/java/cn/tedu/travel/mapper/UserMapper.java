@@ -1,11 +1,15 @@
 package cn.tedu.travel.mapper;
 
+import cn.tedu.travel.model.Banner;
 import cn.tedu.travel.model.User;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
+import org.springframework.stereotype.Repository;
 
-public interface UserMapper {
+@Repository
+public interface UserMapper extends BaseMapper<User> {
     //登录验证
     @Select("select id from user where username=#{username} and password=#{password}")
     Integer loginId(String username, String password);
@@ -15,9 +19,6 @@ public interface UserMapper {
     //判断用户名是否重复
     @Select("select id from user where username=#{username}")
     Integer checkByUsername(String username);
-    //用户注册成功保存信息
-    @Insert("insert into user values(null,#{username},#{password},#{phonenumber})")
-    Integer insertUser(User user);
     //检查用户手机号是否已注册
     @Select("select id from user where phonenumber=#{phonenumber}")
     Integer checkPhoneNumber(String phoneNumber);

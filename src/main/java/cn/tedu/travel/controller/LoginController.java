@@ -52,7 +52,7 @@ public class LoginController {
     //获取短信
     @PostMapping("getCode")
     @ResponseBody
-    public void getCode(HttpServletRequest request,HttpSession session) {
+    public String getCode(HttpServletRequest request,HttpSession session) {
         try {//获取电话号码
             String phone = request.getParameter("phone");
             //短信验证码
@@ -73,9 +73,11 @@ public class LoginController {
             //将验证码存到session中,同时存入创建时间
             session = request.getSession();
             SessionUtil.save(session, phone, code, 5 * 60);
+            return result;
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return null;
     }
     //提交注册判定
     @PostMapping("checkcode")
@@ -94,8 +96,8 @@ public class LoginController {
         if (result.equals("未生成验证码")||result.equals("验证码错误")||result.equals("验证码已过期")) {
             return result;
         }else {
-            User user=new User().setUsername(username).setPassword(password).setPhonenumber(phonenumber);
-            mapper.insertUser(user);
+            User user=new User().setUsername(username).setPassword(password).setPhonenumber(phonenumber).setAdministrators(0);
+            mapper.insert(user);
             return "success";
         }
     }

@@ -84,20 +84,34 @@
         })
     })
     // 获取短信
-    $("#getcode").click(function () {
-        // 发出异步请求
-        $.ajax({
-            type: "post",
-            url: "getCode",
-            data: "phone=" + $("#phone").val()
-        })
+    let preventClickAgain=1;
+    $(function() {
+        if (preventClickAgain === 1) {
+            $("#getcode").click(function () {
+                // 发出异步请求
+                $.ajax({
+                    type: "post",
+                    url: "getCode",
+                    data: "phone=" + $("#phone").val(),
+                    success: function (r) {
+                        let msg = JSON.parse(r);
+                        if (msg.code == 0) {
+                            countdown($("#getcode"));
+                            console.log(preventClickAgain);
+                        } else {
+                            alert(msg.data);
+                        }
+                    }
+                })
+            });
+        }
     });
     //验证码倒计时
-    $(function(){
-        $("#getcode").on("click", function(){
-            countdown(this);
-        })
-    });
+    // $(function(){
+    //     $("#getcode").on("click", function(){
+    //         //countdown(this);
+    //     })
+    // });
     function countdown(obj){
         var that = $(obj);
         var seconds = 60;
@@ -111,7 +125,10 @@
                     that.html(seconds+'秒');
                     if (seconds <= 0) {
                         that.html('获取短信验证码');
-                        resolve(setTimer)
+                        resolve(setTimer);
+                        preventClickAgain=1;
+                    }else{
+                        preventClickAgain=0;
                     }
                 }
                 , 1000)
