@@ -79,4 +79,9 @@ public class ShowController {
         request.getSession().removeAttribute("user");
         return "homePage";
     }
+    @GetMapping("notice.html")
+    public String shownotice(HttpServletRequest request,Map<String, Object> map){
+        request.getSession().removeAttribute("user");
+        return "notice";
+    }
 }
