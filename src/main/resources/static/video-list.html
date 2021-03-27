@@ -9,9 +9,9 @@
     <style>
         div > div > video {
             width: 100%;
-            object-fit: fill;
             background: transparent url('https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/video/1(1).png') 50% 50% no-repeat;
-            background-size: cover;}
+            background-size: cover;
+            object-fit:  none;}
     </style>
 </head>
 <body>
@@ -21,7 +21,6 @@
             <source src="https://xislandtravel.oss-cn-beijing.aliyuncs.com/yrfhzsp.mp4" type="video/mp4">
         </video>
     </div><!--宣传视频-->
-
     <div class="linkList wapper" style="margin-top: 0">
         <a href="index.html">首页</a>
         <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point1.png" alt="">
@@ -32,7 +31,8 @@
     <div id="video-list" class="wapper">
         <div class="video-list-item">
             <div>
-                <video poster="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/video/1.png" controls>
+                <video poster="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/video/1.png" controls
+                       height="400">
                     <source src="https://xislandtravel.oss-cn-beijing.aliyuncs.com/bcyc.mp4" type="video/mp4">
                 </video>
             </div>
@@ -40,10 +40,10 @@
             <p>2015《边城》·凤凰全球摄影擂台赛”
                 创世界摄影史上最高奖金纪录的100万元巨奖</p>
         </div><!--第一个视频-->
-
         <div class="video-list-item">
             <div>
-                <video poster="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/video/2.png" controls>
+                <video poster="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/video/2.png" controls
+                       height="400">
                     <source src="https://xislandtravel.oss-cn-beijing.aliyuncs.com/%E3%80%8A%E7%83%9F%E9%9B%A8%E5%87%A4%E5%87%B0%E3%80%8Bmv.mp4" type="video/mp4">
                 </video>
             </div>
@@ -51,10 +51,10 @@
             <p>青石绵延成古巷 流向童谣收藏的远方
                 岁月斑驳成砖墙 圈住星斗守望的边疆</p>
         </div><!--第二个视频-->
-
         <div class="video-list-item">
             <div>
-                <video poster="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/video/3.png" controls>
+                <video poster="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/video/3.png" controls
+                       height="400">
                     <source src="https://xislandtravel.oss-cn-beijing.aliyuncs.com/%E8%BE%B9%E5%9F%8E%E5%A4%A7%E5%9E%8B%E6%A3%AE%E6%9E%97%E5%AE%9E%E6%99%AF%E6%BC%94%E5%87%BA.mp4" type="video/mp4">
                 </video>
             </div>
@@ -62,10 +62,10 @@
             <p>
                 总投资1.8亿，可同时容纳2600人观演，展示了502套精致的民族服装和3769件苗族精美银饰。演出以沈从文名著为蓝本，讲述了爷爷、翠翠、天保、傩送之间催人泪下的情义和守望。演出分为身世、初萌、端午、灵犀、魂诉、渡缘六幕。</p>
         </div><!--第三个视频-->
-
         <div class="video-list-item">
             <div>
-                <video poster="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/video/4.png" controls>
+                <video poster="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/video/4.png" controls
+                       height="400">
                     <source src="https://xislandtravel.oss-cn-beijing.aliyuncs.com/cc.mp4" type="video/mp4">
                 </video>
             </div>
@@ -78,7 +78,7 @@
 </div>
 </body>
 </html>
-<script >
+<script>
     (function (doc, win) {
         var docEl = doc.documentElement,
             resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',

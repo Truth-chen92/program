@@ -15,8 +15,7 @@
         // 轮播图上一张
         prevTo:(that)=>{
             if(publicityData.moving){
-                return false
-            }
+                return false}
             clearInterval(publicityData.interval);
             publicityData.moving = true;
             let nowLeft = Number($(that).parent().attr("data-left"))*10000; //当前left
@@ -58,21 +57,22 @@
         },
     }</script>
     <style>
-        .jin{margin: 15% 0 0 95%;position: fixed;}
+        .jin>a>img{-webkit-transition: -webkit-transform 1s,height 1s,width 1s;}
+        .jin>a>img:hover{-webkit-transform: rotateY(-360deg);}
+        .jin{margin: 25% 0 0 96%;position: fixed;}
         video {
             width: 100%;
             object-fit: fill;
             background: transparent url('https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/video/1(1).png') 50% 50% no-repeat;
             background-size: cover;}
-        .shiping{width: 50%;margin-top: 100px;}
+        .shiping{width: 50%;margin-top: 10px;}
     </style>
 
 </head>
 <body>
-<div class="jin"><a href="publicity-2.html"><img src="image/img/jin.png" alt=""></a></div>
+<div class="jin"><a href="publicity-2.html"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point1.png" alt=""></a></div>
 <div id="publicity-box">
-
-    <div class="linkList wapper" style="margin-top: 100px">
+    <div class="linkList wapper" style="margin-top: 0">
         <a href="index.html">首页</a>
         <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point1.png" alt="">
         古城景点
@@ -93,7 +93,8 @@
                 <li class="publicity-li publicity-li-active">
                     <div class="publicity-li-box">
                         <div class="shiping">
-                            <video poster="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/publicity/3.png" controls>
+                            <video poster="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/publicity/3.png" controls
+                            height="400">
                                 <source src="https://xislandtravel.oss-cn-beijing.aliyuncs.com/nfcc.mp4" type="video/mp4">
                             </video>
                         </div>
@@ -101,7 +102,7 @@
                             <h3>南方长城景区</h3>
                             <div>一盘下不完的棋，在等您</div>
                             <p>
-                                南长城又称苗疆边墙。它是明王朝和清王朝的统治者为了巩固自己的统治，对南方少数民族,主要是对苗族镇压的产物。为了持续统治，持续镇压，想出了这筑墙屯兵，分割统治的毒计。把湘西苗疆南北隔离起来，规定了“苗不出境，汉不入峒”；禁止苗汉贸易和文化交往。这是一条由汛堡、碉楼、屯卡、哨台、炮台、关门、关厢组成的关卡，以此孤立和征服苗族。
+                                南长城又称苗疆边墙。它是明王朝和清王朝的统治者为了巩固自己的统治，对南方少数民族,主要是对苗族镇压的产物。为了持续统治，持续镇压，想出了这筑墙屯兵，分割统治的毒计。把湘西苗疆南北隔离起来，规定了“苗不出境，汉不入峒”；禁止苗汉贸易和文化交往。
                                 她蜿蜒在湘西凤凰崇山峻岭之间，见证了数百年民族纷争和和美历史，她伴随着中国围棋的复兴与崛起。
                                 登上长城，站在世界最大、最重、最贵的围棋盘上，已经看不到往日战场的硝烟，映入眼帘的是一盘“棋行大地，天下凤凰”的恢弘名局。
                                 蒙住耳朵，您蒙不住的是古老边墙对您心灵撞击而产生的震撼......

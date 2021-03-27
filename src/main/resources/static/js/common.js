@@ -110,6 +110,7 @@ const publicityData={
                 clearInterval(publicityData.interval);
             }
         },1)
+
     },
     // 轮播图下一张
     nextTo:(that)=>{
@@ -135,6 +136,13 @@ const publicityData={
             }
         },1)
     },
+    //凤凰九景taber切换
+    changeNav:(index,that)=>{
+        $(".publicity-nav li").removeClass("publicity-nav-active");
+        $(that).addClass("publicity-nav-active");
+        $(".publicity-item").eq(0).find('.publicity-li').removeClass("publicity-li-active");
+        $(".publicity-item").eq(0).find('.publicity-li').eq(index).addClass("publicity-li-active");
+    }
 }
 
 // 吃喝玩乐事件
