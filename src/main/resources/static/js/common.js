@@ -194,11 +194,6 @@ const aboutData={
             aboutData.moving = false;
         },1000)
     },
-    showTip:(that)=>{
-        $(that).next(".celebrity-tip").css("top",0)
-    },
-    hideTip:(that)=>{
-        $(that).css("top","100%")
-    }
+
 }
 
