@@ -1,4 +1,4 @@
-<html lang="en" style="font-size: 50.3125px;">
+<html lang="en" style="font-size: 50.3125px;" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>攻略详情</title>
@@ -73,6 +73,12 @@
                         <li><a href="showcontactus">联系方式</a></li>
                         <li><a href="showcontactus">人才招聘</a></li>
                     </ul>
+                </li>
+                <li th:if="${user}!=null" class="dropdown">
+                    <a href="/showpersonal" class="dropdown-toggle dropdown-toggle6">个人中心</a>
+                </li>
+                <li th:if="${user}==null" class="dropdown">
+                    <a href="/showlogin" class="dropdown-toggle dropdown-toggle6">登录</a>
                 </li>
             </ul>
         </div><!-- /.container-fluid -->
@@ -184,6 +190,35 @@
         <p style="font-weight: 400;">
             奇梁洞位于凤凰古城以北的奇梁桥乡，吉凤公路左侧。该景点集山、河、峡谷、险滩、绝壁、飞瀑、丛林、田园、村落于一洞，以“奇、秀、幽、峻”四大特色著称，有“奇梁归来不看洞”之说。洞口宛如巨龙张口，高50余米，宽20多米，一条清溪穿溶洞而过，洞长6000余米，洞内有“古战场”、“画廊”、“天堂”、“龙宫”、“阴阳河”五大景区。</p>
         <p style="font-weight: 400;"><strong>地址：湖南省湘西土家族苗族自治州凤凰县凤凰古城</strong></p></div>
+</div>
+<div id="footer">
+    <div id="footer-box">
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/stone.png" alt="">
+        <div class="footer">
+            <div class="footer-item">
+                <a href="showcontactus">联系我们</a>
+                <div class="contact"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/phone.png"
+                                          alt="" style="margin-left: 1.74rem"><span>18030255623</span></div>
+                <span>湖南省湘西土家族苗族自治州</span>
+                <a href="https://weibo.com/hnphoenix?from=myfollow_all" target="_blank"><img
+                        src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/weibo.png" alt=""
+                        style="margin-left: 1.82rem"></a>
+                <a href="https://mp.weixin.qq.com/mp/homepage?__biz=MzA4OTQ2OTIxOQ==&amp;hid=1&amp;sn=6e87d4f93f4b065ddac1548451c6fba3"
+                   target="_blank"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/wechat.png"
+                                        alt=""></a>
+            </div>
+            <div class="line"></div>
+            <div class="footer-item2">
+
+                <a href="http://www.hunanhld.cn/" class="website-link" target="_blank">张家界黄龙洞景区</a>
+                <a href="http://qiyunshan.sunriver.cn/" target="_blank">齐云山生态文化旅游区</a>
+            </div>
+            <div class="footer-item3">
+                <span>凤凰古城官网</span>
+                <a href="http://beian.miit.gov.cn" target="_blank" style="display: inline-block;">湘ICP备20015967号-1</a>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 <script src="./js/nav.js"></script>

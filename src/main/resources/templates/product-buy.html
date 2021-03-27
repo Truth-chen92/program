@@ -1,0 +1,230 @@
+<html lang="en" style="font-size: 50.3125px;" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>乐在凤凰</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/rem.js"></script>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/product.css">
+    <script src="js/template.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/api.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap3/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap3/font-awesome-4.7.0/css/font-awesome.css"/>
+    <link rel="stylesheet" type="text/css" href="bootstrap3/css/main.css"/><!--主要css样式-->
+</head>
+<body>
+<header id="header">
+    <!--导航条开始-->
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <!-- 分类标题列表 -->
+            <ul class="nav navbar-nav">
+                <li><a href="showhome">首页</a></li>
+                <li class="dropdown">
+                    <a href="video-list.html" class="dropdown-toggle dropdown-toggle0">古城景点</a>
+                    <ul class="dropdown-menu dropdown-menu0">
+                        <li><a href="video-list.html">宣传视频</a></li>
+                        <li><a href="publicity-0.html">凤凰九景</a></li>
+                        <li><a href="publicity-1.html">南方长城</a></li>
+                        <li><a href="publicity-2.html">奇梁洞</a></li>
+                        <li><a href="publicity-3.html">边城演艺</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="showticket" class="dropdown-toggle dropdown-toggle1">导览购票</a>
+                    <ul class="dropdown-menu dropdown-menu1">
+                        <li><a href="showticket">开放时间</a></li>
+                        <li><a href="showticket">票务服务</a></li>
+                        <li><a href="showticket">游览须知</a></li>
+                        <li><a href="showticket">电子地图</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="product.html" class="dropdown-toggle dropdown-toggle2">吃喝玩乐</a>
+                    <ul class="dropdown-menu dropdown-menu2">
+                        <li><a href="product-travel.html">玩在凤凰</a></li>
+                        <li><a href="product-live.html">住在凤凰</a></li>
+                        <li><a href="product-eat.html">吃在凤凰</a></li>
+                        <li><a href="product-buy.html">购在凤凰</a></li>
+
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="showabout" class="dropdown-toggle dropdown-toggle3">古城概述</a>
+                    <ul class="dropdown-menu dropdown-menu3">
+                        <li><a href="showabout">古城介绍</a></li>
+                        <li><a href="showabout">古城名人</a></li>
+                        <li><a href="showabout">古城风俗</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="showinformation" class="dropdown-toggle dropdown-toggle4">景点资讯</a>
+                    <ul class="dropdown-menu dropdown-menu4">
+                        <li><a href="showinformation">景点公告</a></li>
+                        <li><a href="showinformation">景点动态</a></li>
+                        <li><a href="showinformation">景点活动</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="showcontactus" class="dropdown-toggle dropdown-toggle5">联系我们</a>
+                    <ul class="dropdown-menu dropdown-menu5">
+                        <li><a href="showcontactus">集团介绍</a></li>
+                        <li><a href="showcontactus">商务合作</a></li>
+                        <li><a href="showcontactus">联系方式</a></li>
+                        <li><a href="showcontactus">人才招聘</a></li>
+                    </ul>
+                </li>
+                <li th:if="${user}!=null" class="dropdown">
+                    <a href="/showpersonal" class="dropdown-toggle dropdown-toggle6">个人中心</a>
+                </li>
+                <li th:if="${user}==null" class="dropdown">
+                    <a href="/showlogin" class="dropdown-toggle dropdown-toggle6">登录</a>
+                </li>
+            </ul>
+        </div><!-- /.container-fluid -->
+    </nav>
+    <!--导航条结束-->
+</header>
+
+<div class="linkList wapper linkList2">
+    <a href="index.html">首页</a>
+    <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point1.png" alt="">
+    <a href="product.html">吃喝玩乐</a>
+    <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point1.png" alt="">
+    凤凰文创
+</div>
+<div class="wapper" id="entertain-box">
+
+    <div class="entertain-item">
+        <div class="entertain-img"
+             style="background-image:url(https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/tiaohua.png);"></div>
+        <h3>苗族挑花</h3>
+        <div class="entertain-dricp">
+            <span>中国古代以苗族为首的“百苗”巫文化，泛指今日长江以南的少数民族文化。其中苗、瑶、侗民族最有代表性，苗族服饰上凡几何纹样，都有巫文化不同符号标志。</span></div>
+        <!-- <div><a href="" class="entertain-btn">去购买<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point right 1.png" alt=""></a></div> -->
+    </div>
+
+    <div class="entertain-item">
+        <div class="entertain-img"
+             style="background-image:url(https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/laran.png);"></div>
+        <h3>蜡染</h3>
+        <div class="entertain-dricp"><span>苗族蜡染有着悠久的历史，其时间甚至可追溯到上古时代，艺术成品在整个染织美术界都享有盛名。古时候人们把蜡染称为蜡缬，简单的说就是用蜡把花纹点绘在麻、丝、棉、毛等织物上，然后放入染料缸中浸染，有蜡的地方染不上颜色，除去蜡即现出美丽的花纹，这就是蜡染。</span>
+        </div>
+        <!-- <div><a href="" class="entertain-btn">去购买<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point right 1.png" alt=""></a></div> -->
+    </div>
+
+    <div class="entertain-item">
+        <div class="entertain-img"
+             style="background-image:url(https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/yinshi.png);"></div>
+        <h3>苗族银饰</h3>
+        <div class="entertain-dricp"><span>银饰是湘西苗族妇女喜爱的传统装饰品，至今仍十分讲究佩戴。苗族银饰大致分为头饰、项圈、手饰、挂饰等。头饰有两种，一种是银帽(又称接龙帽)，上有帽花、龙凤、关刀、梳子、簪子、髻子花等装饰。一种是在头帕前后有银帽沿装饰，上用银丝悬挂树叶、铃铛、果子、银花等多种银饰。</span>
+        </div>
+        <!-- <div><a href="" class="entertain-btn">去购买<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point right 1.png" alt=""></a></div> -->
+    </div>
+
+    <div class="entertain-item">
+        <div class="entertain-img"
+             style="background-image:url(https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/zhusha.png);"></div>
+        <h3>凤凰朱砂</h3>
+        <div class="entertain-dricp"><span>凤凰在汉代、三国、隋朝时属辰溪县，那时的辰溪县内只有凤凰产朱砂。凤凰的朱砂矿发现史有一千多年，开采有四百多年，自古以来远销国内外。目前在茶田、茨岩一带有汞矿开采。</span>
+        </div>
+        <!-- <div><a href="" class="entertain-btn">去购买<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point right 1.png" alt=""></a></div> -->
+    </div>
+
+    <div class="entertain-item">
+        <div class="entertain-img"
+             style="background-image:url(https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/huadai.png);"></div>
+        <h3>苗族花带</h3>
+        <div class="entertain-dricp"><span>湘西心灵手巧的苗家姑娘不仅会绣花，会纺纱织布，还能编织各种图案的花带。传说古时候，苗岭山区的人遭受毒蛇的伤害。凤凰有个姑娘见蛇遇同类便迅速离开。她仿照蛇身花纹编织一块约1寸宽的花带缠在身上，遇毒蛇就取下花带对蛇摆弄，毒蛇见了以为是同类，果然迅速离开。</span>
+        </div>
+        <!-- <div><a href="" class="entertain-btn">去购买<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point right 1.png" alt=""></a></div> -->
+    </div>
+
+    <div class="entertain-item">
+        <div class="entertain-img"
+             style="background-image:url(https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/entertain6.png);"></div>
+        <h3>湘西巫傩图腾</h3>
+        <div class="entertain-dricp"><span>苗族银饰“以银为结，以银为彩，以银为荣，以银为贵。”苗族人一生与银结缘。苗族银饰艺术萌芽于巫傩图腾活动之中。苗族先民相信，一切锋利之物皆能驱邪，银饰是驱邪之上品，还可以消灾祛病。</span>
+        </div>
+        <!-- <div><a href="" class="entertain-btn">去购买<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point right 1.png" alt=""></a></div> -->
+    </div>
+
+</div>
+<div id="footer">
+    <div id="footer-box">
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/stone.png" alt="">
+        <div class="footer">
+            <div class="footer-item">
+                <a href="showcontactus">联系我们</a>
+                <div class="contact"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/phone.png"
+                                          alt="" style="margin-left: 1.74rem"><span>18030255623</span></div>
+                <span>湖南省湘西土家族苗族自治州</span>
+                <a href="https://weibo.com/hnphoenix?from=myfollow_all" target="_blank"><img
+                        src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/weibo.png" alt=""
+                        style="margin-left: 1.82rem"></a>
+                <a href="https://mp.weixin.qq.com/mp/homepage?__biz=MzA4OTQ2OTIxOQ==&amp;hid=1&amp;sn=6e87d4f93f4b065ddac1548451c6fba3"
+                   target="_blank"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/wechat.png"
+                                        alt=""></a>
+            </div>
+            <div class="line"></div>
+            <div class="footer-item2">
+
+                <a href="http://www.hunanhld.cn/" class="website-link" target="_blank">张家界黄龙洞景区</a>
+                <a href="http://qiyunshan.sunriver.cn/" target="_blank">齐云山生态文化旅游区</a>
+            </div>
+            <div class="footer-item3">
+                <span>凤凰古城官网</span>
+                <a href="http://beian.miit.gov.cn" target="_blank" style="display: inline-block;">湘ICP备20015967号-1</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/html" id="entertainBox">
+    <% for(var i = 0;i < entertainList.length;i++){ %>
+    <div class="entertain-item">
+        <div class="entertain-img" style="background-image:url(<%= entertainList[i].img %>);"></div>
+        <h3><%= entertainList[i].title %></h3>
+        <div class="entertain-dricp"><span><%= entertainList[i].dricp %></span></div>
+        <!-- <div><a href="" class="entertain-btn">去购买<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point right 1.png" alt=""></a></div> -->
+    </div>
+    <% } %>
+</script>
+<script>
+    $(function () {
+        let entertainList = [{
+            title: '苗族挑花',
+            img: 'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/tiaohua.png',
+            dricp: '中国古代以苗族为首的“百苗”巫文化，泛指今日长江以南的少数民族文化。其中苗、瑶、侗民族最有代表性，苗族服饰上凡几何纹样，都有巫文化不同符号标志。'
+        }, {
+            title: '蜡染',
+            img: 'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/laran.png',
+            dricp: '苗族蜡染有着悠久的历史，其时间甚至可追溯到上古时代，艺术成品在整个染织美术界都享有盛名。古时候人们把蜡染称为蜡缬，简单的说就是用蜡把花纹点绘在麻、丝、棉、毛等织物上，然后放入染料缸中浸染，有蜡的地方染不上颜色，除去蜡即现出美丽的花纹，这就是蜡染。',
+        }, {
+            title: '苗族银饰',
+            img: 'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/yinshi.png',
+            dricp: '银饰是湘西苗族妇女喜爱的传统装饰品，至今仍十分讲究佩戴。苗族银饰大致分为头饰、项圈、手饰、挂饰等。头饰有两种，一种是银帽(又称接龙帽)，上有帽花、龙凤、关刀、梳子、簪子、髻子花等装饰。一种是在头帕前后有银帽沿装饰，上用银丝悬挂树叶、铃铛、果子、银花等多种银饰。',
+        }, {
+            title: '凤凰朱砂',
+            img: 'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/zhusha.png',
+            dricp: '凤凰在汉代、三国、隋朝时属辰溪县，那时的辰溪县内只有凤凰产朱砂。凤凰的朱砂矿发现史有一千多年，开采有四百多年，自古以来远销国内外。目前在茶田、茨岩一带有汞矿开采。'
+        }, {
+            title: '苗族花带',
+            img: 'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/huadai.png',
+            dricp: '湘西心灵手巧的苗家姑娘不仅会绣花，会纺纱织布，还能编织各种图案的花带。传说古时候，苗岭山区的人遭受毒蛇的伤害。凤凰有个姑娘见蛇遇同类便迅速离开。她仿照蛇身花纹编织一块约1寸宽的花带缠在身上，遇毒蛇就取下花带对蛇摆弄，毒蛇见了以为是同类，果然迅速离开。',
+        }, {
+            title: '湘西巫傩图腾',
+            img: 'https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/entertain6.png',
+            dricp: '苗族银饰“以银为结，以银为彩，以银为荣，以银为贵。”苗族人一生与银结缘。苗族银饰艺术萌芽于巫傩图腾活动之中。苗族先民相信，一切锋利之物皆能驱邪，银饰是驱邪之上品，还可以消灾祛病。',
+        }]
+        $("#entertain-box").html(template($("#entertainBox").html(), {entertainList: entertainList}));
+    })
+
+</script>
+</body>
+<script src="./js/nav.js"></script>
+</html>

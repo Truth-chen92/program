@@ -1,0 +1,146 @@
+<html lang="en" style="font-size: 50.3125px;" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>攻略详情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/about.css">
+    <script src="./js/rem.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap3/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap3/font-awesome-4.7.0/css/font-awesome.css"/>
+    <link rel="stylesheet" type="text/css" href="bootstrap3/css/main.css"/><!--主要css样式-->
+</head>
+<body>
+<header id="header">
+    <!--导航条开始-->
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <!-- 分类标题列表 -->
+            <ul class="nav navbar-nav">
+                <li><a href="showhome">首页</a></li>
+                <li class="dropdown">
+                    <a href="video-list.html" class="dropdown-toggle dropdown-toggle0">古城景点</a>
+                    <ul class="dropdown-menu dropdown-menu0">
+                        <li><a href="video-list.html">宣传视频</a></li>
+                        <li><a href="publicity-0.html">凤凰九景</a></li>
+                        <li><a href="publicity-1.html">南方长城</a></li>
+                        <li><a href="publicity-2.html">奇梁洞</a></li>
+                        <li><a href="publicity-3.html">边城演艺</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="showticket" class="dropdown-toggle dropdown-toggle1">导览购票</a>
+                    <ul class="dropdown-menu dropdown-menu1">
+                        <li><a href="showticket">开放时间</a></li>
+                        <li><a href="showticket">票务服务</a></li>
+                        <li><a href="showticket">游览须知</a></li>
+                        <li><a href="showticket">电子地图</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="product.html" class="dropdown-toggle dropdown-toggle2">吃喝玩乐</a>
+                    <ul class="dropdown-menu dropdown-menu2">
+                        <li><a href="product-travel.html">玩在凤凰</a></li>
+                        <li><a href="product-live.html">住在凤凰</a></li>
+                        <li><a href="product-eat.html">吃在凤凰</a></li>
+                        <li><a href="product-buy.html">购在凤凰</a></li>
+
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="showabout" class="dropdown-toggle dropdown-toggle3">古城概述</a>
+                    <ul class="dropdown-menu dropdown-menu3">
+                        <li><a href="showabout">古城介绍</a></li>
+                        <li><a href="showabout">古城名人</a></li>
+                        <li><a href="showabout">古城风俗</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="showinformation" class="dropdown-toggle dropdown-toggle4">景点资讯</a>
+                    <ul class="dropdown-menu dropdown-menu4">
+                        <li><a href="showinformation">景点公告</a></li>
+                        <li><a href="showinformation">景点动态</a></li>
+                        <li><a href="showinformation">景点活动</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="showcontactus" class="dropdown-toggle dropdown-toggle5">联系我们</a>
+                    <ul class="dropdown-menu dropdown-menu5">
+                        <li><a href="showcontactus">集团介绍</a></li>
+                        <li><a href="showcontactus">商务合作</a></li>
+                        <li><a href="showcontactus">联系方式</a></li>
+                        <li><a href="showcontactus">人才招聘</a></li>
+                    </ul>
+                </li>
+                <li th:if="${user}!=null" class="dropdown">
+                    <a href="/showpersonal" class="dropdown-toggle dropdown-toggle6">个人中心</a>
+                </li>
+                <li th:if="${user}==null" class="dropdown">
+                    <a href="/showlogin" class="dropdown-toggle dropdown-toggle6">登录</a>
+                </li>
+            </ul>
+        </div><!-- /.container-fluid -->
+    </nav>
+    <!--导航条结束-->
+</header>
+<div class="wapper" id="custom-box">
+    <div class="linkList wapper linkList2">
+        <a href="index.html">首页</a>
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point1.png" alt="">
+        <a href="product.html">吃喝玩乐</a>
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point1.png" alt="">
+        <a href="product-travel.html">玩在凤凰</a>
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point1.png" alt="">
+        攻略详情
+    </div>
+    <div id="custom-box-content" style="font-size: .16rem"><p><strong>&nbsp;</strong></p>
+        <p><strong>边城森林剧场实景呈现文学名著</strong></p>
+        <p><strong>&nbsp;&nbsp;&nbsp;&nbsp;不落幕的《边城》</strong></p>
+        <p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;边城森林剧场实景演绎文学巨匠的经典之作</strong></p>
+        <p><strong>&nbsp;</strong></p>
+        <p>
+            《边城》是在凤凰古城上演的，世界上第一部由文学名著改编的大型森林实景演出。边城剧场按照湘西建筑风格设计建造，剧场中保持原木树型的108根树桩和152个神态各异的傩面完美表现了民族建筑艺术风格。演出舞台总面积8860平方米，运用了
+            6300米湘西蜡染，展示了502套精致的民族服装和3769件苗族精美银饰。边城剧场可同时容纳2600人观演，演出总投资1.8亿元。&nbsp; &nbsp;</p>
+        <p>《边城》实景演出以沈从文名著为蓝本，讲述了爷爷、翠翠、天保、傩送之间催人泪下的情义和守望。演出分为身世、初萌、端午、灵犀、魂诉、渡缘六幕。&nbsp; &nbsp;在独特的森林剧场，我们用柔美煽情的民族舞蹈，为您演绎风情万种的神秘湘西；我们用荡气回肠的本土音乐，为您吟唱如泣如诉的边城往事。在这台演出中，你能看得见湘西的山水，听得到湘西的声音，也能感受到湘西的女人和汉子，还会使你泛起淡淡的乡愁。</p>
+        <p>&nbsp;</p>
+        <p>
+            而我们看到的版本是在原基础上改编过的，演出分为身世、初萌、端午、灵犀、魂诉、渡缘六幕。每一幕的场景，灯光，舞台调度都是不一样的。整个舞台按照湘西建筑风格设计建造，都是对凤凰古城的真实还原。演员们用柔美煽情的民族舞蹈，为我们演绎了风情万种的神秘湘西；用荡气回肠的本土音乐，为我们吟唱如泣如诉的边城往事。在这台演出中，我们仿佛看得见湘西，听得到湘西的声音。傩送走了，留下一把红伞，翠翠看着红伞，想到大佬和爷爷的离去，傩送的离开，看着一去不回的时光，从前的欢声笑语没有了。<img
+                title="2448901566355977.jpg" src="https://image.xisland.cn/xmall/editor/2448901566355977.jpg"
+                alt="20190619-IMG_9418.JPG"></p>
+        <p>等一城烟雨只为你，渡一世情缘只和你。</p>
+        <p>翠翠等你在凤凰烟雨间…《边城》谢幕了。演员们离去，观众离去，而这个故事，还在继续着。</p></div>
+</div>
+<div id="footer">
+    <div id="footer-box">
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/stone.png" alt="">
+        <div class="footer">
+            <div class="footer-item">
+                <a href="showcontactus">联系我们</a>
+                <div class="contact"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/phone.png"
+                                          alt="" style="margin-left: 1.74rem"><span>18030255623</span></div>
+                <span>湖南省湘西土家族苗族自治州</span>
+                <a href="https://weibo.com/hnphoenix?from=myfollow_all" target="_blank"><img
+                        src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/weibo.png" alt=""
+                        style="margin-left: 1.82rem"></a>
+                <a href="https://mp.weixin.qq.com/mp/homepage?__biz=MzA4OTQ2OTIxOQ==&amp;hid=1&amp;sn=6e87d4f93f4b065ddac1548451c6fba3"
+                   target="_blank"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/wechat.png"
+                                        alt=""></a>
+            </div>
+            <div class="line"></div>
+            <div class="footer-item2">
+
+                <a href="http://www.hunanhld.cn/" class="website-link" target="_blank">张家界黄龙洞景区</a>
+                <a href="http://qiyunshan.sunriver.cn/" target="_blank">齐云山生态文化旅游区</a>
+            </div>
+            <div class="footer-item3">
+                <span>凤凰古城官网</span>
+                <a href="http://beian.miit.gov.cn" target="_blank" style="display: inline-block;">湘ICP备20015967号-1</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="./js/nav.js"></script>
+</html>

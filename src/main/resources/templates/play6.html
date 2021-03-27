@@ -1,0 +1,168 @@
+<html lang="en" style="font-size: 50.3125px;" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>攻略详情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/about.css">
+    <script src="./js/rem.js"></script>
+
+    <script src="./js/jquery.min.js"></script>
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap3/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap3/font-awesome-4.7.0/css/font-awesome.css"/>
+    <link rel="stylesheet" type="text/css" href="bootstrap3/css/main.css"/><!--主要css样式-->
+</head>
+<body>
+<header id="header">
+    <!--导航条开始-->
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <!-- 分类标题列表 -->
+            <ul class="nav navbar-nav">
+                <li><a href="showhome">首页</a></li>
+                <li class="dropdown">
+                    <a href="video-list.html" class="dropdown-toggle dropdown-toggle0">古城景点</a>
+                    <ul class="dropdown-menu dropdown-menu0">
+                        <li><a href="video-list.html">宣传视频</a></li>
+                        <li><a href="publicity-0.html">凤凰九景</a></li>
+                        <li><a href="publicity-1.html">南方长城</a></li>
+                        <li><a href="publicity-2.html">奇梁洞</a></li>
+                        <li><a href="publicity-3.html">边城演艺</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="showticket" class="dropdown-toggle dropdown-toggle1">导览购票</a>
+                    <ul class="dropdown-menu dropdown-menu1">
+                        <li><a href="showticket">开放时间</a></li>
+                        <li><a href="showticket">票务服务</a></li>
+                        <li><a href="showticket">游览须知</a></li>
+                        <li><a href="showticket">电子地图</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="product.html" class="dropdown-toggle dropdown-toggle2">吃喝玩乐</a>
+                    <ul class="dropdown-menu dropdown-menu2">
+                        <li><a href="product-travel.html">玩在凤凰</a></li>
+                        <li><a href="product-live.html">住在凤凰</a></li>
+                        <li><a href="product-eat.html">吃在凤凰</a></li>
+                        <li><a href="product-buy.html">购在凤凰</a></li>
+
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="showabout" class="dropdown-toggle dropdown-toggle3">古城概述</a>
+                    <ul class="dropdown-menu dropdown-menu3">
+                        <li><a href="showabout">古城介绍</a></li>
+                        <li><a href="showabout">古城名人</a></li>
+                        <li><a href="showabout">古城风俗</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="showinformation" class="dropdown-toggle dropdown-toggle4">景点资讯</a>
+                    <ul class="dropdown-menu dropdown-menu4">
+                        <li><a href="showinformation">景点公告</a></li>
+                        <li><a href="showinformation">景点动态</a></li>
+                        <li><a href="showinformation">景点活动</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="showcontactus" class="dropdown-toggle dropdown-toggle5">联系我们</a>
+                    <ul class="dropdown-menu dropdown-menu5">
+                        <li><a href="showcontactus">集团介绍</a></li>
+                        <li><a href="showcontactus">商务合作</a></li>
+                        <li><a href="showcontactus">联系方式</a></li>
+                        <li><a href="showcontactus">人才招聘</a></li>
+                    </ul>
+                </li>
+                <li th:if="${user}!=null" class="dropdown">
+                    <a href="/showpersonal" class="dropdown-toggle dropdown-toggle6">个人中心</a>
+                </li>
+                <li th:if="${user}==null" class="dropdown">
+                    <a href="/showlogin" class="dropdown-toggle dropdown-toggle6">登录</a>
+                </li>
+            </ul>
+        </div><!-- /.container-fluid -->
+    </nav>
+    <!--导航条结束-->
+</header>
+<div class="wapper" id="custom-box">
+    <div class="linkList wapper linkList2">
+        <a href="index.html">首页</a>
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point1.png" alt="">
+        <a href="product.html">吃喝玩乐</a>
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point1.png" alt="">
+        <a href="product-travel.html">玩在凤凰</a>
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point1.png" alt="">
+        攻略详情
+    </div>
+    <div id="custom-box-content" style="font-size: .16rem"><p><strong>凤凰古城|请接下这波凤凰特色美食安利</strong></p>
+        <p>&nbsp;</p>
+        <p><strong>&nbsp;“一囗血粑鸭唇齿留香时，最想念的是凤凰和你”</strong></p>
+        <p>&nbsp;</p>
+        <p><strong>血粑鸭：</strong>这是凤凰最有名的特色菜，几乎每家餐馆都有。既有鸭肉的鲜美味浓，又有血粑的清香糯柔。吃在嘴里，让人食欲大增，非常有地方特色。味香浓血粑鸭可以在当地的菜馆吃，也可以在特产店买真空包装带走。
+        </p>
+        <p><strong>&nbsp;</strong></p>
+        <p>&nbsp;</p>
+        <p><img title="89878e1561531111.jpg" src="https://image.xisland.cn/xmall/editor/89878e1561531111.jpg"
+                alt="微信图片_20190626143558.jpg"></p>
+        <p><strong>&nbsp;</strong></p>
+        <p><strong>米豆腐：</strong>在夏天，吃米豆腐的时候会从盛着大块冰陀的木桶里捞上一碗色泽如玉的米豆腐，浇上红红的辣椒、青绿的葱花、白花花的蒜泥，爽脆的榨菜丁，酸溜溜的陈醋，黑黝黝的酱油。要是在天气较冷或不太热的时候，你可以吃上在沸水中烫热温好的米豆腐。热气腾腾的米豆腐上面，衬着各色点缀，色香味俱全。
+        </p>
+        <p><strong>&nbsp;</strong></p>
+        <p><img title="d9a11a1561531096.jpg" src="https://image.xisland.cn/xmall/editor/d9a11a1561531096.jpg"
+                alt="微信图片_20190626143804.jpg"></p>
+        <p><strong>&nbsp;</strong></p>
+        <p><strong>虾饼：</strong>小摊上一般会摆上一盆活虾，现炸现卖，调好的面糊加上新鲜的虾，放在特制的勺子里，放到油锅里炸，刚出</p>
+        <p>锅的虾饼外酥里嫩，一囗咬下超级满足。</p>
+        <p><strong>&nbsp;</strong></p>
+        <p><img title="5103361561530495.jpg" src="https://image.xisland.cn/xmall/editor/5103361561530495.jpg"
+                alt="微信图片_20190626142804.jpg"></p>
+        <p>&nbsp;</p>
+        <p><strong>社饭：</strong>社饭主要由糯米、野香蒿、腊肉等组成。有凤凰城牌坊的那条街上就能吃到。</p>
+        <p><strong>&nbsp;</strong></p>
+        <p><img title="219eaf1561530434.jpg" src="https://image.xisland.cn/xmall/editor/219eaf1561530434.jpg"
+                alt="微信图片_20190626142701.jpg"></p>
+        <p>&nbsp;</p>
+        <p><strong>木锤酥：</strong>一上一下，“砰、砰”作响，在酥糖上面来回捶，干果被砸得粉碎，油分充分榨出，使用大木锤推平整，冷后进行切块，让你尝个新鲜，有核桃味、花生味。</p>
+        <p><strong>&nbsp;</strong></p>
+        <p><strong><img title="ba25611561530387.jpg" src="https://image.xisland.cn/xmall/editor/ba25611561530387.jpg"
+                        alt="微信图片_20190626142615.jpg"></strong></p>
+        <p><strong>&nbsp;</strong></p>
+        <p><strong>火参果：</strong>路边随便买的火参果，清凉凉的，不甜，值得尝鲜。</p>
+        <p><strong>&nbsp;</strong></p>
+        <p><img title="cdf1b01561530363.jpg" src="https://image.xisland.cn/xmall/editor/cdf1b01561530363.jpg"
+                alt="微信图片_20190626142547.jpg"></p></div>
+</div>
+<div id="footer">
+    <div id="footer-box">
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/stone.png" alt="">
+        <div class="footer">
+            <div class="footer-item">
+                <a href="showcontactus">联系我们</a>
+                <div class="contact"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/phone.png"
+                                          alt="" style="margin-left: 1.74rem"><span>18030255623</span></div>
+                <span>湖南省湘西土家族苗族自治州</span>
+                <a href="https://weibo.com/hnphoenix?from=myfollow_all" target="_blank"><img
+                        src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/weibo.png" alt=""
+                        style="margin-left: 1.82rem"></a>
+                <a href="https://mp.weixin.qq.com/mp/homepage?__biz=MzA4OTQ2OTIxOQ==&amp;hid=1&amp;sn=6e87d4f93f4b065ddac1548451c6fba3"
+                   target="_blank"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/wechat.png"
+                                        alt=""></a>
+            </div>
+            <div class="line"></div>
+            <div class="footer-item2">
+
+                <a href="http://www.hunanhld.cn/" class="website-link" target="_blank">张家界黄龙洞景区</a>
+                <a href="http://qiyunshan.sunriver.cn/" target="_blank">齐云山生态文化旅游区</a>
+            </div>
+            <div class="footer-item3">
+                <span>凤凰古城官网</span>
+                <a href="http://beian.miit.gov.cn" target="_blank" style="display: inline-block;">湘ICP备20015967号-1</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="./js/nav.js"></script>
+</html>

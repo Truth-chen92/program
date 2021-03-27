@@ -1,0 +1,178 @@
+<html lang="en" style="font-size: 50.3125px;" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>攻略详情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/about.css">
+    <script src="./js/rem.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap3/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap3/font-awesome-4.7.0/css/font-awesome.css"/>
+    <link rel="stylesheet" type="text/css" href="bootstrap3/css/main.css"/><!--主要css样式-->
+</head>
+<body>
+<header id="header">
+    <!--导航条开始-->
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <!-- 分类标题列表 -->
+            <ul class="nav navbar-nav">
+                <li><a href="showhome">首页</a></li>
+                <li class="dropdown">
+                    <a href="video-list.html" class="dropdown-toggle dropdown-toggle0">古城景点</a>
+                    <ul class="dropdown-menu dropdown-menu0">
+                        <li><a href="video-list.html">宣传视频</a></li>
+                        <li><a href="publicity-0.html">凤凰九景</a></li>
+                        <li><a href="publicity-1.html">南方长城</a></li>
+                        <li><a href="publicity-2.html">奇梁洞</a></li>
+                        <li><a href="publicity-3.html">边城演艺</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="showticket" class="dropdown-toggle dropdown-toggle1">导览购票</a>
+                    <ul class="dropdown-menu dropdown-menu1">
+                        <li><a href="showticket">开放时间</a></li>
+                        <li><a href="showticket">票务服务</a></li>
+                        <li><a href="showticket">游览须知</a></li>
+                        <li><a href="showticket">电子地图</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="product.html" class="dropdown-toggle dropdown-toggle2">吃喝玩乐</a>
+                    <ul class="dropdown-menu dropdown-menu2">
+                        <li><a href="product-travel.html">玩在凤凰</a></li>
+                        <li><a href="product-live.html">住在凤凰</a></li>
+                        <li><a href="product-eat.html">吃在凤凰</a></li>
+                        <li><a href="product-buy.html">购在凤凰</a></li>
+
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="showabout" class="dropdown-toggle dropdown-toggle3">古城概述</a>
+                    <ul class="dropdown-menu dropdown-menu3">
+                        <li><a href="showabout">古城介绍</a></li>
+                        <li><a href="showabout">古城名人</a></li>
+                        <li><a href="showabout">古城风俗</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="showinformation" class="dropdown-toggle dropdown-toggle4">景点资讯</a>
+                    <ul class="dropdown-menu dropdown-menu4">
+                        <li><a href="showinformation">景点公告</a></li>
+                        <li><a href="showinformation">景点动态</a></li>
+                        <li><a href="showinformation">景点活动</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="showcontactus" class="dropdown-toggle dropdown-toggle5">联系我们</a>
+                    <ul class="dropdown-menu dropdown-menu5">
+                        <li><a href="showcontactus">集团介绍</a></li>
+                        <li><a href="showcontactus">商务合作</a></li>
+                        <li><a href="showcontactus">联系方式</a></li>
+                        <li><a href="showcontactus">人才招聘</a></li>
+                    </ul>
+                </li>
+                <li th:if="${user}!=null" class="dropdown">
+                    <a href="/showpersonal" class="dropdown-toggle dropdown-toggle6">个人中心</a>
+                </li>
+                <li th:if="${user}==null" class="dropdown">
+                    <a href="/showlogin" class="dropdown-toggle dropdown-toggle6">登录</a>
+                </li>
+            </ul>
+        </div><!-- /.container-fluid -->
+    </nav>
+    <!--导航条结束-->
+</header>
+<div class="wapper" id="custom-box">
+    <div class="linkList wapper linkList2">
+        <a href="index.html">首页</a>
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point1.png" alt="">
+        <a href="product.html">吃喝玩乐</a>
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point1.png" alt="">
+        <a href="product-travel.html">玩在凤凰</a>
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point1.png" alt="">
+        攻略详情
+    </div>
+    <div id="custom-box-content" style="font-size: .16rem"><p><span
+            style="font-size: 24px; font-family: 'Microsoft YaHei', 'Helvetica Neue', 'PingFang SC', sans-serif;"><strong>AAAA级景区—国家历史文化名城</strong></span>
+    </p>
+        <p><span style="font-size: 18px; font-family: 'Microsoft YaHei', 'Helvetica Neue', 'PingFang SC', sans-serif;">凤凰古城——国家历史文化名城，首批中国旅游强县，国家AAAA级景区，湖南省湘西土家族苗族自治州所辖八县市之一。建于清康熙四十三年〔1704年〕。2001年被授予国家历史文化名城称号，是中国历史文化名城，国家AAAA级景区，湖南十大文化遗产之一。曾被新西兰著名作家路易·艾黎称赞为中国最美丽的小城之一，与云南丽江古城、山西平遥古城媲美，享有"北平遥，南凤凰"之美誉。</span>
+        </p>
+        <p>&nbsp;</p>
+        <p><img class="wscnph"
+                src="https://image.xisland.cn/xmall/richText/b32d79d4cca2363acf339d23006b7b19沙湾风景区_副本.jpg"></p>
+        <p>&nbsp;</p>
+        <p><img class="wscnph"
+                src="https://image.xisland.cn/xmall/richText/429a04a98316b13b350751bea75ba613沱江泛舟_副本.jpg"></p>
+        <p>&nbsp;</p>
+        <p><span
+                style="font-size: 24px; font-family: 'Microsoft YaHei', 'Helvetica Neue', 'PingFang SC', sans-serif; color: #000000;"><strong>凤凰古城地理</strong></span>
+        </p>
+        <p><span
+                style="font-size: 24px; font-family: 'Microsoft YaHei', 'Helvetica Neue', 'PingFang SC', sans-serif; color: #000000;"><strong>地理位置</strong></span>
+        </p>
+        <p><span
+                style="font-size: 18px; font-family: 'Microsoft YaHei', 'Helvetica Neue', 'PingFang SC', sans-serif; color: #000000;">凤凰古城，位于湖南省湘西土家族苗族自治州的西南部，土地总面积约10平方千米，由苗族、汉族、土家族等28个民族组成，为典型的少数民族聚居区。这里是怀化、吉首、贵州铜仁三地之间的必经之路。距铜仁凤凰机场27公里，怀化芷江机场57公里，张家界荷花机场280公里；G209国道与S308省道贯穿全境，枝柳铁路穿境而过。凤凰古城与吉首的德夯苗寨、永顺的猛洞河、贵州的梵净山相毗邻，是怀化、吉首、贵州铜仁三地之间的必经之路，交通便利。</span>
+        </p>
+        <p>&nbsp;</p>
+        <p><img class="wscnph"
+                src="https://image.xisland.cn/xmall/richText/2f13828552353b66472907d6f37eed80北门跳岩_副本.jpg"></p>
+        <p><img class="wscnph"
+                src="https://image.xisland.cn/xmall/richText/2f13828552353b66472907d6f37eed80已付费    凤舞九天_副本.jpg"></p>
+        <p>&nbsp;</p>
+        <p><span
+                style="font-size: 24px; font-family: 'Microsoft YaHei', 'Helvetica Neue', 'PingFang SC', sans-serif;"><strong>四季气候</strong></span>
+        </p>
+        <p><span style="font-size: 18px; font-family: 'Microsoft YaHei', 'Helvetica Neue', 'PingFang SC', sans-serif;">凤凰古城属中亚热带季风湿润性气候，温暖湿润，雨水丰沛，日照充足，具有冬冷夏热，春暖秋凉，四季分明的特点，年平均气温为15.9度，1-2月份最冷，月平均气温2℃；7-9月份最热，月平均气温30℃；年平均降水量1308.1毫米，全年有2个明显降水时段即4-5月（春雨），6-7月（梅雨），,冬季会下雪。</span>
+        </p>
+        <p>&nbsp;</p>
+        <p><img class="wscnph"
+                src="https://image.xisland.cn/xmall/richText/caa132d9fcc85bd6a1fead14d4af0739辉暖吊脚楼_入选_湖南_孙建华_副本.jpg">
+        </p>
+        <p><img class="wscnph"
+                src="https://image.xisland.cn/xmall/richText/b21fa1e9fd096962dab42ec181550ec5沱江泛舟_副本.jpg"></p>
+        <p>&nbsp;</p>
+        <p><span
+                style="font-size: 24px; font-family: 'Microsoft YaHei', 'Helvetica Neue', 'PingFang SC', sans-serif;"><strong>-凤凰-</strong></span>
+        </p>
+        <p><span style="font-size: 18px; font-family: 'Microsoft YaHei', 'Helvetica Neue', 'PingFang SC', sans-serif;">&nbsp; 在沈从文的书里能读到； 在黄永玉的画里能看到； 在宋祖英的歌里能听到 ........</span>
+        </p>
+        <p>&nbsp;</p>
+        <p style="text-align: center;">&nbsp;</p>
+        <p style="text-align: center;">&nbsp;</p></div>
+</div>
+<div id="footer">
+    <div id="footer-box">
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/stone.png" alt="">
+        <div class="footer">
+            <div class="footer-item">
+                <a href="showcontactus">联系我们</a>
+                <div class="contact"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/phone.png"
+                                          alt="" style="margin-left: 1.74rem"><span>18030255623</span></div>
+                <span>湖南省湘西土家族苗族自治州</span>
+                <a href="https://weibo.com/hnphoenix?from=myfollow_all" target="_blank"><img
+                        src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/weibo.png" alt=""
+                        style="margin-left: 1.82rem"></a>
+                <a href="https://mp.weixin.qq.com/mp/homepage?__biz=MzA4OTQ2OTIxOQ==&amp;hid=1&amp;sn=6e87d4f93f4b065ddac1548451c6fba3"
+                   target="_blank"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/wechat.png"
+                                        alt=""></a>
+            </div>
+            <div class="line"></div>
+            <div class="footer-item2">
+
+                <a href="http://www.hunanhld.cn/" class="website-link" target="_blank">张家界黄龙洞景区</a>
+                <a href="http://qiyunshan.sunriver.cn/" target="_blank">齐云山生态文化旅游区</a>
+            </div>
+            <div class="footer-item3">
+                <span>凤凰古城官网</span>
+                <a href="http://beian.miit.gov.cn" target="_blank" style="display: inline-block;">湘ICP备20015967号-1</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="./js/nav.js"></script>
+</html>

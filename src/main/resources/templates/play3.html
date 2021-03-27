@@ -1,0 +1,143 @@
+<html lang="en" style="font-size: 50.3125px;" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>攻略详情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/about.css">
+    <script src="./js/rem.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap3/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap3/font-awesome-4.7.0/css/font-awesome.css"/>
+    <link rel="stylesheet" type="text/css" href="bootstrap3/css/main.css"/><!--主要css样式-->
+</head>
+<body>
+<header id="header">
+    <!--导航条开始-->
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <!-- 分类标题列表 -->
+            <ul class="nav navbar-nav">
+                <li><a href="showhome">首页</a></li>
+                <li class="dropdown">
+                    <a href="video-list.html" class="dropdown-toggle dropdown-toggle0">古城景点</a>
+                    <ul class="dropdown-menu dropdown-menu0">
+                        <li><a href="video-list.html">宣传视频</a></li>
+                        <li><a href="publicity-0.html">凤凰九景</a></li>
+                        <li><a href="publicity-1.html">南方长城</a></li>
+                        <li><a href="publicity-2.html">奇梁洞</a></li>
+                        <li><a href="publicity-3.html">边城演艺</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="showticket" class="dropdown-toggle dropdown-toggle1">导览购票</a>
+                    <ul class="dropdown-menu dropdown-menu1">
+                        <li><a href="showticket">开放时间</a></li>
+                        <li><a href="showticket">票务服务</a></li>
+                        <li><a href="showticket">游览须知</a></li>
+                        <li><a href="showticket">电子地图</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="product.html" class="dropdown-toggle dropdown-toggle2">吃喝玩乐</a>
+                    <ul class="dropdown-menu dropdown-menu2">
+                        <li><a href="product-travel.html">玩在凤凰</a></li>
+                        <li><a href="product-live.html">住在凤凰</a></li>
+                        <li><a href="product-eat.html">吃在凤凰</a></li>
+                        <li><a href="product-buy.html">购在凤凰</a></li>
+
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="showabout" class="dropdown-toggle dropdown-toggle3">古城概述</a>
+                    <ul class="dropdown-menu dropdown-menu3">
+                        <li><a href="showabout">古城介绍</a></li>
+                        <li><a href="showabout">古城名人</a></li>
+                        <li><a href="showabout">古城风俗</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="showinformation" class="dropdown-toggle dropdown-toggle4">景点资讯</a>
+                    <ul class="dropdown-menu dropdown-menu4">
+                        <li><a href="showinformation">景点公告</a></li>
+                        <li><a href="showinformation">景点动态</a></li>
+                        <li><a href="showinformation">景点活动</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="showcontactus" class="dropdown-toggle dropdown-toggle5">联系我们</a>
+                    <ul class="dropdown-menu dropdown-menu5">
+                        <li><a href="showcontactus">集团介绍</a></li>
+                        <li><a href="showcontactus">商务合作</a></li>
+                        <li><a href="showcontactus">联系方式</a></li>
+                        <li><a href="showcontactus">人才招聘</a></li>
+                    </ul>
+                </li>
+                <li th:if="${user}!=null" class="dropdown">
+                    <a href="/showpersonal" class="dropdown-toggle dropdown-toggle6">个人中心</a>
+                </li>
+                <li th:if="${user}==null" class="dropdown">
+                    <a href="/showlogin" class="dropdown-toggle dropdown-toggle6">登录</a>
+                </li>
+            </ul>
+        </div><!-- /.container-fluid -->
+    </nav>
+    <!--导航条结束-->
+</header>
+<div class="wapper" id="custom-box">
+    <div class="linkList wapper linkList2">
+        <a href="index.html">首页</a>
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point1.png" alt="">
+        <a href="product.html">吃喝玩乐</a>
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point1.png" alt="">
+        <a href="product-travel.html">玩在凤凰</a>
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point1.png" alt="">
+        攻略详情
+    </div>
+    <div id="custom-box-content" style="font-size: .16rem"><h2 style="text-align: center;"><span
+            style="color: #ff0000;"><strong>湘西民族风情</strong></span></h2>
+        <p>
+            苗族服饰，绚丽多彩，富有浓郁的民放特色。古时，男女都是“色彩斑纹布”，上身穿花衣，着百褶裙，头发，包赫色头帕，穿船形双鼻绣花鞋，佩戴银饰。清代“改土归流”后，男子逐渐以裤代裙，裤管短而宽，穿土产花格子对襟衣。老年人裹黑布头巾，打绑腿、束腰带。妇女服装，胸前、袖口和裤筒，滚边绣花，过腰大而长，袖大而短，皆系满襟，没有衣领。衣服有琵琶襟、套襟、四角挖云、四叉式之分。但也有两臂皆白上衣，短马褂，下不著，长裙青红相间，自成文彩。亦有绣花卉者，上衣下裙以层数多者为美。</p>
+        <p><img src="http://p-product-detail-ld.test.upcdn.net/2020/01/06/0705035e13145f8c2c6.jpg!80" alt=""
+                data-ke-src="http://p-product-detail-ld.test.upcdn.net/2020/01/06/0705035e13145f8c2c6.jpg!80"></p>
+        <p>&nbsp;</p>
+        <p>
+            民国以来，土家男女一年四季都戴头巾，男人以青、蓝、白或条纹布为主，长二三米，一圈圈地缠绕在头上，包成人字路；女人则多为青丝帕或白印花头巾，丝帕薄如蝉翼，最长达七、八米，是妇女终生陪伴之物，死后必以帕缠头入葬。衣服以青、蓝、白、印花布为主，男穿对胸衣，双排七至十一扣，俗称蜈蚣扣，袖口、领口及裤管末端加花边；女人则右开襟，袖大而短，饰花边，拄银铜佩饰，俗称“满襟”，有满清遗风；未出阁少女着花衣，讲究大红大绿；小孩喜戴菩萨帽，虎头帽；男鞋多为青蓝布，女人穿绣鞋；姑娘出嫁时必穿“露水衣”，上着鲜
+            艳挑花绣衣，下着八幅罗裙，与土老司八幅罗裙有异曲同工之妙。</p>
+        <p><img src="http://p-product-detail-ld.test.upcdn.net/2018/04/24/0758115adf1bd3142fb.jpg!80" alt=""
+                data-ke-src="http://p-product-detail-ld.test.upcdn.net/2018/04/24/0758115adf1bd3142fb.jpg!80"></p>
+        <p>&nbsp;</p></div>
+</div>
+<div id="footer">
+    <div id="footer-box">
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/stone.png" alt="">
+        <div class="footer">
+            <div class="footer-item">
+                <a href="showcontactus">联系我们</a>
+                <div class="contact"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/phone.png"
+                                          alt="" style="margin-left: 1.74rem"><span>18030255623</span></div>
+                <span>湖南省湘西土家族苗族自治州</span>
+                <a href="https://weibo.com/hnphoenix?from=myfollow_all" target="_blank"><img
+                        src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/weibo.png" alt=""
+                        style="margin-left: 1.82rem"></a>
+                <a href="https://mp.weixin.qq.com/mp/homepage?__biz=MzA4OTQ2OTIxOQ==&amp;hid=1&amp;sn=6e87d4f93f4b065ddac1548451c6fba3"
+                   target="_blank"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/wechat.png"
+                                        alt=""></a>
+            </div>
+            <div class="line"></div>
+            <div class="footer-item2">
+
+                <a href="http://www.hunanhld.cn/" class="website-link" target="_blank">张家界黄龙洞景区</a>
+                <a href="http://qiyunshan.sunriver.cn/" target="_blank">齐云山生态文化旅游区</a>
+            </div>
+            <div class="footer-item3">
+                <span>凤凰古城官网</span>
+                <a href="http://beian.miit.gov.cn" target="_blank" style="display: inline-block;">湘ICP备20015967号-1</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="./js/nav.js"></script>
+</html>

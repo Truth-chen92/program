@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 100px;" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>玩在凤凰</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="https://hm.baidu.com/hm.js?5b8572ca1660965974d2ea9f755f0459"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/rem.js"></script>
+    <script src="js/template.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/api.js"></script>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/product.css">
+
+    <script src="./js/jquery.min.js"></script>
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap3/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap3/font-awesome-4.7.0/css/font-awesome.css"/>
+    <link rel="stylesheet" type="text/css" href="bootstrap3/css/main.css"/><!--主要css样式-->
+</head>
+<body>
+<header id="header">
+    <!--导航条开始-->
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <!-- 分类标题列表 -->
+            <ul class="nav navbar-nav">
+                <li><a href="showhome">首页</a></li>
+                <li class="dropdown">
+                    <a href="video-list.html" class="dropdown-toggle dropdown-toggle0">古城景点</a>
+                    <ul class="dropdown-menu dropdown-menu0">
+                        <li><a href="video-list.html">宣传视频</a></li>
+                        <li><a href="publicity-0.html">凤凰九景</a></li>
+                        <li><a href="publicity-1.html">南方长城</a></li>
+                        <li><a href="publicity-2.html">奇梁洞</a></li>
+                        <li><a href="publicity-3.html">边城演艺</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="showticket" class="dropdown-toggle dropdown-toggle1">导览购票</a>
+                    <ul class="dropdown-menu dropdown-menu1">
+                        <li><a href="showticket">开放时间</a></li>
+                        <li><a href="showticket">票务服务</a></li>
+                        <li><a href="showticket">游览须知</a></li>
+                        <li><a href="showticket">电子地图</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="product.html" class="dropdown-toggle dropdown-toggle2">吃喝玩乐</a>
+                    <ul class="dropdown-menu dropdown-menu2">
+                        <li><a href="product-travel.html">玩在凤凰</a></li>
+                        <li><a href="product-live.html">住在凤凰</a></li>
+                        <li><a href="product-eat.html">吃在凤凰</a></li>
+                        <li><a href="product-buy.html">购在凤凰</a></li>
+
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="showabout" class="dropdown-toggle dropdown-toggle3">古城概述</a>
+                    <ul class="dropdown-menu dropdown-menu3">
+                        <li><a href="showabout">古城介绍</a></li>
+                        <li><a href="showabout">古城名人</a></li>
+                        <li><a href="showabout">古城风俗</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="showinformation" class="dropdown-toggle dropdown-toggle4">景点资讯</a>
+                    <ul class="dropdown-menu dropdown-menu4">
+                        <li><a href="showinformation">景点公告</a></li>
+                        <li><a href="showinformation">景点动态</a></li>
+                        <li><a href="showinformation">景点活动</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="showcontactus" class="dropdown-toggle dropdown-toggle5">联系我们</a>
+                    <ul class="dropdown-menu dropdown-menu5">
+                        <li><a href="showcontactus">集团介绍</a></li>
+                        <li><a href="showcontactus">商务合作</a></li>
+                        <li><a href="showcontactus">联系方式</a></li>
+                        <li><a href="showcontactus">人才招聘</a></li>
+                    </ul>
+                </li>
+                <li th:if="${user}!=null" class="dropdown">
+                    <a href="/showpersonal" class="dropdown-toggle dropdown-toggle6">个人中心</a>
+                </li>
+                <li th:if="${user}==null" class="dropdown">
+                    <a href="/showlogin" class="dropdown-toggle dropdown-toggle6">登录</a>
+                </li>
+            </ul>
+        </div><!-- /.container-fluid -->
+    </nav>
+    <!--导航条结束-->
+</header>
+<div class="linkList wapper linkList2">
+    <a href="/showhome">首页</a>
+    <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point1.png" alt="">
+    <a href="product.html">吃喝玩乐</a>
+    <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point1.png" alt="">
+    攻略列表
+</div>
+<div class="wapper" id="travel-box">
+
+    <div class="travel-item">
+        <img src="https://image.xisland.cn/xmall/default/1868676e7340aa7cb0b9bf6244ce9a6a少时诵诗书.jpg" alt="产品图片">
+        <div class="travel-content">
+            <h3>走进“文学之父”沈从文的家乡，凤凰古城</h3>
+            <div class="travel-dricp"><span>走进“文学之父”沈从文的家乡，凤凰古城</span></div>
+            <div><a href="play1.html" class="travel-btn">查看详情<img
+                    src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point4.png" alt=""></a></div>
+        </div>
+    </div>
+
+    <div class="travel-item">
+        <img src="https://image.xisland.cn/xmall/goodsImg/d3347672e134805ae10c4e9e99918882凤凰长图.JPG" alt="产品图片">
+        <div class="travel-content">
+            <h3>凤凰古城介绍</h3>
+            <div class="travel-dricp"><span>乘舟望水，留韵凤凰</span></div>
+            <div><a href="play2.html" class="travel-btn">查看详情<img
+                    src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point4.png" alt=""></a></div>
+        </div>
+    </div>
+
+    <div class="travel-item">
+        <img src="https://image.xisland.cn/xmall/goodsImg/59d0f3848b4b024828e5b8852a0207241578308549.jpg" alt="产品图片">
+        <div class="travel-content">
+            <h3>民族风俗</h3>
+            <div class="travel-dricp"><span>风俗文化,湘西</span></div>
+            <div><a href="play3.html" class="travel-btn">查看详情<img
+                    src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point4.png" alt=""></a></div>
+        </div>
+    </div>
+
+    <div class="travel-item">
+        <img src="https://image.xisland.cn/xmall/goodsImg/aa6e358b94faa90b26dadc3d4d659b97古城印象_入选_四川_陈吉中.jpg"
+             alt="产品图片">
+        <div class="travel-content">
+            <h3>凤凰旅游概览</h3>
+            <div class="travel-dricp"><span>旅游,概览</span></div>
+            <div><a href="play4.html" class="travel-btn">查看详情<img
+                    src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point4.png" alt=""></a></div>
+        </div>
+    </div>
+
+    <div class="travel-item">
+        <img src="https://image.xisland.cn/xmall/default/78a236d1258f11880e82d9781d88bb99吊脚楼_副本.jpg" alt="产品图片">
+        <div class="travel-content">
+            <h3>凤凰古城简介</h3>
+            <div class="travel-dricp"><span>凤凰古城简介</span></div>
+            <div><a href="play5.html" class="travel-btn">查看详情<img
+                    src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point4.png" alt=""></a></div>
+        </div>
+    </div>
+
+    <div class="travel-item">
+        <img src="https://image.xisland.cn/xmall/goodsImg/6fb92129fbfaa40760e75b8e175bcb48沱江泛舟 (2).jpg" alt="产品图片">
+        <div class="travel-content">
+            <h3>特产美食</h3>
+            <div class="travel-dricp"><span>如果你来凤凰玩，我会带你早起吃一碗地道的湖南米粉</span></div>
+            <div><a href="play6.html" class="travel-btn">查看详情<img
+                    src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point4.png" alt=""></a></div>
+        </div>
+    </div>
+
+    <div class="travel-item">
+        <img src="https://image.xisland.cn/xmall/default/e63287ca3389726b385eb1729eae1dab四月八 秦帆摄.jpg" alt="产品图片">
+        <div class="travel-content">
+            <h3>凤凰古城风俗</h3>
+            <div class="travel-dricp"><span>古城风俗</span></div>
+            <div><a href="play7.html" class="travel-btn">查看详情<img
+                    src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point4.png" alt=""></a></div>
+        </div>
+    </div>
+
+    <div class="travel-item">
+        <img src="https://image.xisland.cn/xmall/goodsImg/e4418f9d24adf1c26d0d1a3d4c8478dd1578307902.jpg" alt="产品图片">
+        <div class="travel-content">
+            <h3>不落幕的《边城》</h3>
+            <div class="travel-dricp"><span>不落幕的《边城》</span></div>
+            <div><a href="play8.html" class="travel-btn">查看详情<img
+                    src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point4.png" alt=""></a></div>
+        </div>
+    </div>
+</div>
+<div id="footer">
+    <div id="footer-box">
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/stone.png" alt="">
+        <div class="footer">
+            <div class="footer-item">
+                <a href="showcontactus">联系我们</a>
+                <div class="contact"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/phone.png"
+                                          alt="" style="margin-left: 1.74rem"><span>18030255623</span></div>
+                <span>湖南省湘西土家族苗族自治州</span>
+                <a href="https://weibo.com/hnphoenix?from=myfollow_all" target="_blank"><img
+                        src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/weibo.png" alt=""
+                        style="margin-left: 1.82rem"></a>
+                <a href="https://mp.weixin.qq.com/mp/homepage?__biz=MzA4OTQ2OTIxOQ==&amp;hid=1&amp;sn=6e87d4f93f4b065ddac1548451c6fba3"
+                   target="_blank"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/wechat.png"
+                                        alt=""></a>
+            </div>
+            <div class="line"></div>
+            <div class="footer-item2">
+
+                <a href="http://www.hunanhld.cn/" class="website-link" target="_blank">张家界黄龙洞景区</a>
+                <a href="http://qiyunshan.sunriver.cn/" target="_blank">齐云山生态文化旅游区</a>
+            </div>
+            <div class="footer-item3">
+                <span>凤凰古城官网</span>
+                <a href="http://beian.miit.gov.cn" target="_blank" style="display: inline-block;">湘ICP备20015967号-1</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="./js/nav.js"></script>
+</html>

@@ -80,8 +80,90 @@ public class ShowController {
         return "homePage";
     }
     @GetMapping("notice.html")
-    public String shownotice(HttpServletRequest request,Map<String, Object> map){
-        request.getSession().removeAttribute("user");
+    public String showNotice(HttpServletRequest request,Map<String, Object> map){
+        User user=(User)request.getSession().getAttribute("user");
+        map.put("user", user);
         return "notice";
+    }
+    @GetMapping("play1.html")
+    public String showPlay1(HttpServletRequest request,Map<String, Object> map){
+        User user=(User)request.getSession().getAttribute("user");
+        map.put("user", user);
+        return "play1";
+    } @GetMapping("play2.html")
+    public String showPlay2(HttpServletRequest request,Map<String, Object> map){
+        User user=(User)request.getSession().getAttribute("user");
+        map.put("user", user);
+        return "play2";
+    } @GetMapping("play3.html")
+    public String showPlay3(HttpServletRequest request,Map<String, Object> map){
+        User user=(User)request.getSession().getAttribute("user");
+        map.put("user", user);
+        return "play3";
+    } @GetMapping("play4.html")
+    public String showPlay4(HttpServletRequest request,Map<String, Object> map){
+        User user=(User)request.getSession().getAttribute("user");
+        map.put("user", user);
+        return "play4";
+    } @GetMapping("play5.html")
+    public String showPlay5(HttpServletRequest request,Map<String, Object> map){
+        User user=(User)request.getSession().getAttribute("user");
+        map.put("user", user);
+        return "play5";
+    } @GetMapping("play6.html")
+    public String showPlay6(HttpServletRequest request,Map<String, Object> map){
+        User user=(User)request.getSession().getAttribute("user");
+        map.put("user", user);
+        return "play6";
+    } @GetMapping("play7.html")
+    public String showPlay7(HttpServletRequest request,Map<String, Object> map){
+        User user=(User)request.getSession().getAttribute("user");
+        map.put("user", user);
+        return "play7";
+    } @GetMapping("play8.html")
+    public String showPlay8(HttpServletRequest request,Map<String, Object> map){
+        User user=(User)request.getSession().getAttribute("user");
+        map.put("user", user);
+        return "play8";
+    } @GetMapping("product.html")
+    public String showProduct(HttpServletRequest request,Map<String, Object> map){
+        User user=(User)request.getSession().getAttribute("user");
+        map.put("user", user);return "product";
+    } @GetMapping("product-buy.html")
+    public String showProductBuy(HttpServletRequest request,Map<String, Object> map){
+        User user=(User)request.getSession().getAttribute("user");
+        map.put("user", user);return "product-buy";
+    }@GetMapping("product-eat.html")
+    public String showProductEat(HttpServletRequest request,Map<String, Object> map){
+        User user=(User)request.getSession().getAttribute("user");
+        map.put("user", user);return "product-eat";
+    }@GetMapping("product-live.html")
+    public String showProductLive(HttpServletRequest request,Map<String, Object> map){
+        User user=(User)request.getSession().getAttribute("user");
+        map.put("user", user);return "product-live";
+    }@GetMapping("product-travel.html")
+    public String showProductTravel(HttpServletRequest request,Map<String, Object> map){
+        User user=(User)request.getSession().getAttribute("user");
+        map.put("user", user);return "product-travel";
+    }@GetMapping("publicity-0.html")
+    public String showPublicity0(HttpServletRequest request,Map<String, Object> map){
+        User user=(User)request.getSession().getAttribute("user");
+        map.put("user", user);return "publicity-0";
+    }@GetMapping("publicity-1.html")
+    public String showPublicity1(HttpServletRequest request,Map<String, Object> map){User user=(User)request.getSession().getAttribute("user");
+        map.put("user", user);
+        return "publicity-1";
+    }@GetMapping("publicity-2.html")
+    public String showPublicity2(HttpServletRequest request,Map<String, Object> map){User user=(User)request.getSession().getAttribute("user");
+        map.put("user", user);
+        return "publicity-2";
+    }@GetMapping("publicity-3.html")
+    public String showPublicity3(HttpServletRequest request,Map<String, Object> map){User user=(User)request.getSession().getAttribute("user");
+        map.put("user", user);
+        return "publicity-3";
+    }@GetMapping("video-list.html")
+    public String showVideoList(HttpServletRequest request,Map<String, Object> map){
+        User user=(User)request.getSession().getAttribute("user");
+        map.put("user", user);return "video-list";
     }
 }

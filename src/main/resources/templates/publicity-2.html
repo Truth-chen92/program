@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 70px;" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>古城景点</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/publicity.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/rem.js"></script>
+    <script src="js/template.js"></script>
+    <script>//古城景点页面数据
+    const publicityData = {
+        interval: null,//轮播图循环
+        moving: false,//当前是否在翻页
+        // 轮播图上一张
+        prevTo: (that) => {
+            if (publicityData.moving) {
+                return false
+            }
+            clearInterval(publicityData.interval);
+            publicityData.moving = true;
+            let nowLeft = Number($(that).parent().attr("data-left")) * 10000; //当前left
+            let len = Number($(that).parent().attr("data-len")); //目标轮播图的图片总数
+            let orderLeft = nowLeft + 55500; //目标移动位置
+            publicityData.interval = setInterval(() => {
+                nowLeft = nowLeft + 500;
+                $(that).parent().find(".publicity-imglist").css("left", nowLeft / 10000 + 'rem');
+                if (nowLeft == orderLeft) {
+                    publicityData.moving = false;
+                    $(that).parent().attr("data-left", orderLeft / 10000);
+                    if (orderLeft == 0) { //移动到第一张图时
+                        $(that).parent().find(".publicity-imglist").css("left", -len * 5.55 + 'rem');
+                        $(that).parent().attr("data-left", -len * 5.55);
+                    }
+                    clearInterval(publicityData.interval);
+                }
+            }, 1)
+        },
+        // 轮播图下一张
+        nextTo: (that) => {
+            if (publicityData.moving) {
+                return false
+            }
+            clearInterval(publicityData.interval);
+            publicityData.moving = true;
+            let nowLeft = Number($(that).parent().attr("data-left")) * 10000;
+            let len = Number($(that).parent().attr("data-len"));
+            let orderLeft = nowLeft - 55500;
+            publicityData.interval = setInterval(() => {
+                nowLeft = nowLeft - 500;
+                $(that).parent().find(".publicity-imglist").css("left", nowLeft / 10000 + 'rem');
+                if (nowLeft == orderLeft) {
+                    publicityData.moving = false;
+                    $(that).parent().attr("data-left", orderLeft / 10000);
+                    if (orderLeft / 10000 == (-(len + 1) * 5.55)) {//移动到最后一张图时
+                        $(that).parent().find(".publicity-imglist").css("left", '0rem');
+                        $(that).parent().attr("data-left", 0);
+                    }
+                    clearInterval(publicityData.interval);
+                }
+            }, 1)
+        },
+    }</script>
+
+    <style>
+        video {
+            width: 100%;
+            object-fit: fill;
+            background: transparent url('https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/video/1(1).png') 50% 50% no-repeat;
+            background-size: cover;
+        }
+
+        .shiping {
+            width: 50%;
+            margin-top: 10px;
+        }
+
+        .jin > a > img {
+            -webkit-transition: -webkit-transform 1s, height 1s, width 1s;
+        }
+
+        .jin > a > img:hover {
+            -webkit-transform: rotateY(-360deg);
+        }
+
+        .jin {
+            margin: 20% 0 0 96%;
+            position: fixed;
+        }
+    </style>
+    <script src="./js/jquery.min.js"></script>
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap3/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap3/font-awesome-4.7.0/css/font-awesome.css"/>
+    <link rel="stylesheet" type="text/css" href="bootstrap3/css/main.css"/><!--主要css样式-->
+</head>
+<body>
+<header id="header">
+    <!--导航条开始-->
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <!-- 分类标题列表 -->
+            <ul class="nav navbar-nav">
+                <li><a href="showhome">首页</a></li>
+                <li class="dropdown">
+                    <a href="video-list.html" class="dropdown-toggle dropdown-toggle0">古城景点</a>
+                    <ul class="dropdown-menu dropdown-menu0">
+                        <li><a href="video-list.html">宣传视频</a></li>
+                        <li><a href="publicity-0.html">凤凰九景</a></li>
+                        <li><a href="publicity-1.html">南方长城</a></li>
+                        <li><a href="publicity-2.html">奇梁洞</a></li>
+                        <li><a href="publicity-3.html">边城演艺</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="showticket" class="dropdown-toggle dropdown-toggle1">导览购票</a>
+                    <ul class="dropdown-menu dropdown-menu1">
+                        <li><a href="showticket">开放时间</a></li>
+                        <li><a href="showticket">票务服务</a></li>
+                        <li><a href="showticket">游览须知</a></li>
+                        <li><a href="showticket">电子地图</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="product.html" class="dropdown-toggle dropdown-toggle2">吃喝玩乐</a>
+                    <ul class="dropdown-menu dropdown-menu2">
+                        <li><a href="product-travel.html">玩在凤凰</a></li>
+                        <li><a href="product-live.html">住在凤凰</a></li>
+                        <li><a href="product-eat.html">吃在凤凰</a></li>
+                        <li><a href="product-buy.html">购在凤凰</a></li>
+
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="showabout" class="dropdown-toggle dropdown-toggle3">古城概述</a>
+                    <ul class="dropdown-menu dropdown-menu3">
+                        <li><a href="showabout">古城介绍</a></li>
+                        <li><a href="showabout">古城名人</a></li>
+                        <li><a href="showabout">古城风俗</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="showinformation" class="dropdown-toggle dropdown-toggle4">景点资讯</a>
+                    <ul class="dropdown-menu dropdown-menu4">
+                        <li><a href="showinformation">景点公告</a></li>
+                        <li><a href="showinformation">景点动态</a></li>
+                        <li><a href="showinformation">景点活动</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="showcontactus" class="dropdown-toggle dropdown-toggle5">联系我们</a>
+                    <ul class="dropdown-menu dropdown-menu5">
+                        <li><a href="showcontactus">集团介绍</a></li>
+                        <li><a href="showcontactus">商务合作</a></li>
+                        <li><a href="showcontactus">联系方式</a></li>
+                        <li><a href="showcontactus">人才招聘</a></li>
+                    </ul>
+                </li>
+                <li th:if="${user}!=null" class="dropdown">
+                    <a href="/showpersonal" class="dropdown-toggle dropdown-toggle6">个人中心</a>
+                </li>
+                <li th:if="${user}==null" class="dropdown">
+                    <a href="/showlogin" class="dropdown-toggle dropdown-toggle6">登录</a>
+                </li>
+            </ul>
+        </div><!-- /.container-fluid -->
+    </nav>
+    <!--导航条结束-->
+</header>
+<div class="jin"><a href="publicity-3.html"><img
+        src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point1.png" alt=""></a></div>
+<div id="publicity-box">
+    <div class="linkList wapper" style="margin-top: 0">
+        <a href="index.html">首页</a>
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point1.png" alt="">
+        古城景点
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point1.png" alt="">
+        奇梁洞
+    </div>
+    <div id="publicity-list" class="wapper">
+        <div class="publicity-item" id="item_3">
+            <div class="publicity-title">
+                <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/left black.png" alt="">
+                奇梁洞
+                <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/right black.png" alt="">
+            </div>
+            <ul>
+                <li class="publicity-li publicity-li-active">
+                    <div class="publicity-li-box">
+                        <div class="shiping">
+                            <video poster="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/publicity/4.png"
+                                   controls
+                                   height="400">
+                                <source src="https://xislandtravel.oss-cn-beijing.aliyuncs.com/qld.mp4"
+                                        type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="publicity-li-content">
+                            <h3>奇梁洞景区</h3>
+                            <div>一碗喝不醉的酒，在等您</div>
+                            <p>
+                                相传宋代末年，土人首领何车聚众起义反对官府，攻城夺寨，势如破竹。朝廷举派“杨氏三兄弟”统兵征剿，被何车用“追命鼓”、“迷魂锣”、“荷花伞”三件法宝打败。后因叛徒告密，法宝被破，退守奇梁洞中，将士全部战死。民间至今流传“三十六人杀九千，死在奇梁洞门前”的故事。小溪右岸石壁上垂下一把“荷花伞”，流水有声，传说是何车的护身法宝。
+                                著名的地质学家B.D埃德曼考察了奇梁洞后认为洞中的水中倒影美轮美奂堪称世界溶洞一绝。
+                                有着如此惊心动魄一个传说的地方，如此惊艳的一个溶洞，你能不让自己置身其中吗？</p>
+                        </div>
+                    </div>
+                    <div class="publicity-li-imglist" data-left="-11.1" data-len="3">
+                        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/left-btn.png" alt=""
+                             class="imglist-prev" onclick="publicityData.prevTo(this)">
+                        <img class="imglist-img"
+                             src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/publicity/4-1.png" alt=""
+                             style="opacity: 0">
+                        <div class="publicity-imglist" style="width: 38.2rem">
+                            <img class="imglist-img"
+                                 src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/publicity/4-2.png"
+                                 alt="" data-index="2">
+                            <img class="imglist-img"
+                                 src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/publicity/4-3.png"
+                                 alt="" data-index="3">
+                            <img class="imglist-img"
+                                 src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/publicity/4-1.png"
+                                 alt="" data-index="1">
+                            <img class="imglist-img"
+                                 src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/publicity/4-2.png"
+                                 alt="" data-index="2">
+                            <img class="imglist-img"
+                                 src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/publicity/4-3.png"
+                                 alt="" data-index="3">
+                            <img class="imglist-img"
+                                 src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/publicity/4-1.png"
+                                 alt="" data-index="1">
+                            <img class="imglist-img"
+                                 src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/publicity/4-1.png"
+                                 alt="" style="margin-right: 0" data-index="2">
+                        </div>
+                        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/right-btn.png" alt=""
+                             class="imglist-next" onclick="publicityData.nextTo(this)">
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="footer">
+    <div id="footer-box">
+        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/stone.png" alt="">
+        <div class="footer">
+            <div class="footer-item">
+                <a href="showcontactus">联系我们</a>
+                <div class="contact"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/phone.png"
+                                          alt="" style="margin-left: 1.74rem"><span>18030255623</span></div>
+                <span>湖南省湘西土家族苗族自治州</span>
+                <a href="https://weibo.com/hnphoenix?from=myfollow_all" target="_blank"><img
+                        src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/weibo.png" alt=""
+                        style="margin-left: 1.82rem"></a>
+                <a href="https://mp.weixin.qq.com/mp/homepage?__biz=MzA4OTQ2OTIxOQ==&amp;hid=1&amp;sn=6e87d4f93f4b065ddac1548451c6fba3"
+                   target="_blank"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/wechat.png"
+                                        alt=""></a>
+            </div>
+            <div class="line"></div>
+            <div class="footer-item2">
+
+                <a href="http://www.hunanhld.cn/" class="website-link" target="_blank">张家界黄龙洞景区</a>
+                <a href="http://qiyunshan.sunriver.cn/" target="_blank">齐云山生态文化旅游区</a>
+            </div>
+            <div class="footer-item3">
+                <span>凤凰古城官网</span>
+                <a href="http://beian.miit.gov.cn" target="_blank" style="display: inline-block;">湘ICP备20015967号-1</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="./js/nav.js"></script>
+</html>
