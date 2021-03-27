@@ -42,35 +42,53 @@ CREATE TABLE IF NOT EXISTS `banner` (
   `url` varchar(255) DEFAULT NULL,
   `sort_num` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
 
 -- 正在导出表  fhgc.banner 的数据：~4 rows (大约)
 /*!40000 ALTER TABLE `banner` DISABLE KEYS */;
 INSERT INTO `banner` (`id`, `url`, `sort_num`) VALUES
-	(1, 'image/homePage/banner0.jpg', 13),
-	(2, 'image/homePage/banner1.jpg', 14),
-	(3, 'image/homePage/banner2.jpg', 22),
-	(4, 'image/homePage/banner3.jpg', 25);
+	(1, 'image/homePage/banner0.jpg', 2),
+	(2, 'image/homePage/banner1.jpg', 3),
+	(3, 'image/homePage/banner2.jpg', 5),
+	(4, 'image/homePage/banner3.jpg', 6);
 /*!40000 ALTER TABLE `banner` ENABLE KEYS */;
+
+-- 导出  表 fhgc.passwordquestion 结构
+CREATE TABLE IF NOT EXISTS `passwordquestion` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `question1` varchar(255) NOT NULL DEFAULT '0',
+  `answer1` varchar(255) NOT NULL DEFAULT '0',
+  `question2` varchar(255) NOT NULL DEFAULT '0',
+  `answer2` varchar(255) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- 正在导出表  fhgc.passwordquestion 的数据：~0 rows (大约)
+/*!40000 ALTER TABLE `passwordquestion` DISABLE KEYS */;
+/*!40000 ALTER TABLE `passwordquestion` ENABLE KEYS */;
 
 -- 导出  表 fhgc.user 结构
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `password` int(11) NOT NULL,
+  `password` varchar(50) NOT NULL DEFAULT '',
   `username` varchar(50) NOT NULL,
-  `administrators` tinyint(4) NOT NULL DEFAULT '0' COMMENT '是否是管理员',
+  `administrators` int(11) NOT NULL DEFAULT '0' COMMENT '是否是管理员',
+  `phonenumber` varchar(50) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
--- 正在导出表  fhgc.user 的数据：~6 rows (大约)
+-- 正在导出表  fhgc.user 的数据：~8 rows (大约)
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` (`id`, `password`, `username`, `administrators`) VALUES
-	(1, 123456, 'admin', 1),
-	(2, 888888, 'tom', 0),
-	(3, 123456, 'jerry', 0),
-	(4, 123456, 'miki', 0),
-	(5, 123456, 'jse', 0),
-	(7, 888888, 'cj', 0);
+INSERT INTO `user` (`id`, `password`, `username`, `administrators`, `phonenumber`) VALUES
+	(1, '123456', 'admin', 1, '0'),
+	(2, '111111', 'tom', 0, '18025894136'),
+	(3, '123456', 'jerry', 0, '18952366285'),
+	(8, '888888', 'cxcx', 0, '18841259633'),
+	(11, 'www', 'ddd', 0, '18030255623'),
+	(12, '123456', '123456', 0, '18585855587'),
+	(13, '123456', 'dddd', 0, '13234557819'),
+	(14, '888888', '151515', 0, '18030255627');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
