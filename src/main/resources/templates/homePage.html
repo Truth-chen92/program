@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../bootstrap3/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../bootstrap3/font-awesome-4.7.0/css/font-awesome.css"/>
     <link rel="stylesheet" type="text/css" href="../bootstrap3/css/main.css"/><!--主要css样式-->
+    <script src="js/vue.js"></script>
 </head>
 <body>
 <header id="header">
@@ -43,7 +44,6 @@
                         <li><a href="product-live.html">住在凤凰</a></li>
                         <li><a href="product-eat.html">吃在凤凰</a></li>
                         <li><a href="product-buy.html">购在凤凰</a></li>
-
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -72,7 +72,7 @@
                     </ul>
                 </li>
                 <li th:if="${user}!=null" class="dropdown">
-                    <a href="/showpersonal" class="dropdown-toggle dropdown-toggle6">个人中心</a>
+                    <a href="/showup" class="dropdown-toggle dropdown-toggle6">个人中心</a>
                 </li>
                 <li th:if="${user}==null" class="dropdown">
                     <a href="/showlogin" class="dropdown-toggle dropdown-toggle6">登录</a>
@@ -82,34 +82,42 @@
     </nav>
     <!--导航条结束-->
     <!--轮播图开始-->
-    <div id="myCarousel" class="carousel slide">
+    <div id="myCarousel" class="carousel slide bannersApp">
         <!-- 轮播（Carousel）指标 -->
         <ol class="carousel-indicators">
             <!--在使用th:each语法进行遍历时 会自动创建一个 变量名+Stat 对象
             这个对象里面装着遍历的下标 bStat.index-->
-            <li class="active" data-target="#myCarousel" data-slide-to="0"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-            <li data-target="#myCarousel" data-slide-to="3"></li>
+<!--            <li class="active" data-target="#myCarousel" data-slide-to="0"></li>-->
+            <li  data-target="#myCarousel" data-slide-to="1"
+                 v-for="(banner,index) in banners"
+                 v-bind:data-slide-to="index"
+                 v-bind:class="{active:isFirst}"
+                 v-if="first(index)"></li>
+<!--            <li data-target="#myCarousel" data-slide-to="2"></li>-->
+<!--            <li data-target="#myCarousel" data-slide-to="3"></li>-->
         </ol>
         <!-- 轮播（Carousel）项目 -->
         <div class="carousel-inner">
-            <div class="item active">
-                <img src="image/homePage/banner0.jpg" alt="图裂了..">
+<!--            <div class="item active">-->
+<!--                <img src="image/homePage/banner0.jpg" alt="图裂了..">-->
+<!--                <div class="carousel-caption"></div>-->
+<!--            </div>-->
+            <div class="item" v-for="(banner,index) in banners"
+                 v-bind:class="{active:isFirst2}"
+                 v-if="first2(index)">
+                <img src="image/homePage/banner1.jpg" alt="图裂了.."
+                    v-bind:src="banner.url"
+                >
                 <div class="carousel-caption"></div>
             </div>
-            <div class="item">
-                <img src="image/homePage/banner1.jpg" alt="图裂了..">
-                <div class="carousel-caption"></div>
-            </div>
-            <div class="item">
-                <img src="image/homePage/banner2.jpg" alt="图裂了..">
-                <div class="carousel-caption"></div>
-            </div>
-            <div class="item">
-                <img src="image/homePage/banner3.jpg" alt="图裂了..">
-                <div class="carousel-caption"></div>
-            </div>
+<!--            <div class="item">-->
+<!--                <img src="image/homePage/banner2.jpg" alt="图裂了..">-->
+<!--                <div class="carousel-caption"></div>-->
+<!--            </div>-->
+<!--            <div class="item">-->
+<!--                <img src="image/homePage/banner3.jpg" alt="图裂了..">-->
+<!--                <div class="carousel-caption"></div>-->
+<!--            </div>-->
         </div>
         <!-- 轮播（Carousel）导航 -->
         <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -238,7 +246,6 @@
 
                         </li>
                     </a>
-
                     <a href="showinformation">
                         <li>
 
@@ -248,20 +255,16 @@
                                 <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point right 1.png"
                                      alt="详情">
                             </div>
-
                         </li>
                     </a>
-
                     <a href="showinformation">
                         <li>
-
                             <div class="flex1">2020-09-30 11:16:45</div>
                             <div class="dynamic-content">
                                 <div class="overhide notice-content">凤凰古城国庆节出游全攻略</div>
                                 <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point right 1.png"
                                      alt="详情">
                             </div>
-
                         </li>
                     </a>
 
@@ -398,4 +401,7 @@
         doc.addEventListener('DOMContentLoaded', recalc, false);
     })(document, window);
 </script>
+<script src="js/utils.js"></script>
+<script src="js/banners.js"></script>
+<script src="js/activities.js"></script>
 </html>
