@@ -84,7 +84,6 @@
                     <th>轮播图</th>
                     <th>
                         操作
-
                     </th>
                 </tr>
                 <tr v-for="banner in banners">
@@ -105,12 +104,29 @@
                         </form>
                     </td>
                 </tr>
-
             </table>
-
         </div>
         <div v-show="sideStatus===2" style="padding: 15px;">票务</div>
-        <div v-show="sideStatus===3" style="padding: 15px;">用户</div>
+        <div v-show="sideStatus===3" style="padding: 15px;">
+            <div class="layui-btn-group demoTable">
+                <button class="layui-btn" data-type="getCheckData">获取选中行数据</button>
+                <button class="layui-btn" data-type="getCheckLength">获取选中数目</button>
+                <button class="layui-btn" data-type="isAll">验证是否全选</button>
+            </div>
+            <table class="layui-table" lay-data="{width: 892, height:660, url:'/users', page:true, id:'idTest'}" lay-filter="demo">
+                <thead>
+                <tr>
+                    <th lay-data="{type:'checkbox', fixed: 'left'}"></th>
+                    <th lay-data="{field:'id', width:80, sort: true, fixed: true}">ID</th>
+                    <th lay-data="{field:'username', width:80}">用户名</th>
+                    <th lay-data="{field:'password', width:80, sort: true}">密码</th>
+                    <th lay-data="{field:'administrators', width:80}">管理员</th>
+                    <th lay-data="{field:'phonenumber', width:160}">电话</th>
+                    <th lay-data="{fixed: 'right', width:178, align:'center', toolbar: '#barDemo'}"></th>
+                </tr>
+                </thead>
+            </table>
+        </div>
         <div v-show="sideStatus===4" style="padding: 15px;">管理员</div>
     </div>
 
@@ -147,10 +163,20 @@
                         }
 
                     })
-                }else if(status===2){//景区活动CRUD
+                }else if(status===2){//票务CRUD
                     console.log("景区活动CRUD");
                 }else if(status===3){//普通用户账户管理
-                    console.log("普通用户账户管理");
+                    console.log("用户CRUD");
+                    $.ajax({
+                        url:"/users",
+                        method:"get",
+                        success:function (r) {
+                            console.log("users:"+r)
+                            if (r.code == 0) {
+                                bodyApp.users = r.data;
+                            }
+                        }
+                    })
                 }else if(status===4){//管理员账户管理
                     console.log("管理员账户管理");
                 }
@@ -162,7 +188,8 @@
         data: {
             sideStatus:0,
             banners:[],
-            insertBannerFormStatus:0
+            insertBannerFormStatus:0,
+            users:[]
         },
         methods:{
             showInsertBannerForm:function(id){
@@ -216,10 +243,70 @@
                 }else{
                     alert(r.message);
                 }
-                $("#imageFile").val("")
+                $("#imageFile").val("");
             }
         });
     }
 </script>
+<script type="text/html" id="barDemo">
+<!--    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>-->
+    <a class="layui-btn layui-btn-xs" lay-event="edit">查看数据</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+<script>
+    layui.use('table', function(){
+        var table = layui.table;
+        //监听表格复选框选择
+        table.on('checkbox(demo)', function(obj){
+            console.log(obj)
+        });
+        //监听工具条
+        table.on('tool(demo)', function(obj){
+            var data = obj.data;
+            if(obj.event === 'detail'){//点击查看
+                layer.msg('ID：'+ data.id + ' 的查看操作');
+            } else if(obj.event === 'del'){//点击删除
+                layer.confirm('真的删除行么', function(index){
+                    $.ajax({
+                        url:"/deleteUser",
+                        data:{
+                            id:data.id
+                        },
+                        method:"get",
+                        success:function (r) {
+                            if (r.code == OK){
+                                obj.del();
+                                layer.close(index);
+                            }
+                        }
+                    })
+                });
+            } else if(obj.event === 'edit'){//点击编辑
+                layer.alert('查看json数据：<br>'+ JSON.stringify(data))
+            }
+        });
 
+        var $ = layui.$, active = {
+            getCheckData: function(){ //获取选中数据
+                var checkStatus = table.checkStatus('idTest')
+                    ,data = checkStatus.data;
+                layer.alert(JSON.stringify(data));
+            }
+            ,getCheckLength: function(){ //获取选中数目
+                var checkStatus = table.checkStatus('idTest')
+                    ,data = checkStatus.data;
+                layer.msg('选中了：'+ data.length + ' 个');
+            }
+            ,isAll: function(){ //验证是否全选
+                var checkStatus = table.checkStatus('idTest');
+                layer.msg(checkStatus.isAll ? '全选': '未全选')
+            }
+        };
+
+        $('.demoTable .layui-btn').on('click', function(){
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+        });
+    });
+</script>
 </html>
