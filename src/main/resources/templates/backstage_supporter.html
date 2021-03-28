@@ -8,6 +8,8 @@
     <link rel="stylesheet" type="text/css" href="bootstrap3/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="bootstrap3/font-awesome-4.7.0/css/font-awesome.css"/>
     <link rel="stylesheet" type="text/css" href="bootstrap3/css/main.css"/><!--主要css样式-->
+    <link rel="stylesheet" href="bower_components/summernote/dist/summernote-bs4.min.css">
+
     <script type="text/javascript" src="bootstrap3/jquery.min.js"></script>
     <script type="text/javascript" src="bootstrap3/js/bootstrap.js"></script>
     <script type="text/javascript" src="bootstrap3/js/holder.js"></script>
@@ -17,38 +19,24 @@
     <script type="text/javascript" src="js/jquery.firefly-0.7.min.js"></script>
     <script src="layui/layui.js"></script>
     <script src="js/vue.js"></script>
+    <script src="bower_components/polyfill/dist/polyfill.min.js"></script>
+    <script src="bower_components/summernote/dist/summernote-bs4.js"></script>
+    <script src="bower_components/summernote/dist/lang/summernote-zh-CN.min.js"></script>
+
+    <style>
+        .modal-backdrop {
+            position: relative;!important;/*一个超tmd*******bug  position不能为fixed，否则tmd会发生样式冲突，导致富文本弹出对话框被遮挡*/
+        }
+        .modal-dialog{
+            margin-top: 60px;/*控制富文本弹出对话框的位置*/
+        }
+    </style>
+
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
     <div class="layui-header">
         <div class="layui-logo">凤凰古城</div>
-        <!-- 头部区域（可配合layui已有的水平导航） -->
-<!--        <ul class="layui-nav layui-layout-left">-->
-<!--            <li class="layui-nav-item"><a href="">控制台</a></li>-->
-<!--            <li class="layui-nav-item"><a href="">商品管理</a></li>-->
-<!--            <li class="layui-nav-item"><a href="">用户</a></li>-->
-<!--            <li class="layui-nav-item">-->
-<!--                <a href="javascript:;">其它系统</a>-->
-<!--                <dl class="layui-nav-child">-->
-<!--                    <dd><a href="">邮件管理</a></dd>-->
-<!--                    <dd><a href="">消息管理</a></dd>-->
-<!--                    <dd><a href="">授权管理</a></dd>-->
-<!--                </dl>-->
-<!--            </li>-->
-<!--        </ul>-->
-<!--        <ul class="layui-nav layui-layout-right">-->
-<!--            <li class="layui-nav-item">-->
-<!--                <a href="javascript:;">-->
-<!--                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img">-->
-<!--                    贤心-->
-<!--                </a>-->
-<!--                <dl class="layui-nav-child">-->
-<!--                    <dd><a href="">基本资料</a></dd>-->
-<!--                    <dd><a href="">安全设置</a></dd>-->
-<!--                </dl>-->
-<!--            </li>-->
-<!--            <li class="layui-nav-item"><a href="">退了</a></li>-->
-<!--        </ul>-->
     </div>
 
     <div id="sideApp" class="layui-side layui-bg-black">
@@ -59,7 +47,7 @@
                     <a class="" href="javascript:;">CRUD</a>
                     <dl class="layui-nav-child">
                         <dd @click="sideClick(1)"><a href="javascript:;">轮播图</a></dd>
-                        <dd @click="sideClick(2)"><a href="javascript:;">票务</a></dd>
+                        <dd @click="sideClick(2)"><a href="javascript:;">景区公告</a></dd>
                         <dd><a href="/showhome">查看效果(跳转网页)</a></dd>
                     </dl>
                 </li>
@@ -67,7 +55,6 @@
                     <a href="javascript:;">用户管理</a>
                     <dl class="layui-nav-child">
                         <dd @click="sideClick(3)"><a href="javascript:;">用户管理</a></dd>
-                        <dd @click="sideClick(4)"><a href="javascript:;">管理员账号管理</a></dd>
                     </dl>
                 </li>
             </ul>
@@ -76,7 +63,7 @@
 
     <div id="bodyApp" class="layui-body">
         <!-- 内容主体区域 -->
-        <div id="bannerApp" v-show="sideStatus===1" style="padding: 15px;">
+        <div  v-show="sideStatus===1" style="padding: 15px;">
             <table class="table table-bordered table-hover">
                 <tr>
                     <th>轮播图</th>
@@ -104,14 +91,55 @@
                 </tr>
             </table>
         </div>
-        <div v-show="sideStatus===2" style="padding: 15px;">票务</div>
-        <div v-show="sideStatus===3" style="padding: 15px;">
-            <div class="layui-btn-group demoTable">
+        <div v-show="sideStatus===2" style="padding: 15px;"> <!--景区公告-->
+            <div class="layui-btn-group noticeTable">
                 <button class="layui-btn" data-type="getCheckData">获取选中行数据</button>
                 <button class="layui-btn" data-type="getCheckLength">获取选中数目</button>
                 <button class="layui-btn" data-type="isAll">验证是否全选</button>
             </div>
-            <table class="layui-table" lay-data="{width: 892, height:660, url:'/users', page:true, id:'idTest'}" lay-filter="demo">
+            <table class="layui-table" lay-data="{width: 1260, height:360, url:'/notices', id:'idNotice'}" lay-filter="notice">
+                <thead>
+                <tr>
+                    <th lay-data="{type:'checkbox', fixed: 'left'}"></th>
+                    <th lay-data="{field:'id', width:80, sort: true, fixed: true}">ID</th>
+                    <th lay-data="{field:'title', width:320}">标题</th>
+                    <th lay-data="{field:'createtime', width:160, sort: true}">创建时间</th>
+                    <th lay-data="{field:'content', width:320}">内容</th>
+                    <th lay-data="{field:'dynamic', width:160}">公告or动态</th>
+                    <th lay-data="{fixed: 'right', width:178, align:'center', toolbar: '#barNotice'}"></th>
+                </tr>
+                </thead>
+            </table>
+            <form class="form-demo" v-on:submit.prevent="createContent">
+                <div class="form-group" style="margin-top: 60px">
+                    <label for="title">标题:</label>
+                    <input type="text" class="form-control" id="title" name="title" placeholder="请填写标题3~50字符"
+                           pattern="^.{3,50}$" required v-model="title">
+                </div>
+                <div class="form-group">
+                    <label >请选择内容类型：</label>
+                    <select v-model="dynamic">
+                        <option value ="0">景区公告</option>
+                        <option value ="1">景区动态</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <!--富文本编辑器 start-->
+                    <label for="summernote" style="margin-top: 10px">问题正文</label>
+                    <textarea name="content" id="summernote"></textarea>
+                    <!--富文本编辑器 end-->
+                </div>
+                <button type="submit" class="btn btn-primary mt-3 addNoticeSubmit">添加</button>
+                <a id="refreshButton" class="btn btn-primary mt-3">刷新</a>
+            </form>
+        </div>
+        <div v-show="sideStatus===3" style="padding: 15px;"> <!--用户管理-->
+            <div class="layui-btn-group userTable">
+                <button class="layui-btn" data-type="getCheckData">获取选中行数据</button>
+                <button class="layui-btn" data-type="getCheckLength">获取选中数目</button>
+                <button class="layui-btn" data-type="isAll">验证是否全选</button>
+            </div>
+            <table class="layui-table" lay-data="{width: 892, height:660, url:'/users', id:'idUser'}" lay-filter="user">
                 <thead>
                 <tr>
                     <th lay-data="{type:'checkbox', fixed: 'left'}"></th>
@@ -125,12 +153,6 @@
                 </thead>
             </table>
         </div>
-        <div v-show="sideStatus===4" style="padding: 15px;">管理员</div>
-    </div>
-
-    <div class="layui-footer">
-        <!-- 底部固定区域 -->
-        © layui.com - 底部固定区域
     </div>
 </div>
 </body>
@@ -140,174 +162,60 @@
     layui.use('element', function () {
         var element = layui.element;
     });
-    let sideApp = new Vue({//挂载在侧边栏的Vue
-        el: "#sideApp",
-        data: {},
-        methods: {
-            sideClick: function (status) {//侧边栏轮播图点击事件(更改主体标签内容)
-                bodyApp.sideStatus=status;
-                if(status===1){//轮播图CRUD
-                    console.log("轮播图CRUD");
-                    $.ajax({
-                        url: "/banners",
-                        data:{
-                        },
-                        method:"Get",
-                        success: function (r) {
-                            console.log("banners:"+r);
-                            if(r.code==OK) {
-                                bodyApp.banners = r.data;
-                            }
-                        }
 
-                    })
-                }else if(status===2){//票务CRUD
-                    console.log("景区活动CRUD");
-                }else if(status===3){//普通用户账户管理
-                    console.log("用户CRUD");
-                    $.ajax({
-                        url:"/users",
-                        method:"get",
-                        success:function (r) {
-                            console.log("users:"+r)
-                            if (r.code == 0) {
-                                bodyApp.users = r.data;
-                            }
-                        }
-                    })
-                }else if(status===4){//管理员账户管理
-                    console.log("管理员账户管理");
-                }
-            },
-        },
-        created:function () {
-            bodyApp.sideStatus=1;
-            this.sideClick(1);
-        }
-    })
-    let bodyApp = new Vue({//挂载在内容主体的Vue
-        el: "#bodyApp",
-        data: {
-            sideStatus:0,
-            banners:[],
-            insertBannerFormStatus:0,
-            users:[]
-        },
-        methods:{
-            showInsertBannerForm:function(id){
-                this.insertBannerFormStatus=id;
-            },
-            insertBanner:function (sortNum) {
-                console.log("insertBanner:");
-                let files =document.getElementById("imageFile"+sortNum).files;
-                console.log("files.length:"+files.length);
-                if(files.length>0){
-                    let file=files[0];
-                    console.log(file);
-                    uploadImage(file,sortNum);
-                }else{
-                    alert("请选择要上传的文件!!!");//如果用户没选中文件,给与提示
-                    return;
-                }
-            },
-            deleteBanner:function (id) {
-                console.log("deleteBanner");
-                $.ajax({
-                    url:"/deleteBanner",
-                    data:{
-                        id:id
-                    },
-                    method: "get",
-                    success:function (r) {
-                        console.log("deleteBanner:"+r.code);
-                        sideApp.sideClick(1);//执行方法，目的是遍历轮播图
-                    }
-                })
-            }
-        }
-    })
-    function uploadImage(file,sortNum){
-        let form=new FormData();
-        //将用户上传的文件,追加到表单中imageFile就是它的name属性
-        form.append("imageFile",file);
-        form.append("sortNum",sortNum)
-        $.ajax({
-            url:"/addBanner",
-            method:"post",
-            data: form,
-            //文件上传时必须编写的两个属性设置
-            contentType:false,
-            processData:false,
-            success:function(r){
-                if(r.code==OK){
-                    bodyApp.banners=r.data;
-                    bodyApp.insertBannerFormStatus=0;
-                }else{
-                    alert(r.message);
-                }
-                $("#imageFile").val("");
-            }
-        });
-    }
+
 </script>
+<script src="js/backStage_side.js"></script>
+<script src="js/backStage_body.js"></script>
 <script type="text/html" id="barDemo">
 <!--    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>-->
     <a class="layui-btn layui-btn-xs" lay-event="edit">查看数据</a>
     <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 </script>
+<script type="text/html" id="barNotice">
+    <!--    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>-->
+    <a class="layui-btn layui-btn-xs" lay-event="edit">查看数据</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+<script src="js/backStage_layui_userTable.js"></script>
+<script src="js/backStage_layui_noticeTable.js"></script>
 <script>
-    layui.use('table', function(){
-        var table = layui.table;
-        //监听表格复选框选择
-        table.on('checkbox(demo)', function(obj){
-            console.log(obj)
-        });
-        //监听工具条
-        table.on('tool(demo)', function(obj){
-            var data = obj.data;
-            if(obj.event === 'detail'){//点击查看
-                layer.msg('ID：'+ data.id + ' 的查看操作');
-            } else if(obj.event === 'del'){//点击删除
-                layer.confirm('真的删除行么', function(index){
+    $(document).ready(function() {
+        $('#summernote').summernote({
+            height: 300,
+            tabsize: 2,
+            lang: 'zh-CN',
+            placeholder: '请输入问题的详细描述...',
+            callbacks:{
+                //当用户选择图片之后立即执行
+                onImageUpload:function(files){
+                    //获得用户选中的文件
+                    let file=files[0];
+                    console.log(file)
+                    let form=new FormData();
+                    form.append("imageFile",file);
                     $.ajax({
-                        url:"/deleteUser",
-                        data:{
-                            id:data.id
-                        },
-                        method:"get",
-                        success:function (r) {
-                            if (r.code == OK){
-                                obj.del();
-                                layer.close(index);
+                        url:"/upload/image",
+                        method:"post",
+                        data:form,
+                        contentType:false,
+                        processData:false,
+                        cache:false,//可以将缓存也关闭节省内存
+                        success:function(r){
+                            if(r.code==OK){
+                                //将图片显示在富文本编辑器中
+                                let img=new Image();//实例化一个img标签对象
+                                img.src=r.message;//将src属性赋值为访问静态资源的路径
+                                //利用summernote提供的api将我们创建的图片显示在富文本编辑器中
+                                $("#summernote").summernote(
+                                    "insertNode",img);
+                            }else{
+                                alert(r.message);
                             }
                         }
-                    })
-                });
-            } else if(obj.event === 'edit'){//点击编辑
-                layer.alert('查看json数据：<br>'+ JSON.stringify(data))
+                    });
+                }
             }
-        });
-
-        var $ = layui.$, active = {
-            getCheckData: function(){ //获取选中数据
-                var checkStatus = table.checkStatus('idTest')
-                    ,data = checkStatus.data;
-                layer.alert(JSON.stringify(data));
-            }
-            ,getCheckLength: function(){ //获取选中数目
-                var checkStatus = table.checkStatus('idTest')
-                    ,data = checkStatus.data;
-                layer.msg('选中了：'+ data.length + ' 个');
-            }
-            ,isAll: function(){ //验证是否全选
-                var checkStatus = table.checkStatus('idTest');
-                layer.msg(checkStatus.isAll ? '全选': '未全选')
-            }
-        };
-
-        $('.demoTable .layui-btn').on('click', function(){
-            var type = $(this).data('type');
-            active[type] ? active[type].call(this) : '';
         });
     });
 </script>

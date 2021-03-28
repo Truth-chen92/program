@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap3/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap3/font-awesome-4.7.0/css/font-awesome.css"/>
+    <link rel="stylesheet" type="text/css" href="bootstrap3/css/main.css"/><!--主要css样式-->
+    <link rel="stylesheet" href="bower_components/summernote/dist/summernote-bs4.min.css">
+
+    <script type="text/javascript" src="bootstrap3/jquery.min.js"></script>
+    <script type="text/javascript" src="bootstrap3/js/bootstrap.js"></script>
+    <script type="text/javascript" src="bootstrap3/js/holder.js"></script>
+    <script type="text/javascript" src="bootstrap3/js/html5shiv.min.js"></script>
+    <script type="text/javascript" src="bootstrap3/js/css3-mediaqueries.js"></script>
+    <script type="text/javascript" src="bootstrap3/js/respond.min.js"></script>
+    <script type="text/javascript" src="js/jquery.firefly-0.7.min.js"></script>
+    <script src="layui/layui.js"></script>
+    <script src="js/vue.js"></script>
+
+
+
+<!--    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">-->
+<!--    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">-->
+
+<!--    <link rel="stylesheet" href="bower_components/select2/dist/css/select2.min.css">-->
+<!--    <link rel="stylesheet" href="bower_components/select2-bootstrap4-theme/dist/select2-bootstrap4.min.css">-->
+<!--    <link rel="stylesheet" href="bower_components/vue-select/dist/vue-select.css">-->
+
+<!--    <script src="bower_components/jquery/dist/jquery.min.js"></script>-->
+<!--    <script src="bower_components/popper.js/dist/umd/popper.min.js"></script>-->
+<!--    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>-->
+    <script src="bower_components/polyfill/dist/polyfill.min.js"></script>
+    <script src="bower_components/summernote/dist/summernote-bs4.js"></script>
+    <script src="bower_components/summernote/dist/lang/summernote-zh-CN.min.js"></script>
+<!--    <script src="bower_components/vue/dist/vue.js"></script>-->
+<!--    <script src="bower_components/select2/dist/js/select2.min.js"></script>-->
+<!--    <script src="bower_components/select2/dist/js/i18n/zh-CN.js"></script>-->
+<!--    <script src="bower_components/vue-select/dist/vue-select.js"></script>-->
+</head>
+<body>
+
+<form  v-on:submit.prevent="createContent">
+    <div class="form-group">
+        <!--富文本编辑器 start-->
+        <label for="summernote" style="margin-top: 30px">问题正文</label>
+        <textarea name="content" id="summernote"></textarea>
+        <!--富文本编辑器 end-->
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">添加</button>
+</form>
+</body>
+<script>
+    $(document).ready(function() {
+        $('#summernote').summernote({
+            height: 300,
+            tabsize: 2,
+            lang: 'zh-CN',
+            placeholder: '请输入问题的详细描述...',
+            callbacks:{
+                //当用户选择图片之后立即执行
+                onImageUpload:function(files){
+                    //获得用户选中的文件
+                    let file=files[0];
+                    console.log(file)
+                    let form=new FormData();
+                    form.append("imageFile",file);
+                    $.ajax({
+                        url:"/upload/image",
+                        method:"post",
+                        data:form,
+                        contentType:false,
+                        processData:false,
+                        cache:false,//可以将缓存也关闭节省内存
+                        success:function(r){
+                            if(r.code==OK){
+                                //将图片显示在富文本编辑器中
+                                let img=new Image();//实例化一个img标签对象
+                                img.src=r.message;//将src属性赋值为访问静态资源的路径
+                                //利用summernote提供的api将我们创建的图片显示在富文本编辑器中
+                                $("#summernote").summernote(
+                                    "insertNode",img);
+                            }else{
+                                alert(r.message);
+                            }
+                        }
+                    });
+                }
+            }
+        });
+    });
+</script>
+</html>

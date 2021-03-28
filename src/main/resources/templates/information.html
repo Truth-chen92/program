@@ -11,7 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="bootstrap3/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="bootstrap3/font-awesome-4.7.0/css/font-awesome.css"/>
 	<link rel="stylesheet" type="text/css" href="bootstrap3/css/main.css"/><!--主要css样式-->
-
+	<script src="js/vue.js"></script>
 </head>
 <body>
 
@@ -77,7 +77,7 @@
 					</ul>
 				</li>
 				<li th:if="${user}!=null" class="dropdown">
-					<a href="/showpersonal" class="dropdown-toggle dropdown-toggle6">个人中心</a>
+					<a href="/showup" class="dropdown-toggle dropdown-toggle6">个人中心</a>
 				</li>
 				<li th:if="${user}==null" class="dropdown">
 					<a href="/showlogin" class="dropdown-toggle dropdown-toggle6">登录</a>
@@ -87,7 +87,7 @@
 	</nav>
 	<!--导航条结束-->
 </header>
-	<div id="information">
+	<div id="bodyApp">
 		<div style="line-height: 0">
 			<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/inf.png" alt="头图" style="width: 100%" class="about-chart3">
 			<div class="linkList wapper" style="margin-top: 0">
@@ -98,23 +98,27 @@
 		</div>
 		
 		<div id="information-notice">
-			<a href="notice.html" class="notice-item wapper">
-				<h3>关于恢复凤凰古城核心九景全面开放的公告</h3>
+			<a href="notice.html" class="notice-item wapper"
+			v-for="notice in notices"
+			v-if="notice.dynamic==0"
+			   v-bind:href="'notice.html?'+notice.id"
+			>
+				<h3 v-text="notice.title">关于恢复凤凰古城核心九景全面开放的公告</h3>
 
-				<div>2020-09-30 10:51:12<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point3.png" alt=""></div>
+				<div v-text="notice.createtime">2020-09-30 10:51:12<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point3.png" alt=""></div>
 			</a>
-			<a href="#" class="notice-item wapper">
-				<h3>关于恢复凤凰古城沱江泛舟、南方长城 旅游景区对外开放的公告</h3>
+<!--			<a href="#" class="notice-item wapper">-->
+<!--				<h3>关于恢复凤凰古城沱江泛舟、南方长城 旅游景区对外开放的公告</h3>-->
 
-				<div>2020-09-30 10:36:26<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point3.png" alt=""></div>
-			</a>
-			<a href="#" class="notice-item wapper">
-				<h3>关于暂停凤凰古城九景、奇梁洞、南方长城旅游景区对外开放的公告</h3>
+<!--				<div>2020-09-30 10:36:26<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point3.png" alt=""></div>-->
+<!--			</a>-->
+<!--			<a href="#" class="notice-item wapper">-->
+<!--				<h3>关于暂停凤凰古城九景、奇梁洞、南方长城旅游景区对外开放的公告</h3>-->
 
-				<div>2020-01-08 16:56:52<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point3.png" alt=""></div>
-			</a>
+<!--				<div>2020-01-08 16:56:52<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point3.png" alt=""></div>-->
+<!--			</a>-->
 		</div>
-		<a href="#" class="information-more wapper">查看更多<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point5.png" alt=""></a>
+<!--		<a href="#" class="information-more wapper">查看更多<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point5.png" alt=""></a>-->
 		<div id="information-activity">
 			<div class="information-title">
 				<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/left black.png" alt="">
@@ -133,47 +137,50 @@
 					</div>
 				</li>
 
-				<li class="activity-item">
-					<img src="https://image.xisland.cn/xmall/default/43e7343a68a5224741f26495cf538af0沈从文.jfif" alt="活动图片">
-					<span class="activity-tip">已结束</span>
-					<h3>九九重阳节</h3>
-					<div>
-						2020-01-08 11:19:16
-						<a href="activity-details.html?id=13">活动详情 &gt;&gt;</a>
-					</div>
-				</li>
+<!--				<li class="activity-item">-->
+<!--					<img src="https://image.xisland.cn/xmall/default/43e7343a68a5224741f26495cf538af0沈从文.jfif" alt="活动图片">-->
+<!--					<span class="activity-tip">已结束</span>-->
+<!--					<h3>九九重阳节</h3>-->
+<!--					<div>-->
+<!--						2020-01-08 11:19:16-->
+<!--						<a href="activity-details.html?id=13">活动详情 &gt;&gt;</a>-->
+<!--					</div>-->
+<!--				</li>-->
 
-				<li class="activity-item">
-					<img src="https://image.xisland.cn/xmall/default/3856dc7bb2c83ec0721999f0782d272e测试用.jpg" alt="活动图片">
-					<span class="activity-tip">已结束</span>
-					<h3>凤凰古城</h3>
-					<div>
-						2020-01-09 15:18:47
-						<a href="activity-details.html?id=14">活动详情 &gt;&gt;</a>
-					</div>
-				</li>
+<!--				<li class="activity-item">-->
+<!--					<img src="https://image.xisland.cn/xmall/default/3856dc7bb2c83ec0721999f0782d272e测试用.jpg" alt="活动图片">-->
+<!--					<span class="activity-tip">已结束</span>-->
+<!--					<h3>凤凰古城</h3>-->
+<!--					<div>-->
+<!--						2020-01-09 15:18:47-->
+<!--						<a href="activity-details.html?id=14">活动详情 &gt;&gt;</a>-->
+<!--					</div>-->
+<!--				</li>-->
 
 			</ul>
 		</div>
 		<div id="information-dynamic" class="wapper">
 			<h2>景区动态</h2>
-			<a href="#" class="dynamic-item">
-				<div>2021-01-12 16:25:34</div>
-				<div class="dynamic-dricp overhide">不可错过的新年祈福活动</div>
+			<a href="#" class="dynamic-item"
+			v-for="notice in notices"
+			   v-if="notice.dynamic==1"
+			   v-bind:href="'notice.html?'+notice.id">
+				<div v-text="notice.createtime">2021-01-12 16:25:34</div>
+				<div class="dynamic-dricp overhide" v-text="notice.title">不可错过的新年祈福活动</div>
 				<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point3.png" alt="">
 			</a>
-			<a href="#" class="dynamic-item">
-				<div>2021-01-04 15:27:02</div>
-				<div class="dynamic-dricp overhide">2021，凤凰古城等着您！</div>
-				<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point3.png" alt="">
-			</a>
-			<a href="#" class="dynamic-item">
-				<div>2020-09-30 11:16:45</div>
-				<div class="dynamic-dricp overhide">攻略</div>
-				<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point3.png" alt="">
-			</a>
+<!--			<a href="#" class="dynamic-item">-->
+<!--				<div>2021-01-04 15:27:02</div>-->
+<!--				<div class="dynamic-dricp overhide">2021，凤凰古城等着您！</div>-->
+<!--				<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point3.png" alt="">-->
+<!--			</a>-->
+<!--			<a href="#" class="dynamic-item">-->
+<!--				<div>2020-09-30 11:16:45</div>-->
+<!--				<div class="dynamic-dricp overhide">攻略</div>-->
+<!--				<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point3.png" alt="">-->
+<!--			</a>-->
 		</div>
-		<a href="#" class="information-more wapper">查看更多<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point5.png" alt=""></a>
+<!--		<a href="#" class="information-more wapper">查看更多<img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point5.png" alt=""></a>-->
 	</div>
 <div id="footer">
 	<div id="footer-box">
@@ -204,5 +211,7 @@
 		</div>
 	</div>
 </div>
-</body><script src="./js/nav.js"></script>
+</body>
+<script src="./js/nav.js"></script>
+<script src="js/backStage_body.js"></script>
 </html>

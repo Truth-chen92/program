@@ -182,7 +182,7 @@
     </div>
     <!--景点详情+走进景区结束-->
     <!--景区公告+景区动态开始-->
-    <div class="message-box wapper">
+    <div id="bodyApp" class="message-box wapper">
         <div id="notice-box">
             <div class="notice-left">
                 <div class="message-title">
@@ -191,10 +191,15 @@
                 </div>
                 <ul>
 
-                    <a href="showinformation">
+                    <a href="showinformation"
+                        v-for="notice in notices" v-if="notice.dynamic==0">
                         <li>
-                            <div class="overhide flex2 notice-content">关于恢复凤凰古城核心九景全面开放的公告</div>
-                            <div class="message-btn">
+                            <div class="overhide flex2 notice-content"
+                            v-text="notice.title">
+                                关于恢复凤凰古城核心九景全面开放的公告
+                            </div>
+                            <div class="message-btn"
+                            v-text="notice.createtime">
                                 2020-09-30 10:51:12
                                 <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point right 1.png"
                                      alt="详情">
@@ -202,27 +207,27 @@
                         </li>
                     </a>
 
-                    <a href="showinformation">
-                        <li>
-                            <div class="overhide flex2 notice-content">关于恢复凤凰古城沱江泛舟、南方长城 旅游景区对外开放的公告</div>
-                            <div class="message-btn">
-                                2020-09-30 10:36:26
-                                <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point right 1.png"
-                                     alt="详情">
-                            </div>
-                        </li>
-                    </a>
+<!--                    <a href="showinformation">-->
+<!--                        <li>-->
+<!--                            <div class="overhide flex2 notice-content">关于恢复凤凰古城沱江泛舟、南方长城 旅游景区对外开放的公告</div>-->
+<!--                            <div class="message-btn">-->
+<!--                                2020-09-30 10:36:26-->
+<!--                                <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point right 1.png"-->
+<!--                                     alt="详情">-->
+<!--                            </div>-->
+<!--                        </li>-->
+<!--                    </a>-->
 
-                    <a href="showinformation">
-                        <li>
-                            <div class="overhide flex2 notice-content">关于暂停凤凰古城九景、奇梁洞、南方长城旅游景区对外开放的公告</div>
-                            <div class="message-btn">
-                                2020-01-08 16:56:52
-                                <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point right 1.png"
-                                     alt="详情">
-                            </div>
-                        </li>
-                    </a>
+<!--                    <a href="showinformation">-->
+<!--                        <li>-->
+<!--                            <div class="overhide flex2 notice-content">关于暂停凤凰古城九景、奇梁洞、南方长城旅游景区对外开放的公告</div>-->
+<!--                            <div class="message-btn">-->
+<!--                                2020-01-08 16:56:52-->
+<!--                                <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point right 1.png"-->
+<!--                                     alt="详情">-->
+<!--                            </div>-->
+<!--                        </li>-->
+<!--                    </a>-->
 
                 </ul>
             </div>
@@ -235,39 +240,44 @@
                 </div>
                 <ul>
 
-                    <a href="showinformation">
+                    <a href="showinformation"
+                    v-for="notice in notices" v-if="notice.dynamic==1">
                         <li>
-
-                            <div class="flex1">2021-01-12 16:25:34</div>
-                            <div class="dynamic-content">
-                                <div class="overhide notice-content">定了！2021年来“神秘湘西 凤凰守年”——唤起凤凰古城远去的年味</div>
-                                <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point right 1.png"
-                                     alt="详情">
+                            <div class="flex1"
+                            v-text="notice.createtime">
+                                2021-01-12 16:25:34
                             </div>
-
-                        </li>
-                    </a>
-                    <a href="showinformation">
-                        <li>
-
-                            <div class="flex1">2021-01-04 15:27:02</div>
                             <div class="dynamic-content">
-                                <div class="overhide notice-content">2021，从随心所欲的旅程开始吧！</div>
+                                <div class="overhide notice-content"
+                                v-text="notice.title">
+                                    国庆节出游
+                                </div>
                                 <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point right 1.png"
                                      alt="详情">
                             </div>
                         </li>
                     </a>
-                    <a href="showinformation">
-                        <li>
-                            <div class="flex1">2020-09-30 11:16:45</div>
-                            <div class="dynamic-content">
-                                <div class="overhide notice-content">凤凰古城国庆节出游全攻略</div>
-                                <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point right 1.png"
-                                     alt="详情">
-                            </div>
-                        </li>
-                    </a>
+<!--                    <a href="showinformation">-->
+<!--                        <li>-->
+
+<!--                            <div class="flex1">2021-01-04 15:27:02</div>-->
+<!--                            <div class="dynamic-content">-->
+<!--                                <div class="overhide notice-content">2021，从随心所欲的旅程开始吧！</div>-->
+<!--                                <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point right 1.png"-->
+<!--                                     alt="详情">-->
+<!--                            </div>-->
+<!--                        </li>-->
+<!--                    </a>-->
+<!--                    <a href="showinformation">-->
+<!--                        <li>-->
+<!--                            <div class="flex1">2020-09-30 11:16:45</div>-->
+<!--                            <div class="dynamic-content">-->
+<!--                                <div class="overhide notice-content">凤凰古城国庆节出游全攻略</div>-->
+<!--                                <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/point right 1.png"-->
+<!--                                     alt="详情">-->
+<!--                            </div>-->
+<!--                        </li>-->
+<!--                    </a>-->
 
                 </ul>
             </div>
@@ -405,4 +415,5 @@
 <script src="js/utils.js"></script>
 <script src="js/banners.js"></script>
 <script src="js/activities.js"></script>
+<script src="js/backStage_body.js"></script>
 </html>

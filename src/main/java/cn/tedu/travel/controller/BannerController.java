@@ -50,7 +50,6 @@ public class BannerController {
         String path= DateTimeFormatter.ofPattern("yyyy/MM/dd").format(LocalDate.now());//年月日
         File folder=new File(realPath,path);//真实路径+年月日
         folder.mkdirs();
-        log.debug("imageFile:{},sortNum:{}",imageFile,sortNum);
         String fileName=imageFile.getOriginalFilename();//文件名
         String ext=fileName.substring(fileName.lastIndexOf("."));//获得后缀
         String name= UUID.randomUUID().toString()+ext;//随机名字+后缀

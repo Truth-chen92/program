@@ -5,6 +5,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 import org.thymeleaf.context.Context;
 
 import javax.servlet.http.Cookie;
@@ -18,6 +20,10 @@ import java.util.Map;
 @Controller
 @Slf4j
 public class ShowController {
+    @RequestMapping(value="")
+    public String  index(){
+        return "homePage";
+    }
     @GetMapping("/showlogin")
     public String showLogin() {
         return "login";
