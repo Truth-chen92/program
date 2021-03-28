@@ -17,6 +17,7 @@
     <link rel="stylesheet" type="text/css" href="bootstrap3/font-awesome-4.7.0/css/font-awesome.css"/>
     <link rel="stylesheet" type="text/css" href="bootstrap3/css/main.css"/><!--主要css样式-->
     <script src="./js/jquery.min.js"></script>
+    <script src="js/vue.js"></script>
 </head>
 <body>
 <header id="header">
@@ -80,12 +81,18 @@
                         <li><a href="showcontactus">人才招聘</a></li>
                     </ul>
                 </li>
+                <li th:if="${user}!=null" class="dropdown">
+                    <a href="/showup" class="dropdown-toggle dropdown-toggle6">个人中心</a>
+                </li>
+                <li th:if="${user}==null" class="dropdown">
+                    <a href="/showlogin" class="dropdown-toggle dropdown-toggle6">登录</a>
+                </li>
             </ul>
         </div><!-- /.container-fluid -->
     </nav>
     <!--导航条结束-->
 </header>
-<div class="pm">
+<div class="pm" id="noticeApp">
     <div class="wapper" id="custom-box">
         <div class="linkList wapper linkList2">
             <a href="index.html">首页</a>
@@ -98,166 +105,20 @@
         </div>
         <div class="information-title" style="margin-top: .6rem">
             <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/left black.png" alt="">
-            <span class="dynamic-details">关于恢复凤凰古城核心九景全面开放的公告</span>
+            <span class="dynamic-details"
+            v-text="notice.title">
+
+            </span>
             <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/right black.png" alt="">
         </div>
-        <div id="custom-box-content">
-            <p>
-                <section>
-            <p>应广大游客朋友的游玩需求，增添游玩体验。自2020年9月25日起凤凰古城核心九景向国内游客全面安全有序开放。</p>
-            </section>
-            <section>
-                <p>&nbsp;</p>
-            </section>
-            <section>
-                <p><strong>一、已开放景点：</strong></p>
-                <p>城内：沈从文故居、沱江泛舟、万寿宫、古城博物馆</p>
-                <p>城外：南长城、奇梁洞</p>
-                <p><strong>二、现开放景点：</strong></p>
-                <p>城内：熊希龄故居、杨家祠堂、崇德堂、东门城楼、虹桥</p>
-                <p><strong>三、景点开放时间：</strong></p>
-                <p>沈从文故居：8：00—22：00</p>
-                <p>&nbsp; &nbsp;夜游沱江：18：00—23：00</p>
-                <p>&nbsp; &nbsp;其他景点：8：00—17：30</p>
-                <p><img class="wscnph"
-                        src="https://image.xisland.cn/xmall/richText/56a8aca3bf7f02c3438d14fd52d63cac微信图片_20200930104518.jpg">
-                </p>
-                <p><strong>景点简介</strong></p>
-                <p><strong><img class="wscnph"
-                                src="https://image.xisland.cn/xmall/richText/914960a4e7c597b9d20391fb87e89237微信图片_20200930104546.jpg"></strong>
-                </p>
-                <section>
-                    <p><strong>沱江泛舟</strong></p>
-                </section>
-                <section>
-                    <p>坐上一艘乌篷船，带你穿越百年吊脚楼群，看最美夜景。</p>
-                    <p>&nbsp;</p>
-                    <p><img class="wscnph"
-                            src="https://image.xisland.cn/xmall/richText/997f523fb2c25824d92d3b878436615e微信图片_20200930104553.jpg">
-                    </p>
-                    <section>
-                        <p><strong>万寿宫</strong></p>
-                    </section>
-                    <section>
-                        <p>
-                            曾是江西会馆，座地4000多平方的古建筑群，见证了在凤凰经商的江西人的富有。现为本地有名的凤凰美术馆，陈列着上百幅知名画作。每晚更有湘西赶尸、猜新娘、栏门酒等有趣的苗族风俗等你来体验。</p>
-                        <p>&nbsp;</p>
-                        <p><img class="wscnph"
-                                src="https://image.xisland.cn/xmall/richText/e21d11a29bc48d7c11830ab87254e059微信图片_20200930104559.jpg"><img
-                                class="wscnph"
-                                src="https://image.xisland.cn/xmall/richText/c4ffb9ea7ff50e8fe47cb318750ec9f9微信图片_20200930104602.jpg">
-                        </p>
-                        <section>
-                            <p><strong>古城博物馆</strong></p>
-                        </section>
-                        <section>
-                            <p>原湖南辰永源靖道事陈宝箴之府，晚清维新派主干，著名的“陈氏五杰”均出于此。每天上午可免费参观当地苗族缠头帕等民俗节目。</p>
-                            <p>&nbsp;</p>
-                        </section>
-                        <p><img class="wscnph"
-                                src="https://image.xisland.cn/xmall/richText/afbb9e1ebfd51c29b78750a81050584e微信图片_20200930104605.jpg">
-                        </p>
-                        <section>
-                            <section>
-                                <p><strong>杨家祠堂</strong></p>
-                            </section>
-                            <section>
-                                <p>杨家祠堂是杨家将后代杨芳在此征战时，出资修建的祠堂，是旧时宗族制度的产物,记录着家族的辉煌与传统,是县内为数不多保留完整的的祠堂之一。</p>
-                                <p>&nbsp;</p>
-                                <p><img class="wscnph"
-                                        src="https://image.xisland.cn/xmall/richText/030d08e2b7b2cbc819b85661ca340678微信图片_20200930104609.jpg">
-                                </p>
-                                <section>
-                                    <p><strong>崇德堂</strong></p>
-                                </section>
-                                <section>
-                                    <p>
-                                        凤凰首富裴守䘵的宅院，一位在凤凰经营煤油布匹发家的江西商人，也是一位收匾“狂魔”，屋内有匾额108块。古色古香的宅院，搭配特色讲解服务，带您穿越百年，看民国宅斗大戏。</p>
-                                    <p>&nbsp;</p>
-                                    <p><img class="wscnph"
-                                            src="https://image.xisland.cn/xmall/richText/8dd33c420d16e35e1d92d0521d02383a微信图片_20200930104613.jpg">
-                                    </p>
-                                    <section>
-                                        <p><strong>东门城楼</strong></p>
-                                    </section>
-                                    <section>
-                                        <p>东门城楼曾作为古城4座城门楼之一，起着重要军事防御作用，内有炮台、炮眼等攻击防御工具一应俱全，见证了凤凰古城曾经的腥风血雨。</p>
-                                        <p>&nbsp;</p>
-                                        <p><img class="wscnph"
-                                                src="https://image.xisland.cn/xmall/richText/0d02b3db85e56a31fcdcbb01e478b112微信图片_20200930104616.jpg">
-                                        </p>
-                                        <section>
-                                            <p><strong>虹桥</strong></p>
-                                        </section>
-                                        <section>
-                                            <p>虹桥距今已有六百多年的历史，一楼可为过往行人遮风档雨，二楼观景台，可将河面两岸吊脚楼群尽收眼底，是一个品茗观景、文化交流的好地方。</p>
-                                            <p>&nbsp;</p>
-                                            <p><img class="wscnph"
-                                                    src="https://image.xisland.cn/xmall/richText/97c1d42d98fe43a092ff9e8b41336784微信图片_20200930104623.jpg">
-                                            </p>
-                                            <section>
-                                                <p><strong>奇梁洞</strong></p>
-                                            </section>
-                                            <section>
-                                                <p>喝栏门酒，看亿年溶洞，感受苗族人的热情，叹大自然的鬼斧神工。每周末苗家阿妹都大开寨门，等你喝糯米酒，对栏门歌，体验一把苗族生活。</p>
-                                                <p>&nbsp;</p>
-                                                <p><img class="wscnph"
-                                                        src="https://image.xisland.cn/xmall/richText/733f40de90fa2e2bc4416e5ce9e58ac5微信图片_20200930104629.jpg">
-                                                </p>
-                                                <section>
-                                                    <p><strong>南方长城</strong></p>
-                                                </section>
-                                                <section>
-                                                    <p>
-                                                        南方长城是中国历史上工程浩大的古建筑之一，这段长城是明清王朝对南方苗族镇抚的产物，见证了100多年前，苗族同胞们的辛酸血泪史。</p>
-                                                    <p>&nbsp;</p>
-                                                </section>
-                                            </section>
-                                        </section>
-                                    </section>
-                                </section>
-                            </section>
-                        </section>
-                    </section>
-                </section>
-            </section>
-            </p>
-            <div class="announcer">
-                <p>凤凰古城文化旅游投资股份有限公司</p>
-                <div>2020-09-30 10:51:12</div>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="footer">
-    <div id="footer-box">
-        <img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/stone.png" alt="">
-        <div class="footer">
-            <div class="footer-item">
-                <a href="showcontactus">联系我们</a>
-                <div class="contact"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/phone.png"
-                                          alt="" style="margin-left: 1.74rem"><span>18030255623</span></div>
-                <span>湖南省湘西土家族苗族自治州</span>
-                <a href="https://weibo.com/hnphoenix?from=myfollow_all" target="_blank"><img
-                        src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/weibo.png" alt=""
-                        style="margin-left: 1.82rem"></a>
-                <a href="https://mp.weixin.qq.com/mp/homepage?__biz=MzA4OTQ2OTIxOQ==&amp;hid=1&amp;sn=6e87d4f93f4b065ddac1548451c6fba3"
-                   target="_blank"><img src="https://xiangyuanhui.oss-cn-hangzhou.aliyuncs.com/fenghuang/wechat.png"
-                                        alt=""></a>
-            </div>
-            <div class="line"></div>
-            <div class="footer-item2">
+        <div id="custom-box-content"
+        v-html="notice.content">
 
-                <a href="http://www.hunanhld.cn/" class="website-link" target="_blank">张家界黄龙洞景区</a>
-                <a href="http://qiyunshan.sunriver.cn/" target="_blank">齐云山生态文化旅游区</a>
-            </div>
-            <div class="footer-item3">
-                <span>凤凰古城官网</span>
-                <a href="http://beian.miit.gov.cn" target="_blank" style="display: inline-block;">湘ICP备20015967号-1</a>
-            </div>
         </div>
     </div>
 </div>
 </body>
+<script src="js/utils.js"></script>
 <script src="./js/nav.js"></script>
+<script src="./js/noticeDetail.js"></script>
 </html>
