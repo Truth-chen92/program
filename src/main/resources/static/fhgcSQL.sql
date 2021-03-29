@@ -19,18 +19,18 @@ USE `fhgc`;
 -- 导出  表 fhgc.activity 结构
 CREATE TABLE IF NOT EXISTS `activity` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `image_url` varchar(255) DEFAULT NULL COMMENT '图片路径',
+  `url` varchar(255) DEFAULT NULL COMMENT '图片路径',
   `name` varchar(255) DEFAULT NULL COMMENT '活动名称',
   `description` varchar(255) DEFAULT NULL COMMENT '活动描述',
   `time` varchar(255) DEFAULT NULL COMMENT '活动时间',
-  `release_time` varchar(255) DEFAULT NULL COMMENT '活动发布时间',
+  `createtime` varchar(255) DEFAULT NULL COMMENT '活动发布时间',
   `location` varchar(255) DEFAULT NULL COMMENT '活动地点',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- 正在导出表  fhgc.activity 的数据：~3 rows (大约)
 /*!40000 ALTER TABLE `activity` DISABLE KEYS */;
-INSERT INTO `activity` (`id`, `image_url`, `name`, `description`, `time`, `release_time`, `location`) VALUES
+INSERT INTO `activity` (`id`, `url`, `name`, `description`, `time`, `createtime`, `location`) VALUES
 	(1, 'https://image.xisland.cn/xmall/default/445b2874d1a87cb2154c87f2d67d97d91578308549.jpg', '春节活动', '春节活动', '2020-01-24 00:08:00 至 2020-01-27 00:19:00', '2020-01-08 11:09:25', '凤凰古城万寿宫'),
 	(2, 'https://image.xisland.cn/xmall/default/43e7343a68a5224741f26495cf538af0%E6%B2%88%E4%BB%8E%E6%96%87.jfif', '九九重阳节', '九月九日忆山东兄弟', '2020-02-21 00:06:00 至 2020-02-28 00:20:00', '2020-01-08 11:19:16', '凤凰景区沈从文'),
 	(3, 'https://image.xisland.cn/xmall/default/3856dc7bb2c83ec0721999f0782d272e%E6%B5%8B%E8%AF%95%E7%94%A8.jpg', '凤凰', '凤凰古城', '2020-01-09 00:00:00 至 2020-02-03 00:00:00', '2020-01-09 15:18:47', '凤凰');
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `notice` (
   `content` longtext NOT NULL,
   `dynamic` int(11) NOT NULL COMMENT '景区公告为0，动态为1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=249 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=250 DEFAULT CHARSET=utf8;
 
 -- 正在导出表  fhgc.notice 的数据：~4 rows (大约)
 /*!40000 ALTER TABLE `notice` DISABLE KEYS */;
